@@ -9,6 +9,7 @@ Method | HTTP request | Description
 [**solanaGetNFTMintFee**](SolanaNftApi.md#solanaGetNFTMintFee) | **GET** /solana/nft/mint/fee | Get the NFT mint fee
 [**solanaGetNFTOwner**](SolanaNftApi.md#solanaGetNFTOwner) | **GET** /solana/nft/{network}/{mint_address}/owner | Get owner of an NFT
 [**solanaGetNFTsCandyMachineId**](SolanaNftApi.md#solanaGetNFTsCandyMachineId) | **POST** /solana/nft/candy_machine_id | Get the ID of the candy machine of an NFT 
+[**solanaSearchNFTs**](SolanaNftApi.md#solanaSearchNFTs) | **POST** /solana/nft/search | Search NFTs on Solana
 
 
 <a name="solanaCreateNFT"></a>
@@ -17,7 +18,7 @@ Method | HTTP request | Description
 
 Create an NFT on Solana
 
-&lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-nft/create-an-nft\&quot; target&#x3D;\&quot;_blank\&quot;&gt;See examples (Python, JavaScript)&lt;/a&gt;.  Create a Metaplex NFT on Solana. Read more on this &lt;a href&#x3D;\&quot;https://blog.theblockchainapi.com/2021/11/16/a-note-on-nfts.html\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;.  &#x60;Cost: 2 Credits&#x60; (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
+&lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-nft/create-an-nft\&quot; target&#x3D;\&quot;_blank\&quot;&gt;See examples (Python, JavaScript)&lt;/a&gt;.  Create a Metaplex NFT on Solana. Read more on this &lt;a href&#x3D;\&quot;https://blog.theblockchainapi.com/2021/11/16/a-note-on-nfts.html\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;.  To add attributes to the NFT, add them to a JSON file and upload that to Arweave/IPFS/Filecoin. The JSON file should follow this format: &lt;a href&#x3D;\&quot;https://docs.metaplex.com/nft-standard\&quot; target&#x3D;\&quot;_blank\&quot;&gt;NFT Standard.&lt;/a&gt; (See the \&quot;URI JSON Schema\&quot; section in that article). Then supply the link to the JSON file in &#x60;nft_url&#x60;. You don&#39;t need to use &#x60;nft_metadata&#x60;.  &#x60;Cost: 2 Credits&#x60; (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
 
 ### Example
 ```java
@@ -89,7 +90,6 @@ Name | Type | Description  | Notes
 **401** | Invalid API key pair in headers |  -  |
 **402** | Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. |  -  |
 **414** | URI too long (the data you provided was too large [e.g., the metadata provided was 500kb]) |  -  |
-**502** | Service unavailable. This can happen when Solana&#39;s leading validator is behind and is unable to process transactions we send. We have no control over this. The proper response here is to wait 10 or so seconds and try again. |  -  |
 
 <a name="solanaGetNFT"></a>
 # **solanaGetNFT**
@@ -97,7 +97,7 @@ Name | Type | Description  | Notes
 
 Get an NFT&#39;s metadata
 
-&lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-nft/get-nft-metadata\&quot; target&#x3D;\&quot;_blank\&quot;&gt;See examples (Python, JavaScript)&lt;/a&gt;.       Get the metadata of an NFT.  &#x60;Cost: 1 Credits&#x60; (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
+&lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-nft/get-nft-metadata\&quot; target&#x3D;\&quot;_blank\&quot;&gt;See examples (Python, JavaScript)&lt;/a&gt;.       Get the metadata of an NFT.  If you&#39;re looking for metadata such as attributes and others, you can retrieve them from the link in the URI field of the NFT metadata returned. See the example on the right. The URI is an Arweave URL. That contains the attributes and other information about the NFT. That URL is stored on the Solana blockchain.  &#x60;Cost: 1 Credits&#x60; (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
 
 ### Example
 ```java
@@ -404,4 +404,82 @@ Name | Type | Description  | Notes
 **401** | Invalid API key pair in headers |  -  |
 **402** | Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. |  -  |
 **404** | Not found |  -  |
+
+<a name="solanaSearchNFTs"></a>
+# **solanaSearchNFTs**
+> NFTSearchResponse solanaSearchNFTs(nfTSearchRequest)
+
+Search NFTs on Solana
+
+&lt;a href&#x3D;\&quot;\&quot; target&#x3D;\&quot;_blank\&quot;&gt;See examples (Python, JavaScript) [Coming Soon]&lt;/a&gt;.  With this endpoint, you can search for NFTs by their symbol, name of NFTs, uuid, configuration address, and update authority.  The output is a list of NFTs that match your query.  You can also provide multiple search clauses, such as the update authority (&#x60;update_authority&#x3D;\&quot;G17UmNGnMJ851x3M1JXocgpft1afcYedjPuFpo1ohhCk\&quot;&#x60;) and symbol begins with \&quot;Sol\&quot; (&#x60;symbol&#x3D;\&quot;Sol\&quot;, symbol_search_method&#x3D;&#39;begins_with&#39;&#x60;).  &#x60;Cost: 1 Credit&#x60; (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.auth.*;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.SolanaNftApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.theblockchainapi.com/v1");
+    
+    // Configure API key authorization: APIKeyID
+    ApiKeyAuth APIKeyID = (ApiKeyAuth) defaultClient.getAuthentication("APIKeyID");
+    APIKeyID.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //APIKeyID.setApiKeyPrefix("Token");
+
+    // Configure API key authorization: APISecretKey
+    ApiKeyAuth APISecretKey = (ApiKeyAuth) defaultClient.getAuthentication("APISecretKey");
+    APISecretKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //APISecretKey.setApiKeyPrefix("Token");
+
+    SolanaNftApi apiInstance = new SolanaNftApi(defaultClient);
+    NFTSearchRequest nfTSearchRequest = new NFTSearchRequest(); // NFTSearchRequest | 
+    try {
+      NFTSearchResponse result = apiInstance.solanaSearchNFTs(nfTSearchRequest);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling SolanaNftApi#solanaSearchNFTs");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **nfTSearchRequest** | [**NFTSearchRequest**](NFTSearchRequest.md)|  | [optional]
+
+### Return type
+
+[**NFTSearchResponse**](NFTSearchResponse.md)
+
+### Authorization
+
+[APIKeyID](../README.md#APIKeyID), [APISecretKey](../README.md#APISecretKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successful Response |  -  |
+**400** | Bad request (check response message) |  -  |
+**401** | Invalid API key pair in headers |  -  |
+**402** | Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. |  -  |
 

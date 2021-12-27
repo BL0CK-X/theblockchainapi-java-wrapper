@@ -1,6 +1,6 @@
 /*
  * The Blockchain API
- * # About  Our vision is to make it super easy to interact with the decentralized web. We want you to be able to do this in any coding language and do it easily and quickly.   You're a key part of our vision. We love feature requests! <a href=\"#section/Feature-Requests\">Make one!</a>  # How to Use the API  To use the API, you simply need to create an API key pair.  Doing so takes less than a minute. Simply go to <a target=\"_blank\" href=\"https://dashboard.theblockchainapi.com\">the dashboard</a>, create an account, and generate a key pair. You can now use this pair to make API requests. You must create your first pair via the dashboard.  # Feature Requests  Got a feature request? Submit it as an issue on <a target=\"_blank\" href=\"https://github.com/BL0CK-X/the-blockchain-api/issues/new/choose\">our GitHub repo</a> or [email us](mailto:info@theblockchainapi.com).  # Contact  <figure>     <img          width=\"40px\"         height=\"40px\"          src=\"https://theblockchainapi-docs.s3.amazonaws.com/icons/phone.svg\"     />     <figcaption style=\"textAlign:center;\">Text / Call: +1 (415) 888 4745 </figcaption> </figure> <a href=\"mailto:info@theblockchainapi.com\" target=\"_blank\">     <figure>         <img              width=\"40px\"             height=\"40px\"              src=\"https://theblockchainapi-docs.s3.amazonaws.com/icons/email.svg\"         />         <figcaption style=\"textAlign:center;\">Email us: info@theblockchainapi.com</figcaption>     </figure> </a> <a href=\"https://discord.gg/d49yzrZRAF\" target=\"_blank\">     <figure>         <img              width=\"40px\"             height=\"40px\"              src=\"https://theblockchainapi-docs.s3.amazonaws.com/icons/discord.svg\"         />         <figcaption style=\"textAlign:center;\">Join our Discord</figcaption>     </figure> </a> <a href=\"https://twitter.com/_BlockX_\" target=\"_blank\">     <figure>         <img              width=\"40px\"             height=\"40px\"              src=\"https://theblockchainapi-docs.s3.amazonaws.com/icons/twitter.svg\"         />          <figcaption style=\"textAlign:center;\">Follow us on Twitter</figcaption>     </figure> </a> <a href=\"https://github.com/BL0CK-X/the-blockchain-api\" target=\"_blank\">     <figure>         <img              width=\"40px\"             height=\"40px\"              src=\"https://theblockchainapi-docs.s3.amazonaws.com/icons/github.svg\"         />         <figcaption style=\"textAlign:center;\">Star us on Github</figcaption>     </figure> </a>  # Security  Common dogma is to never give out your seed phrase. We agree. It's a matter of security, and anyone who has your seed phrase can irreversibly empty your wallet.   <b>When using an API endpoint that requires a seed phrase, we highly recommend that users use or create a wallet that they do not use as their primary wallet.</b>   How you make this work depends on what you're doing. If you're minting an NFT for example, we recommend creating a new wallet and then transferring just enough SOL to that wallet to mint the NFT. This is possible on Solana because such transactions cost less than a penny. We will have more tutorials in the future that make it easier for you to be secure when using our API.  We have easy-to-use endpoints for <a href=\"#tag/Solana-Wallet/paths/~1solana~1wallet~1secret_recovery_phrase/post\">creating a new seed phrase</a> and then <a href=\"#tag/Solana-Wallet/paths/~1solana~1wallet~1public_key/post\">deriving a public key</a> to enable you to transfer to that new wallet.  Let's have a constructive dialog about this. Feel free to <a href=\"#section/Contact\">contact us</a>. I made a video discussing this matter <a target=\"_blank\" href=\"https://youtu.be/m9unUb8Z9qU\">here</a>.  Note: We have had a couple of individuals harrass and threaten us. These individuals did <b>not</b> try our API or speak to anyone who has used it. They simply saw that we require a seed phrase for certain endpoints and figured that the proper response was to attack us. (I explain why we do <a target=\"_blank\" href=\"https://youtu.be/m9unUb8Z9qU\">here</a>.) Such harrassment and threats are not only harmful, but they are also illegal, and we will report offenders. Do not harrass us. Rather, feel free to discuss your concerns with us and we will be more than happy to work with you to come up with a solution.  # Pricing  <b>Each user receives 500 free credits every month.</b>  You can learn more about our pricing <a href=\"https://dashboard.theblockchainapi.com/billing\" target=\"_blank\">here</a>.   We frequently do custom plans. If our pricing doesn't work for you, <a href=\"#section/Contact\">contact us</a>.  If you have questions, concerns, feedback, or ideas, <a href=\"#section/Contact\">contact us</a>.  # SDKs / API Wrappers  We have examples using both our <a href=\"https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples\" target=\"_blank\">Python wrapper and our JavaScript wrapper here</a>.  We have built a custom <a href=\"https://github.com/BL0CK-X/the-blockchain-api-python-wrapper\" target=\"_blank\">Python wrapper</a>.  `pip install theblockchainapi`  We also have published a <a href=\"https://github.com/BL0CK-X/theblockchainapi-wrappers/tree/main/javascript\" target=\"_blank\">JavaScript Wrapper</a>.  `npm install theblockchainapi`  We also have auto-generated wrappers for the following languages: - <a href=\"https://github.com/BL0CK-X/theblockchainapi-wrappers/tree/main/go\" target = \"_blank\">Go</a> - <a href=\"https://github.com/BL0CK-X/theblockchainapi-wrappers/tree/main/java\" target = \"_blank\">Java</a> - <a href=\"https://github.com/BL0CK-X/theblockchainapi-wrappers/tree/main/go\" target = \"_blank\">Kotlin</a> - <a href=\"https://github.com/BL0CK-X/theblockchainapi-wrappers/tree/main/go\" target = \"_blank\">PHP</a> - <a href=\"https://github.com/BL0CK-X/theblockchainapi-wrappers/tree/main/go\" target = \"_blank\">Swift5</a> - <a href=\"https://github.com/BL0CK-X/theblockchainapi-wrappers/tree/main/go\" target = \"_blank\">TypeScript</a>  If you would like a different language as well, submit an issue <a href=\"https://github.com/BL0CK-X/theblockchainapi-wrappers/issues/new\" target=\"_blank\">here</a>.  If you run into any bugs with the wrappers, submit an issue <a href=\"https://github.com/BL0CK-X/theblockchainapi-wrappers/issues/new\" target=\"_blank\">here</a>.
+ * # About  Our vision is to make it super easy to interact with the decentralized web. We want you to be able to do this in any coding language and do it easily and quickly.   You're a key part of our vision. We love feature requests! <a href=\"#section/Feature-Requests\">Make one!</a>  # How to Use the API  To use the API, you simply need to create an API key pair.  Doing so takes less than a minute. Simply go to <a target=\"_blank\" href=\"https://dashboard.theblockchainapi.com\">the dashboard</a>, create an account, and generate a key pair. You can now use this pair to make API requests. You must create your first pair via the dashboard.  # Feature Requests  Got a feature request? Submit it as an issue on <a target=\"_blank\" href=\"https://github.com/BL0CK-X/the-blockchain-api/issues/new/choose\">our GitHub repo</a> or [email us](mailto:info@theblockchainapi.com).  # Contact  <figure>     <img          width=\"40px\"         height=\"40px\"          src=\"https://theblockchainapi-docs.s3.amazonaws.com/icons/phone.svg\"     />     <figcaption style=\"textAlign:center;\">Text / Call: +1 (415) 888 4745 </figcaption> </figure> <a href=\"mailto:info@theblockchainapi.com\" target=\"_blank\">     <figure>         <img              width=\"40px\"             height=\"40px\"              src=\"https://theblockchainapi-docs.s3.amazonaws.com/icons/email.svg\"         />         <figcaption style=\"textAlign:center;\">Email us: info@theblockchainapi.com</figcaption>     </figure> </a> <a href=\"https://discord.gg/d49yzrZRAF\" target=\"_blank\">     <figure>         <img              width=\"40px\"             height=\"40px\"              src=\"https://theblockchainapi-docs.s3.amazonaws.com/icons/discord.svg\"         />         <figcaption style=\"textAlign:center;\">Join our Discord</figcaption>     </figure> </a> <a href=\"https://twitter.com/_BlockX_\" target=\"_blank\">     <figure>         <img              width=\"40px\"             height=\"40px\"              src=\"https://theblockchainapi-docs.s3.amazonaws.com/icons/twitter.svg\"         />          <figcaption style=\"textAlign:center;\">Follow us on Twitter</figcaption>     </figure> </a> <a href=\"https://github.com/BL0CK-X/the-blockchain-api\" target=\"_blank\">     <figure>         <img              width=\"40px\"             height=\"40px\"              src=\"https://theblockchainapi-docs.s3.amazonaws.com/icons/github.svg\"         />         <figcaption style=\"textAlign:center;\">Star us on Github</figcaption>     </figure> </a>  # Security  Common dogma is to never give out your seed phrase. We agree. It's a matter of security, and anyone who has your seed phrase can irreversibly empty your wallet.   <b>When using an API endpoint that requires a seed phrase, we highly recommend that users use or create a wallet that they do not use as their primary wallet.</b>   How you make this work depends on what you're doing. If you're minting an NFT for example, we recommend creating a new wallet and then transferring just enough SOL to that wallet to mint the NFT. This is possible on Solana because such transactions cost less than a penny. We will have more tutorials in the future that make it easier for you to be secure when using our API.  We have easy-to-use endpoints for <a href=\"#tag/Solana-Wallet/paths/~1solana~1wallet~1secret_recovery_phrase/post\">creating a new seed phrase</a> and then <a href=\"#tag/Solana-Wallet/paths/~1solana~1wallet~1public_key/post\">deriving a public key</a> to enable you to transfer to that new wallet.  Let's have a constructive dialog about this. Feel free to <a href=\"#section/Contact\">contact us</a>. I made a video discussing this matter <a target=\"_blank\" href=\"https://youtu.be/m9unUb8Z9qU\">here</a>.  Note: We have had a couple of individuals harrass and threaten us. These individuals did <b>not</b> try our API or speak to anyone who has used it. They simply saw that we require a seed phrase for certain endpoints and figured that the proper response was to attack us. (I explain why we do <a target=\"_blank\" href=\"https://youtu.be/m9unUb8Z9qU\">here</a>.) Such harrassment and threats are not only harmful, but they are also illegal, and we will report offenders. Do not harrass us. Rather, feel free to discuss your concerns with us and we will be more than happy to work with you to come up with a solution.  # Pricing  <b>Each user receives 500 free credits.</b>  You can learn more about our pricing <a href=\"https://dashboard.theblockchainapi.com/billing\" target=\"_blank\">here</a>.   We frequently do custom plans. If our pricing doesn't work for you, <a href=\"#section/Contact\">contact us</a>.  If you have questions, concerns, feedback, or ideas, <a href=\"#section/Contact\">contact us</a>.  # SDKs / API Wrappers  We have examples using both our <a href=\"https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples\" target=\"_blank\">Python wrapper and our JavaScript wrapper here</a>.  We have built a custom <a href=\"https://github.com/BL0CK-X/the-blockchain-api-python-wrapper\" target=\"_blank\">Python wrapper</a>.  `pip install theblockchainapi`  We also have published a <a href=\"https://github.com/BL0CK-X/theblockchainapi-javascript-wrapper\" target=\"_blank\">JavaScript Wrapper</a>.  `npm install theblockchainapi`  We also have auto-generated wrappers for the following languages: - <a href=\"https://github.com/BL0CK-X/theblockchainapi-go-wrapper\" target = \"_blank\">Go</a> - <a href=\"https://github.com/BL0CK-X/theblockchainapi-java-wrapper\" target = \"_blank\">Java</a> - <a href=\"https://github.com/BL0CK-X/theblockchainapi-kotlin-wrapper\" target = \"_blank\">Kotlin</a> - <a href=\"https://github.com/BL0CK-X/theblockchainapi-php-wrapper\" target = \"_blank\">PHP</a> - <a href=\"https://github.com/BL0CK-X/theblockchainapi-swift-wrapper\" target = \"_blank\">Swift5</a> - <a href=\"https://github.com/BL0CK-X/theblockchainapi-typescript-wrapper\" target = \"_blank\">TypeScript</a>  If you would like a different language as well, submit an issue <a href=\"https://github.com/BL0CK-X/theblockchainapi-wrappers/issues/new\" target=\"_blank\">here</a>.  If you run into any bugs with the wrappers, submit an issue <a href=\"https://github.com/BL0CK-X/theblockchainapi-wrappers/issues/new\" target=\"_blank\">here</a>.
  *
  * The version of the OpenAPI document: null
  * Contact: info@theblockchainapi.com
@@ -27,16 +27,14 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import org.openapitools.client.model.CandyMachineSearchRequest;
+import org.openapitools.client.model.CandyMachineSearchResponse;
 import org.openapitools.client.model.CreateTestCandyMachineRequest;
 import org.openapitools.client.model.CreateTestCandyMachineResponse;
 import org.openapitools.client.model.GetAllNFTsResponse;
-import org.openapitools.client.model.GetCandyDetailsErrorResponse;
-import org.openapitools.client.model.GetCandyDetailsRequest;
-import org.openapitools.client.model.GetCandyDetailsResponse;
-import org.openapitools.client.model.GetConfigInfoRequest;
-import org.openapitools.client.model.GetConfigInfoResponse;
-import org.openapitools.client.model.GetMintedNFTsRequest;
-import org.openapitools.client.model.GetMintedNFTsResponse;
+import org.openapitools.client.model.GetCandyMetadataErrorResponse;
+import org.openapitools.client.model.GetCandyMetadataRequest;
+import org.openapitools.client.model.GetCandyMetadataResponse;
 import org.openapitools.client.model.MintNFTErrorResponse;
 import org.openapitools.client.model.MintNFTRequest;
 import org.openapitools.client.model.MintNFTResponse;
@@ -121,7 +119,7 @@ public class SolanaCandyMachineApi {
     }
 
     /**
-     * Create a test candy machine 
+     * Create a test CM
      * &lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-candy-machine/create-test-candy-machine\&quot; target&#x3D;\&quot;_blank\&quot;&gt;See examples (Python, JavaScript)&lt;/a&gt;.   Use this endpoint to create a test candy machine so that you can test your minting bot.  &#x60;Cost: 1 Credit&#x60; (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
      * @param createTestCandyMachineRequest  (optional)
      * @return CreateTestCandyMachineResponse
@@ -141,7 +139,7 @@ public class SolanaCandyMachineApi {
     }
 
     /**
-     * Create a test candy machine 
+     * Create a test CM
      * &lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-candy-machine/create-test-candy-machine\&quot; target&#x3D;\&quot;_blank\&quot;&gt;See examples (Python, JavaScript)&lt;/a&gt;.   Use this endpoint to create a test candy machine so that you can test your minting bot.  &#x60;Cost: 1 Credit&#x60; (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
      * @param createTestCandyMachineRequest  (optional)
      * @return ApiResponse&lt;CreateTestCandyMachineResponse&gt;
@@ -162,7 +160,7 @@ public class SolanaCandyMachineApi {
     }
 
     /**
-     * Create a test candy machine  (asynchronously)
+     * Create a test CM (asynchronously)
      * &lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-candy-machine/create-test-candy-machine\&quot; target&#x3D;\&quot;_blank\&quot;&gt;See examples (Python, JavaScript)&lt;/a&gt;.   Use this endpoint to create a test candy machine so that you can test your minting bot.  &#x60;Cost: 1 Credit&#x60; (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
      * @param createTestCandyMachineRequest  (optional)
      * @param _callback The callback to be executed when the API call finishes
@@ -253,8 +251,8 @@ public class SolanaCandyMachineApi {
     }
 
     /**
-     * Get the list of all NFTs (minted and unminted) from a Solana Candy Machine 
-     * &lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-candy-machine/get-candy-machine-all-nfts\&quot; target&#x3D;\&quot;_blank\&quot;&gt; See examples (Python, JavaScript)&lt;/a&gt;.  Use this endpoint to get the list of all NFTs (minted and unminted) from a Solana Candy Machine.  &#x60;Cost: 3 Credits&#x60; (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
+     * Get CM&#39;s NFTs  
+     * &lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-candy-machine/get-candy-machine-all-nfts\&quot; target&#x3D;\&quot;_blank\&quot;&gt; See examples (Python, JavaScript)&lt;/a&gt;.  Use this endpoint to get the list of all NFTs (minted and unminted) from a Solana Candy Machine.  This works for &#x60;v1&#x60; and &#x60;v2&#x60; candy machines.   *However*, for &#x60;v2&#x60; only the value for &#x60;all_nfts&#x60; is provided. To determine which are minted and unminted follow this example.  You do not need to specify &#x60;v1&#x60; or &#x60;v2&#x60; for this endpoint as it will automatically determine it from the candy machine ID.  See example for how to get the list of NFT hashes &lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-candy-machine/get-candy-machine-hash-table\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;.    &#x60;Cost: 2 Credits&#x60; (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
      * @param network The network ID (devnet, mainnet-beta) (required)
      * @param candyMachineId The ID of the candy machine (required)
      * @return GetAllNFTsResponse
@@ -275,8 +273,8 @@ public class SolanaCandyMachineApi {
     }
 
     /**
-     * Get the list of all NFTs (minted and unminted) from a Solana Candy Machine 
-     * &lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-candy-machine/get-candy-machine-all-nfts\&quot; target&#x3D;\&quot;_blank\&quot;&gt; See examples (Python, JavaScript)&lt;/a&gt;.  Use this endpoint to get the list of all NFTs (minted and unminted) from a Solana Candy Machine.  &#x60;Cost: 3 Credits&#x60; (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
+     * Get CM&#39;s NFTs  
+     * &lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-candy-machine/get-candy-machine-all-nfts\&quot; target&#x3D;\&quot;_blank\&quot;&gt; See examples (Python, JavaScript)&lt;/a&gt;.  Use this endpoint to get the list of all NFTs (minted and unminted) from a Solana Candy Machine.  This works for &#x60;v1&#x60; and &#x60;v2&#x60; candy machines.   *However*, for &#x60;v2&#x60; only the value for &#x60;all_nfts&#x60; is provided. To determine which are minted and unminted follow this example.  You do not need to specify &#x60;v1&#x60; or &#x60;v2&#x60; for this endpoint as it will automatically determine it from the candy machine ID.  See example for how to get the list of NFT hashes &lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-candy-machine/get-candy-machine-hash-table\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;.    &#x60;Cost: 2 Credits&#x60; (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
      * @param network The network ID (devnet, mainnet-beta) (required)
      * @param candyMachineId The ID of the candy machine (required)
      * @return ApiResponse&lt;GetAllNFTsResponse&gt;
@@ -298,8 +296,8 @@ public class SolanaCandyMachineApi {
     }
 
     /**
-     * Get the list of all NFTs (minted and unminted) from a Solana Candy Machine  (asynchronously)
-     * &lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-candy-machine/get-candy-machine-all-nfts\&quot; target&#x3D;\&quot;_blank\&quot;&gt; See examples (Python, JavaScript)&lt;/a&gt;.  Use this endpoint to get the list of all NFTs (minted and unminted) from a Solana Candy Machine.  &#x60;Cost: 3 Credits&#x60; (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
+     * Get CM&#39;s NFTs   (asynchronously)
+     * &lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-candy-machine/get-candy-machine-all-nfts\&quot; target&#x3D;\&quot;_blank\&quot;&gt; See examples (Python, JavaScript)&lt;/a&gt;.  Use this endpoint to get the list of all NFTs (minted and unminted) from a Solana Candy Machine.  This works for &#x60;v1&#x60; and &#x60;v2&#x60; candy machines.   *However*, for &#x60;v2&#x60; only the value for &#x60;all_nfts&#x60; is provided. To determine which are minted and unminted follow this example.  You do not need to specify &#x60;v1&#x60; or &#x60;v2&#x60; for this endpoint as it will automatically determine it from the candy machine ID.  See example for how to get the list of NFT hashes &lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-candy-machine/get-candy-machine-hash-table\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;.    &#x60;Cost: 2 Credits&#x60; (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
      * @param network The network ID (devnet, mainnet-beta) (required)
      * @param candyMachineId The ID of the candy machine (required)
      * @param _callback The callback to be executed when the API call finishes
@@ -323,26 +321,25 @@ public class SolanaCandyMachineApi {
         return localVarCall;
     }
     /**
-     * Build call for solanaGetCandyMachineConfigurationDetails
-     * @param getConfigInfoRequest  (optional)
+     * Build call for solanaGetCandyMachineMetadata
+     * @param getCandyMetadataRequest  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Successful Response.  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request (check response message) </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid API key pair in headers </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call solanaGetCandyMachineConfigurationDetailsCall(GetConfigInfoRequest getConfigInfoRequest, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = getConfigInfoRequest;
+    public okhttp3.Call solanaGetCandyMachineMetadataCall(GetCandyMetadataRequest getCandyMetadataRequest, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = getCandyMetadataRequest;
 
         // create path and map variables
-        String localVarPath = "/solana/nft/candy_machine/config/info";
+        String localVarPath = "/solana/nft/candy_machine/metadata";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -369,101 +366,97 @@ public class SolanaCandyMachineApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call solanaGetCandyMachineConfigurationDetailsValidateBeforeCall(GetConfigInfoRequest getConfigInfoRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call solanaGetCandyMachineMetadataValidateBeforeCall(GetCandyMetadataRequest getCandyMetadataRequest, final ApiCallback _callback) throws ApiException {
         
 
-        okhttp3.Call localVarCall = solanaGetCandyMachineConfigurationDetailsCall(getConfigInfoRequest, _callback);
+        okhttp3.Call localVarCall = solanaGetCandyMachineMetadataCall(getCandyMetadataRequest, _callback);
         return localVarCall;
 
     }
 
     /**
-     * Get the details of a Solana Candy Machine configuration 
-     * &lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-candy-machine/get-candy-machine-config-info\&quot; target&#x3D;\&quot;_blank\&quot;&gt;See examples (Python, JavaScript)&lt;/a&gt;.  Use this endpoint to get the details of a Solana Candy Machine configuration.  &#x60;Cost: 1 Credit&#x60; (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
-     * @param getConfigInfoRequest  (optional)
-     * @return GetConfigInfoResponse
+     * Get a CM&#39;s metadata 
+     * &lt;a href&#x3D;\&quot;\&quot; target&#x3D;\&quot;_blank\&quot;&gt;See examples (Python, JavaScript) [Coming Soon]&lt;/a&gt;.  Use this endpoint to get metadata about a Metaplex candy machine. This includes the goLiveDate, itemsAvailable, and itemsRedeemed. To see what is included, expand the green successful response below.  NOTE: Supply exactly one of &#x60;candy_machine_id&#x60;, &#x60;config_address&#x60;, or &#x60;uuid&#x60;. If you provide more than one, you will receive a &#x60;400&#x60; error.   &#x60;Cost: 2 Credits&#x60; (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
+     * @param getCandyMetadataRequest  (optional)
+     * @return GetCandyMetadataResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Successful Response.  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request (check response message) </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid API key pair in headers </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Not found </td><td>  -  </td></tr>
      </table>
      */
-    public GetConfigInfoResponse solanaGetCandyMachineConfigurationDetails(GetConfigInfoRequest getConfigInfoRequest) throws ApiException {
-        ApiResponse<GetConfigInfoResponse> localVarResp = solanaGetCandyMachineConfigurationDetailsWithHttpInfo(getConfigInfoRequest);
+    public GetCandyMetadataResponse solanaGetCandyMachineMetadata(GetCandyMetadataRequest getCandyMetadataRequest) throws ApiException {
+        ApiResponse<GetCandyMetadataResponse> localVarResp = solanaGetCandyMachineMetadataWithHttpInfo(getCandyMetadataRequest);
         return localVarResp.getData();
     }
 
     /**
-     * Get the details of a Solana Candy Machine configuration 
-     * &lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-candy-machine/get-candy-machine-config-info\&quot; target&#x3D;\&quot;_blank\&quot;&gt;See examples (Python, JavaScript)&lt;/a&gt;.  Use this endpoint to get the details of a Solana Candy Machine configuration.  &#x60;Cost: 1 Credit&#x60; (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
-     * @param getConfigInfoRequest  (optional)
-     * @return ApiResponse&lt;GetConfigInfoResponse&gt;
+     * Get a CM&#39;s metadata 
+     * &lt;a href&#x3D;\&quot;\&quot; target&#x3D;\&quot;_blank\&quot;&gt;See examples (Python, JavaScript) [Coming Soon]&lt;/a&gt;.  Use this endpoint to get metadata about a Metaplex candy machine. This includes the goLiveDate, itemsAvailable, and itemsRedeemed. To see what is included, expand the green successful response below.  NOTE: Supply exactly one of &#x60;candy_machine_id&#x60;, &#x60;config_address&#x60;, or &#x60;uuid&#x60;. If you provide more than one, you will receive a &#x60;400&#x60; error.   &#x60;Cost: 2 Credits&#x60; (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
+     * @param getCandyMetadataRequest  (optional)
+     * @return ApiResponse&lt;GetCandyMetadataResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Successful Response.  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request (check response message) </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid API key pair in headers </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Not found </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GetConfigInfoResponse> solanaGetCandyMachineConfigurationDetailsWithHttpInfo(GetConfigInfoRequest getConfigInfoRequest) throws ApiException {
-        okhttp3.Call localVarCall = solanaGetCandyMachineConfigurationDetailsValidateBeforeCall(getConfigInfoRequest, null);
-        Type localVarReturnType = new TypeToken<GetConfigInfoResponse>(){}.getType();
+    public ApiResponse<GetCandyMetadataResponse> solanaGetCandyMachineMetadataWithHttpInfo(GetCandyMetadataRequest getCandyMetadataRequest) throws ApiException {
+        okhttp3.Call localVarCall = solanaGetCandyMachineMetadataValidateBeforeCall(getCandyMetadataRequest, null);
+        Type localVarReturnType = new TypeToken<GetCandyMetadataResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * Get the details of a Solana Candy Machine configuration  (asynchronously)
-     * &lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-candy-machine/get-candy-machine-config-info\&quot; target&#x3D;\&quot;_blank\&quot;&gt;See examples (Python, JavaScript)&lt;/a&gt;.  Use this endpoint to get the details of a Solana Candy Machine configuration.  &#x60;Cost: 1 Credit&#x60; (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
-     * @param getConfigInfoRequest  (optional)
+     * Get a CM&#39;s metadata  (asynchronously)
+     * &lt;a href&#x3D;\&quot;\&quot; target&#x3D;\&quot;_blank\&quot;&gt;See examples (Python, JavaScript) [Coming Soon]&lt;/a&gt;.  Use this endpoint to get metadata about a Metaplex candy machine. This includes the goLiveDate, itemsAvailable, and itemsRedeemed. To see what is included, expand the green successful response below.  NOTE: Supply exactly one of &#x60;candy_machine_id&#x60;, &#x60;config_address&#x60;, or &#x60;uuid&#x60;. If you provide more than one, you will receive a &#x60;400&#x60; error.   &#x60;Cost: 2 Credits&#x60; (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
+     * @param getCandyMetadataRequest  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Successful Response.  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request (check response message) </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid API key pair in headers </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Not found </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call solanaGetCandyMachineConfigurationDetailsAsync(GetConfigInfoRequest getConfigInfoRequest, final ApiCallback<GetConfigInfoResponse> _callback) throws ApiException {
+    public okhttp3.Call solanaGetCandyMachineMetadataAsync(GetCandyMetadataRequest getCandyMetadataRequest, final ApiCallback<GetCandyMetadataResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = solanaGetCandyMachineConfigurationDetailsValidateBeforeCall(getConfigInfoRequest, _callback);
-        Type localVarReturnType = new TypeToken<GetConfigInfoResponse>(){}.getType();
+        okhttp3.Call localVarCall = solanaGetCandyMachineMetadataValidateBeforeCall(getCandyMetadataRequest, _callback);
+        Type localVarReturnType = new TypeToken<GetCandyMetadataResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for solanaGetCandyMachineDetails
-     * @param getCandyDetailsRequest  (optional)
+     * Build call for solanaListAllCandyMachines
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response.  </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request (check response message) </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid API key pair in headers </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call solanaGetCandyMachineDetailsCall(GetCandyDetailsRequest getCandyDetailsRequest, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = getCandyDetailsRequest;
+    public okhttp3.Call solanaListAllCandyMachinesCall(final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/solana/nft/candy_machine/info";
+        String localVarPath = "/solana/nft/candy_machine/list";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -480,207 +473,82 @@ public class SolanaCandyMachineApi {
         }
 
         final String[] localVarContentTypes = {
-            "application/json"
+            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
 
         String[] localVarAuthNames = new String[] { "APIKeyID", "APISecretKey" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call solanaGetCandyMachineDetailsValidateBeforeCall(GetCandyDetailsRequest getCandyDetailsRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call solanaListAllCandyMachinesValidateBeforeCall(final ApiCallback _callback) throws ApiException {
         
 
-        okhttp3.Call localVarCall = solanaGetCandyMachineDetailsCall(getCandyDetailsRequest, _callback);
+        okhttp3.Call localVarCall = solanaListAllCandyMachinesCall(_callback);
         return localVarCall;
 
     }
 
     /**
-     * Get a Metaplex candy machine&#39;s details 
-     * &lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-candy-machine/get-candy-machine-info\&quot; target&#x3D;\&quot;_blank\&quot;&gt;See examples (Python, JavaScript)&lt;/a&gt;.  Use this endpoint to get the following details about a Metaplex candy machine: uuid, go live date, items in the collection, and the cost to mint.  &#x60;Cost: 2 Credits&#x60; (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
-     * @param getCandyDetailsRequest  (optional)
-     * @return GetCandyDetailsResponse
+     * List all CMs
+     * &lt;a href&#x3D;\&quot;\&quot; target&#x3D;\&quot;_blank\&quot;&gt;See examples (Python, JavaScript) [Coming Soon]&lt;/a&gt;.  With this endpoint, you can list all candy machines published to Solana mainnet.  We update this data every 15 minutes.  The output is a list of config addresses, currently about 17000 in length.  &#x60;Cost: 2 Credits&#x60; (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
+     * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response.  </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request (check response message) </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid API key pair in headers </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. </td><td>  -  </td></tr>
      </table>
      */
-    public GetCandyDetailsResponse solanaGetCandyMachineDetails(GetCandyDetailsRequest getCandyDetailsRequest) throws ApiException {
-        ApiResponse<GetCandyDetailsResponse> localVarResp = solanaGetCandyMachineDetailsWithHttpInfo(getCandyDetailsRequest);
+    public Object solanaListAllCandyMachines() throws ApiException {
+        ApiResponse<Object> localVarResp = solanaListAllCandyMachinesWithHttpInfo();
         return localVarResp.getData();
     }
 
     /**
-     * Get a Metaplex candy machine&#39;s details 
-     * &lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-candy-machine/get-candy-machine-info\&quot; target&#x3D;\&quot;_blank\&quot;&gt;See examples (Python, JavaScript)&lt;/a&gt;.  Use this endpoint to get the following details about a Metaplex candy machine: uuid, go live date, items in the collection, and the cost to mint.  &#x60;Cost: 2 Credits&#x60; (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
-     * @param getCandyDetailsRequest  (optional)
-     * @return ApiResponse&lt;GetCandyDetailsResponse&gt;
+     * List all CMs
+     * &lt;a href&#x3D;\&quot;\&quot; target&#x3D;\&quot;_blank\&quot;&gt;See examples (Python, JavaScript) [Coming Soon]&lt;/a&gt;.  With this endpoint, you can list all candy machines published to Solana mainnet.  We update this data every 15 minutes.  The output is a list of config addresses, currently about 17000 in length.  &#x60;Cost: 2 Credits&#x60; (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
+     * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response.  </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request (check response message) </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid API key pair in headers </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GetCandyDetailsResponse> solanaGetCandyMachineDetailsWithHttpInfo(GetCandyDetailsRequest getCandyDetailsRequest) throws ApiException {
-        okhttp3.Call localVarCall = solanaGetCandyMachineDetailsValidateBeforeCall(getCandyDetailsRequest, null);
-        Type localVarReturnType = new TypeToken<GetCandyDetailsResponse>(){}.getType();
+    public ApiResponse<Object> solanaListAllCandyMachinesWithHttpInfo() throws ApiException {
+        okhttp3.Call localVarCall = solanaListAllCandyMachinesValidateBeforeCall(null);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * Get a Metaplex candy machine&#39;s details  (asynchronously)
-     * &lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-candy-machine/get-candy-machine-info\&quot; target&#x3D;\&quot;_blank\&quot;&gt;See examples (Python, JavaScript)&lt;/a&gt;.  Use this endpoint to get the following details about a Metaplex candy machine: uuid, go live date, items in the collection, and the cost to mint.  &#x60;Cost: 2 Credits&#x60; (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
-     * @param getCandyDetailsRequest  (optional)
+     * List all CMs (asynchronously)
+     * &lt;a href&#x3D;\&quot;\&quot; target&#x3D;\&quot;_blank\&quot;&gt;See examples (Python, JavaScript) [Coming Soon]&lt;/a&gt;.  With this endpoint, you can list all candy machines published to Solana mainnet.  We update this data every 15 minutes.  The output is a list of config addresses, currently about 17000 in length.  &#x60;Cost: 2 Credits&#x60; (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response.  </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request (check response message) </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid API key pair in headers </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call solanaGetCandyMachineDetailsAsync(GetCandyDetailsRequest getCandyDetailsRequest, final ApiCallback<GetCandyDetailsResponse> _callback) throws ApiException {
+    public okhttp3.Call solanaListAllCandyMachinesAsync(final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = solanaGetCandyMachineDetailsValidateBeforeCall(getCandyDetailsRequest, _callback);
-        Type localVarReturnType = new TypeToken<GetCandyDetailsResponse>(){}.getType();
-        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
-        return localVarCall;
-    }
-    /**
-     * Build call for solanaGetNFTsMintedFromCandyMachine
-     * @param getMintedNFTsRequest  (optional)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response. Click \&quot;Expand All\&quot; on the right sidebar to see more. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad request (check response message) </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Invalid API key pair in headers </td><td>  -  </td></tr>
-        <tr><td> 402 </td><td> Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Not found </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call solanaGetNFTsMintedFromCandyMachineCall(GetMintedNFTsRequest getMintedNFTsRequest, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = getMintedNFTsRequest;
-
-        // create path and map variables
-        String localVarPath = "/solana/nft/candy_machine/nfts";
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        String[] localVarAuthNames = new String[] { "APIKeyID", "APISecretKey" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call solanaGetNFTsMintedFromCandyMachineValidateBeforeCall(GetMintedNFTsRequest getMintedNFTsRequest, final ApiCallback _callback) throws ApiException {
-        
-
-        okhttp3.Call localVarCall = solanaGetNFTsMintedFromCandyMachineCall(getMintedNFTsRequest, _callback);
-        return localVarCall;
-
-    }
-
-    /**
-     * Get the list of NFTs minted from a Solana Candy Machine 
-     * &lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-candy-machine/get-candy-machine-minted-nfts\&quot; target&#x3D;\&quot;_blank\&quot;&gt;See examples (Python, JavaScript)&lt;/a&gt;.  Use this endpoint to get the list of NFTs minted from a Solana Candy Machine.  See example for how to get the list of NFT hashes &lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-candy-machine/get-candy-machine-hash-table\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;.  &#x60;Cost: 2 Credits&#x60; (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
-     * @param getMintedNFTsRequest  (optional)
-     * @return List&lt;GetMintedNFTsResponse&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response. Click \&quot;Expand All\&quot; on the right sidebar to see more. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad request (check response message) </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Invalid API key pair in headers </td><td>  -  </td></tr>
-        <tr><td> 402 </td><td> Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Not found </td><td>  -  </td></tr>
-     </table>
-     */
-    public List<GetMintedNFTsResponse> solanaGetNFTsMintedFromCandyMachine(GetMintedNFTsRequest getMintedNFTsRequest) throws ApiException {
-        ApiResponse<List<GetMintedNFTsResponse>> localVarResp = solanaGetNFTsMintedFromCandyMachineWithHttpInfo(getMintedNFTsRequest);
-        return localVarResp.getData();
-    }
-
-    /**
-     * Get the list of NFTs minted from a Solana Candy Machine 
-     * &lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-candy-machine/get-candy-machine-minted-nfts\&quot; target&#x3D;\&quot;_blank\&quot;&gt;See examples (Python, JavaScript)&lt;/a&gt;.  Use this endpoint to get the list of NFTs minted from a Solana Candy Machine.  See example for how to get the list of NFT hashes &lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-candy-machine/get-candy-machine-hash-table\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;.  &#x60;Cost: 2 Credits&#x60; (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
-     * @param getMintedNFTsRequest  (optional)
-     * @return ApiResponse&lt;List&lt;GetMintedNFTsResponse&gt;&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response. Click \&quot;Expand All\&quot; on the right sidebar to see more. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad request (check response message) </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Invalid API key pair in headers </td><td>  -  </td></tr>
-        <tr><td> 402 </td><td> Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Not found </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<List<GetMintedNFTsResponse>> solanaGetNFTsMintedFromCandyMachineWithHttpInfo(GetMintedNFTsRequest getMintedNFTsRequest) throws ApiException {
-        okhttp3.Call localVarCall = solanaGetNFTsMintedFromCandyMachineValidateBeforeCall(getMintedNFTsRequest, null);
-        Type localVarReturnType = new TypeToken<List<GetMintedNFTsResponse>>(){}.getType();
-        return localVarApiClient.execute(localVarCall, localVarReturnType);
-    }
-
-    /**
-     * Get the list of NFTs minted from a Solana Candy Machine  (asynchronously)
-     * &lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-candy-machine/get-candy-machine-minted-nfts\&quot; target&#x3D;\&quot;_blank\&quot;&gt;See examples (Python, JavaScript)&lt;/a&gt;.  Use this endpoint to get the list of NFTs minted from a Solana Candy Machine.  See example for how to get the list of NFT hashes &lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-candy-machine/get-candy-machine-hash-table\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;.  &#x60;Cost: 2 Credits&#x60; (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
-     * @param getMintedNFTsRequest  (optional)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table summary="Response Details" border="1">
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response. Click \&quot;Expand All\&quot; on the right sidebar to see more. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> Bad request (check response message) </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> Invalid API key pair in headers </td><td>  -  </td></tr>
-        <tr><td> 402 </td><td> Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. </td><td>  -  </td></tr>
-        <tr><td> 404 </td><td> Not found </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call solanaGetNFTsMintedFromCandyMachineAsync(GetMintedNFTsRequest getMintedNFTsRequest, final ApiCallback<List<GetMintedNFTsResponse>> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = solanaGetNFTsMintedFromCandyMachineValidateBeforeCall(getMintedNFTsRequest, _callback);
-        Type localVarReturnType = new TypeToken<List<GetMintedNFTsResponse>>(){}.getType();
+        okhttp3.Call localVarCall = solanaListAllCandyMachinesValidateBeforeCall(_callback);
+        Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -693,7 +561,7 @@ public class SolanaCandyMachineApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response. The actual response to this API will be something like {\&quot;task_id\&quot;: \&quot;10jd12Ka1\&quot;}.  You must poll the task ID endpoint to get info on this task. Once the task is completed, the returned format will follow the schema {&#39;transaction_signature&#39;: &#39;...&#39;}. See the [Task endpoint](/#tag/Task/paths/~1task~1{task_id}/get).  </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Successful Response.  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request (check response message) </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid API key pair in headers </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. </td><td>  -  </td></tr>
@@ -739,15 +607,15 @@ public class SolanaCandyMachineApi {
     }
 
     /**
-     * Mint an NFT from a Metaplex candy machine
-     * &lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-candy-machine/mint-from-candy-machine\&quot; target&#x3D;\&quot;_blank\&quot;&gt;See examples (Python, JavaScript)&lt;/a&gt;.  Use this endpoint to mint an NFT from a metaplex candy machine as soon as it drops.  &#x60;Cost: 10 Credits&#x60; (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
+     * Mint from a CM
+     * &lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-candy-machine/mint-from-candy-machine\&quot; target&#x3D;\&quot;_blank\&quot;&gt;See examples (Python, JavaScript)&lt;/a&gt;.  Use this endpoint to mint an NFT from a metaplex candy machine as soon as it drops.  In order to achieve speed, this endpoint sends the transaction without checking whether or not it confirmed. It could still fail, for example, because the candy machine ran out of available mints. You should check the status of the transaction using our &lt;a href&#x3D;\&quot;#operation/solanaGetTransaction\&quot;&gt;getTransaction&lt;/a&gt; endpoint.  &#x60;Cost: 2 Credits&#x60; (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
      * @param mintNFTRequest  (optional)
      * @return MintNFTResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response. The actual response to this API will be something like {\&quot;task_id\&quot;: \&quot;10jd12Ka1\&quot;}.  You must poll the task ID endpoint to get info on this task. Once the task is completed, the returned format will follow the schema {&#39;transaction_signature&#39;: &#39;...&#39;}. See the [Task endpoint](/#tag/Task/paths/~1task~1{task_id}/get).  </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Successful Response.  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request (check response message) </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid API key pair in headers </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. </td><td>  -  </td></tr>
@@ -759,15 +627,15 @@ public class SolanaCandyMachineApi {
     }
 
     /**
-     * Mint an NFT from a Metaplex candy machine
-     * &lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-candy-machine/mint-from-candy-machine\&quot; target&#x3D;\&quot;_blank\&quot;&gt;See examples (Python, JavaScript)&lt;/a&gt;.  Use this endpoint to mint an NFT from a metaplex candy machine as soon as it drops.  &#x60;Cost: 10 Credits&#x60; (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
+     * Mint from a CM
+     * &lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-candy-machine/mint-from-candy-machine\&quot; target&#x3D;\&quot;_blank\&quot;&gt;See examples (Python, JavaScript)&lt;/a&gt;.  Use this endpoint to mint an NFT from a metaplex candy machine as soon as it drops.  In order to achieve speed, this endpoint sends the transaction without checking whether or not it confirmed. It could still fail, for example, because the candy machine ran out of available mints. You should check the status of the transaction using our &lt;a href&#x3D;\&quot;#operation/solanaGetTransaction\&quot;&gt;getTransaction&lt;/a&gt; endpoint.  &#x60;Cost: 2 Credits&#x60; (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
      * @param mintNFTRequest  (optional)
      * @return ApiResponse&lt;MintNFTResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response. The actual response to this API will be something like {\&quot;task_id\&quot;: \&quot;10jd12Ka1\&quot;}.  You must poll the task ID endpoint to get info on this task. Once the task is completed, the returned format will follow the schema {&#39;transaction_signature&#39;: &#39;...&#39;}. See the [Task endpoint](/#tag/Task/paths/~1task~1{task_id}/get).  </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Successful Response.  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request (check response message) </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid API key pair in headers </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. </td><td>  -  </td></tr>
@@ -780,8 +648,8 @@ public class SolanaCandyMachineApi {
     }
 
     /**
-     * Mint an NFT from a Metaplex candy machine (asynchronously)
-     * &lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-candy-machine/mint-from-candy-machine\&quot; target&#x3D;\&quot;_blank\&quot;&gt;See examples (Python, JavaScript)&lt;/a&gt;.  Use this endpoint to mint an NFT from a metaplex candy machine as soon as it drops.  &#x60;Cost: 10 Credits&#x60; (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
+     * Mint from a CM (asynchronously)
+     * &lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-candy-machine/mint-from-candy-machine\&quot; target&#x3D;\&quot;_blank\&quot;&gt;See examples (Python, JavaScript)&lt;/a&gt;.  Use this endpoint to mint an NFT from a metaplex candy machine as soon as it drops.  In order to achieve speed, this endpoint sends the transaction without checking whether or not it confirmed. It could still fail, for example, because the candy machine ran out of available mints. You should check the status of the transaction using our &lt;a href&#x3D;\&quot;#operation/solanaGetTransaction\&quot;&gt;getTransaction&lt;/a&gt; endpoint.  &#x60;Cost: 2 Credits&#x60; (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
      * @param mintNFTRequest  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -789,7 +657,7 @@ public class SolanaCandyMachineApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td> Successful Response. The actual response to this API will be something like {\&quot;task_id\&quot;: \&quot;10jd12Ka1\&quot;}.  You must poll the task ID endpoint to get info on this task. Once the task is completed, the returned format will follow the schema {&#39;transaction_signature&#39;: &#39;...&#39;}. See the [Task endpoint](/#tag/Task/paths/~1task~1{task_id}/get).  </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> Successful Response.  </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> Bad request (check response message) </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> Invalid API key pair in headers </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. </td><td>  -  </td></tr>
@@ -799,6 +667,124 @@ public class SolanaCandyMachineApi {
 
         okhttp3.Call localVarCall = solanaMintFromCandyMachineValidateBeforeCall(mintNFTRequest, _callback);
         Type localVarReturnType = new TypeToken<MintNFTResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for solanaSearchCandyMachines
+     * @param candyMachineSearchRequest  (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request (check response message) </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Invalid API key pair in headers </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call solanaSearchCandyMachinesCall(CandyMachineSearchRequest candyMachineSearchRequest, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = candyMachineSearchRequest;
+
+        // create path and map variables
+        String localVarPath = "/solana/nft/candy_machine/search";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "APIKeyID", "APISecretKey" };
+        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call solanaSearchCandyMachinesValidateBeforeCall(CandyMachineSearchRequest candyMachineSearchRequest, final ApiCallback _callback) throws ApiException {
+        
+
+        okhttp3.Call localVarCall = solanaSearchCandyMachinesCall(candyMachineSearchRequest, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * Search CMs
+     * &lt;a href&#x3D;\&quot;\&quot; target&#x3D;\&quot;_blank\&quot;&gt;See examples (Python, JavaScript) [Coming Soon]&lt;/a&gt;.  With this endpoint, you can search candy machines by their symbol, name of NFTs, uuid, configuration address, and update authority.  The output is a list of config addresses.  You can also provide multiple search clauses, such as the update authority (&#x60;update_authority&#x3D;\&quot;G17UmNGnMJ851x3M1JXocgpft1afcYedjPuFpo1ohhCk\&quot;&#x60;) and symbol begins with \&quot;Sol\&quot; (&#x60;symbol&#x3D;\&quot;Sol\&quot;, symbol_search_method&#x3D;&#39;begins_with&#39;&#x60;).  &#x60;Cost: 2 Credits&#x60; (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
+     * @param candyMachineSearchRequest  (optional)
+     * @return List&lt;CandyMachineSearchResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request (check response message) </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Invalid API key pair in headers </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. </td><td>  -  </td></tr>
+     </table>
+     */
+    public List<CandyMachineSearchResponse> solanaSearchCandyMachines(CandyMachineSearchRequest candyMachineSearchRequest) throws ApiException {
+        ApiResponse<List<CandyMachineSearchResponse>> localVarResp = solanaSearchCandyMachinesWithHttpInfo(candyMachineSearchRequest);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Search CMs
+     * &lt;a href&#x3D;\&quot;\&quot; target&#x3D;\&quot;_blank\&quot;&gt;See examples (Python, JavaScript) [Coming Soon]&lt;/a&gt;.  With this endpoint, you can search candy machines by their symbol, name of NFTs, uuid, configuration address, and update authority.  The output is a list of config addresses.  You can also provide multiple search clauses, such as the update authority (&#x60;update_authority&#x3D;\&quot;G17UmNGnMJ851x3M1JXocgpft1afcYedjPuFpo1ohhCk\&quot;&#x60;) and symbol begins with \&quot;Sol\&quot; (&#x60;symbol&#x3D;\&quot;Sol\&quot;, symbol_search_method&#x3D;&#39;begins_with&#39;&#x60;).  &#x60;Cost: 2 Credits&#x60; (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
+     * @param candyMachineSearchRequest  (optional)
+     * @return ApiResponse&lt;List&lt;CandyMachineSearchResponse&gt;&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request (check response message) </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Invalid API key pair in headers </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<List<CandyMachineSearchResponse>> solanaSearchCandyMachinesWithHttpInfo(CandyMachineSearchRequest candyMachineSearchRequest) throws ApiException {
+        okhttp3.Call localVarCall = solanaSearchCandyMachinesValidateBeforeCall(candyMachineSearchRequest, null);
+        Type localVarReturnType = new TypeToken<List<CandyMachineSearchResponse>>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Search CMs (asynchronously)
+     * &lt;a href&#x3D;\&quot;\&quot; target&#x3D;\&quot;_blank\&quot;&gt;See examples (Python, JavaScript) [Coming Soon]&lt;/a&gt;.  With this endpoint, you can search candy machines by their symbol, name of NFTs, uuid, configuration address, and update authority.  The output is a list of config addresses.  You can also provide multiple search clauses, such as the update authority (&#x60;update_authority&#x3D;\&quot;G17UmNGnMJ851x3M1JXocgpft1afcYedjPuFpo1ohhCk\&quot;&#x60;) and symbol begins with \&quot;Sol\&quot; (&#x60;symbol&#x3D;\&quot;Sol\&quot;, symbol_search_method&#x3D;&#39;begins_with&#39;&#x60;).  &#x60;Cost: 2 Credits&#x60; (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
+     * @param candyMachineSearchRequest  (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Successful Response </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> Bad request (check response message) </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> Invalid API key pair in headers </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call solanaSearchCandyMachinesAsync(CandyMachineSearchRequest candyMachineSearchRequest, final ApiCallback<List<CandyMachineSearchResponse>> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = solanaSearchCandyMachinesValidateBeforeCall(candyMachineSearchRequest, _callback);
+        Type localVarReturnType = new TypeToken<List<CandyMachineSearchResponse>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
