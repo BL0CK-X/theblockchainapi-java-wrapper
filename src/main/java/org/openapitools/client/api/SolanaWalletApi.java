@@ -33,7 +33,6 @@ import org.openapitools.client.model.BalanceRequest;
 import org.openapitools.client.model.BalanceResponse;
 import org.openapitools.client.model.GetPublicKeyRequest;
 import org.openapitools.client.model.ListNFTsResponse;
-import org.openapitools.client.model.ListTokensRequest;
 import org.openapitools.client.model.PublicKey;
 import org.openapitools.client.model.SecretPhrase;
 import org.openapitools.client.model.TransferRequest;
@@ -809,7 +808,8 @@ public class SolanaWalletApi {
      * Build call for solanaGetTokensBelongingToWallet
      * @param network The network ID (devnet, mainnet-beta) (required)
      * @param publicKey The public key of the account whose list of owned NFTs you want to get (required)
-     * @param listTokensRequest  (optional)
+     * @param includeNfts Whether or not to include NFTs in the response (optional, default to false)
+     * @param includeZeroBalanceHoldings Whether or not to include holdings that have zero balance. This indicates that the wallet held this token or NFT in the past, but no longer holds it. (optional, default to false)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -822,8 +822,8 @@ public class SolanaWalletApi {
         <tr><td> 402 </td><td> Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call solanaGetTokensBelongingToWalletCall(String network, String publicKey, ListTokensRequest listTokensRequest, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = listTokensRequest;
+    public okhttp3.Call solanaGetTokensBelongingToWalletCall(String network, String publicKey, Boolean includeNfts, Boolean includeZeroBalanceHoldings, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/solana/wallet/{network}/{public_key}/tokens"
@@ -836,6 +836,14 @@ public class SolanaWalletApi {
         Map<String, String> localVarCookieParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
+        if (includeNfts != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("include_nfts", includeNfts));
+        }
+
+        if (includeZeroBalanceHoldings != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("include_zero_balance_holdings", includeZeroBalanceHoldings));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -845,7 +853,7 @@ public class SolanaWalletApi {
         }
 
         final String[] localVarContentTypes = {
-            "application/json"
+            
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -855,7 +863,7 @@ public class SolanaWalletApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call solanaGetTokensBelongingToWalletValidateBeforeCall(String network, String publicKey, ListTokensRequest listTokensRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call solanaGetTokensBelongingToWalletValidateBeforeCall(String network, String publicKey, Boolean includeNfts, Boolean includeZeroBalanceHoldings, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'network' is set
         if (network == null) {
@@ -868,7 +876,7 @@ public class SolanaWalletApi {
         }
         
 
-        okhttp3.Call localVarCall = solanaGetTokensBelongingToWalletCall(network, publicKey, listTokensRequest, _callback);
+        okhttp3.Call localVarCall = solanaGetTokensBelongingToWalletCall(network, publicKey, includeNfts, includeZeroBalanceHoldings, _callback);
         return localVarCall;
 
     }
@@ -878,7 +886,8 @@ public class SolanaWalletApi {
      * &lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-wallet/get-wallet-token-holdings\&quot; target&#x3D;\&quot;_blank\&quot;&gt;See examples (Python, JavaScript)&lt;/a&gt;.      See the token holdings of a given public key address  &#x60;Cost: 1 Credit&#x60; (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
      * @param network The network ID (devnet, mainnet-beta) (required)
      * @param publicKey The public key of the account whose list of owned NFTs you want to get (required)
-     * @param listTokensRequest  (optional)
+     * @param includeNfts Whether or not to include NFTs in the response (optional, default to false)
+     * @param includeZeroBalanceHoldings Whether or not to include holdings that have zero balance. This indicates that the wallet held this token or NFT in the past, but no longer holds it. (optional, default to false)
      * @return List&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -890,8 +899,8 @@ public class SolanaWalletApi {
         <tr><td> 402 </td><td> Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. </td><td>  -  </td></tr>
      </table>
      */
-    public List<Object> solanaGetTokensBelongingToWallet(String network, String publicKey, ListTokensRequest listTokensRequest) throws ApiException {
-        ApiResponse<List<Object>> localVarResp = solanaGetTokensBelongingToWalletWithHttpInfo(network, publicKey, listTokensRequest);
+    public List<Object> solanaGetTokensBelongingToWallet(String network, String publicKey, Boolean includeNfts, Boolean includeZeroBalanceHoldings) throws ApiException {
+        ApiResponse<List<Object>> localVarResp = solanaGetTokensBelongingToWalletWithHttpInfo(network, publicKey, includeNfts, includeZeroBalanceHoldings);
         return localVarResp.getData();
     }
 
@@ -900,7 +909,8 @@ public class SolanaWalletApi {
      * &lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-wallet/get-wallet-token-holdings\&quot; target&#x3D;\&quot;_blank\&quot;&gt;See examples (Python, JavaScript)&lt;/a&gt;.      See the token holdings of a given public key address  &#x60;Cost: 1 Credit&#x60; (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
      * @param network The network ID (devnet, mainnet-beta) (required)
      * @param publicKey The public key of the account whose list of owned NFTs you want to get (required)
-     * @param listTokensRequest  (optional)
+     * @param includeNfts Whether or not to include NFTs in the response (optional, default to false)
+     * @param includeZeroBalanceHoldings Whether or not to include holdings that have zero balance. This indicates that the wallet held this token or NFT in the past, but no longer holds it. (optional, default to false)
      * @return ApiResponse&lt;List&lt;Object&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -912,8 +922,8 @@ public class SolanaWalletApi {
         <tr><td> 402 </td><td> Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<Object>> solanaGetTokensBelongingToWalletWithHttpInfo(String network, String publicKey, ListTokensRequest listTokensRequest) throws ApiException {
-        okhttp3.Call localVarCall = solanaGetTokensBelongingToWalletValidateBeforeCall(network, publicKey, listTokensRequest, null);
+    public ApiResponse<List<Object>> solanaGetTokensBelongingToWalletWithHttpInfo(String network, String publicKey, Boolean includeNfts, Boolean includeZeroBalanceHoldings) throws ApiException {
+        okhttp3.Call localVarCall = solanaGetTokensBelongingToWalletValidateBeforeCall(network, publicKey, includeNfts, includeZeroBalanceHoldings, null);
         Type localVarReturnType = new TypeToken<List<Object>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -923,7 +933,8 @@ public class SolanaWalletApi {
      * &lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-wallet/get-wallet-token-holdings\&quot; target&#x3D;\&quot;_blank\&quot;&gt;See examples (Python, JavaScript)&lt;/a&gt;.      See the token holdings of a given public key address  &#x60;Cost: 1 Credit&#x60; (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
      * @param network The network ID (devnet, mainnet-beta) (required)
      * @param publicKey The public key of the account whose list of owned NFTs you want to get (required)
-     * @param listTokensRequest  (optional)
+     * @param includeNfts Whether or not to include NFTs in the response (optional, default to false)
+     * @param includeZeroBalanceHoldings Whether or not to include holdings that have zero balance. This indicates that the wallet held this token or NFT in the past, but no longer holds it. (optional, default to false)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -936,9 +947,9 @@ public class SolanaWalletApi {
         <tr><td> 402 </td><td> Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call solanaGetTokensBelongingToWalletAsync(String network, String publicKey, ListTokensRequest listTokensRequest, final ApiCallback<List<Object>> _callback) throws ApiException {
+    public okhttp3.Call solanaGetTokensBelongingToWalletAsync(String network, String publicKey, Boolean includeNfts, Boolean includeZeroBalanceHoldings, final ApiCallback<List<Object>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = solanaGetTokensBelongingToWalletValidateBeforeCall(network, publicKey, listTokensRequest, _callback);
+        okhttp3.Call localVarCall = solanaGetTokensBelongingToWalletValidateBeforeCall(network, publicKey, includeNfts, includeZeroBalanceHoldings, _callback);
         Type localVarReturnType = new TypeToken<List<Object>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

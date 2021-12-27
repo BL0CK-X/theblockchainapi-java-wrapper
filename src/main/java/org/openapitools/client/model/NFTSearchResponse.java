@@ -28,7 +28,7 @@ import org.openapitools.client.model.NFT;
 /**
  * NFTSearchResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-27T08:10:20.407381-08:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-27T08:36:20.342797-08:00[America/Los_Angeles]")
 public class NFTSearchResponse {
   public static final String SERIALIZED_NAME_NFT_METADATA = "nft_metadata";
   @SerializedName(SERIALIZED_NAME_NFT_METADATA)

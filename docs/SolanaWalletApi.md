@@ -484,7 +484,7 @@ Name | Type | Description  | Notes
 
 <a name="solanaGetTokensBelongingToWallet"></a>
 # **solanaGetTokensBelongingToWallet**
-> List&lt;Object&gt; solanaGetTokensBelongingToWallet(network, publicKey, listTokensRequest)
+> List&lt;Object&gt; solanaGetTokensBelongingToWallet(network, publicKey, includeNfts, includeZeroBalanceHoldings)
 
 Get address&#39;s tokens and respective balances
 
@@ -520,9 +520,10 @@ public class Example {
     SolanaWalletApi apiInstance = new SolanaWalletApi(defaultClient);
     String network = "mainnet-beta"; // String | The network ID (devnet, mainnet-beta)
     String publicKey = "GKNcUmNacSJo4S2Kq3DuYRYRGw3sNUfJ4tyqd198t6vQ"; // String | The public key of the account whose list of owned NFTs you want to get
-    ListTokensRequest listTokensRequest = new ListTokensRequest(); // ListTokensRequest | 
+    Boolean includeNfts = false; // Boolean | Whether or not to include NFTs in the response
+    Boolean includeZeroBalanceHoldings = false; // Boolean | Whether or not to include holdings that have zero balance. This indicates that the wallet held this token or NFT in the past, but no longer holds it.
     try {
-      List<Object> result = apiInstance.solanaGetTokensBelongingToWallet(network, publicKey, listTokensRequest);
+      List<Object> result = apiInstance.solanaGetTokensBelongingToWallet(network, publicKey, includeNfts, includeZeroBalanceHoldings);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling SolanaWalletApi#solanaGetTokensBelongingToWallet");
@@ -541,7 +542,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **network** | **String**| The network ID (devnet, mainnet-beta) |
  **publicKey** | **String**| The public key of the account whose list of owned NFTs you want to get |
- **listTokensRequest** | [**ListTokensRequest**](ListTokensRequest.md)|  | [optional]
+ **includeNfts** | **Boolean**| Whether or not to include NFTs in the response | [optional] [default to false]
+ **includeZeroBalanceHoldings** | **Boolean**| Whether or not to include holdings that have zero balance. This indicates that the wallet held this token or NFT in the past, but no longer holds it. | [optional] [default to false]
 
 ### Return type
 
@@ -553,7 +555,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 ### HTTP response details

@@ -30,7 +30,6 @@ docs/GetCandyMetadataResponseCreators.md
 docs/GetFileResponse.md
 docs/GetPublicKeyRequest.md
 docs/ListNFTsResponse.md
-docs/ListTokensRequest.md
 docs/MintNFTErrorResponse.md
 docs/MintNFTRequest.md
 docs/MintNFTResponse.md
@@ -110,7 +109,6 @@ src/main/java/org/openapitools/client/model/GetCandyMetadataResponseCreators.jav
 src/main/java/org/openapitools/client/model/GetFileResponse.java
 src/main/java/org/openapitools/client/model/GetPublicKeyRequest.java
 src/main/java/org/openapitools/client/model/ListNFTsResponse.java
-src/main/java/org/openapitools/client/model/ListTokensRequest.java
 src/main/java/org/openapitools/client/model/MintNFTErrorResponse.java
 src/main/java/org/openapitools/client/model/MintNFTRequest.java
 src/main/java/org/openapitools/client/model/MintNFTResponse.java
@@ -128,4 +126,3 @@ src/main/java/org/openapitools/client/model/Transaction.java
 src/main/java/org/openapitools/client/model/TransferRequest.java
 src/main/java/org/openapitools/client/model/TransferResponse.java
 src/main/java/org/openapitools/client/model/UploadFileRequest.java
-src/test/java/org/openapitools/client/model/ListTokensRequestTest.java

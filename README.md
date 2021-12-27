@@ -2,7 +2,7 @@
 
 The Blockchain API
 - API version: null
-  - Build date: 2021-12-27T08:10:20.407381-08:00[America/Los_Angeles]
+  - Build date: 2021-12-27T08:36:20.342797-08:00[America/Los_Angeles]
 
 # About
 
@@ -282,7 +282,6 @@ Class | Method | HTTP request | Description
  - [GetFileResponse](docs/GetFileResponse.md)
  - [GetPublicKeyRequest](docs/GetPublicKeyRequest.md)
  - [ListNFTsResponse](docs/ListNFTsResponse.md)
- - [ListTokensRequest](docs/ListTokensRequest.md)
  - [MintNFTErrorResponse](docs/MintNFTErrorResponse.md)
  - [MintNFTRequest](docs/MintNFTRequest.md)
  - [MintNFTResponse](docs/MintNFTResponse.md)

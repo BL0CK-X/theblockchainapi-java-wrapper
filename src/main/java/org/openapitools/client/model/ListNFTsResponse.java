@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * ListNFTsResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-27T08:10:20.407381-08:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-27T08:36:20.342797-08:00[America/Los_Angeles]")
 public class ListNFTsResponse {
   public static final String SERIALIZED_NAME_NFTS_OWNED = "nfts_owned";
   @SerializedName(SERIALIZED_NAME_NFTS_OWNED)
