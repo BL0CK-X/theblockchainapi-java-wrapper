@@ -24,192 +24,92 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.math.BigDecimal;
+import org.openapitools.client.model.TransactionResult;
 
 /**
  * Transaction
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-27T08:36:20.342797-08:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-07T15:47:22.277045-08:00[America/Los_Angeles]")
 public class Transaction {
-  public static final String SERIALIZED_NAME_BLOCK_TIME = "block_time";
-  @SerializedName(SERIALIZED_NAME_BLOCK_TIME)
-  private BigDecimal blockTime;
+  public static final String SERIALIZED_NAME_ID = "id";
+  @SerializedName(SERIALIZED_NAME_ID)
+  private BigDecimal id;
 
-  public static final String SERIALIZED_NAME_META = "meta";
-  @SerializedName(SERIALIZED_NAME_META)
-  private Object meta;
+  public static final String SERIALIZED_NAME_JSONRPC = "jsonrpc";
+  @SerializedName(SERIALIZED_NAME_JSONRPC)
+  private String jsonrpc;
 
-  public static final String SERIALIZED_NAME_SLOT = "slot";
-  @SerializedName(SERIALIZED_NAME_SLOT)
-  private BigDecimal slot;
+  public static final String SERIALIZED_NAME_RESULT = "result";
+  @SerializedName(SERIALIZED_NAME_RESULT)
+  private TransactionResult result;
 
-  public static final String SERIALIZED_NAME_TRANSACTION = "transaction";
-  @SerializedName(SERIALIZED_NAME_TRANSACTION)
-  private Object transaction;
 
-  /**
-   * Gets or Sets network
-   */
-  @JsonAdapter(NetworkEnum.Adapter.class)
-  public enum NetworkEnum {
-    DEVNET("devnet"),
+  public Transaction id(BigDecimal id) {
     
-    MAINNET_BETA("mainnet-beta");
-
-    private String value;
-
-    NetworkEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static NetworkEnum fromValue(String value) {
-      for (NetworkEnum b : NetworkEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<NetworkEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final NetworkEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public NetworkEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return NetworkEnum.fromValue(value);
-      }
-    }
-  }
-
-  public static final String SERIALIZED_NAME_NETWORK = "network";
-  @SerializedName(SERIALIZED_NAME_NETWORK)
-  private NetworkEnum network = NetworkEnum.DEVNET;
-
-
-  public Transaction blockTime(BigDecimal blockTime) {
-    
-    this.blockTime = blockTime;
+    this.id = id;
     return this;
   }
 
    /**
-   * Get blockTime
-   * @return blockTime
+   * Get id
+   * @return id
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public BigDecimal getBlockTime() {
-    return blockTime;
+  public BigDecimal getId() {
+    return id;
   }
 
 
-  public void setBlockTime(BigDecimal blockTime) {
-    this.blockTime = blockTime;
+  public void setId(BigDecimal id) {
+    this.id = id;
   }
 
 
-  public Transaction meta(Object meta) {
+  public Transaction jsonrpc(String jsonrpc) {
     
-    this.meta = meta;
+    this.jsonrpc = jsonrpc;
     return this;
   }
 
    /**
-   * Get meta
-   * @return meta
+   * Get jsonrpc
+   * @return jsonrpc
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Object getMeta() {
-    return meta;
+  public String getJsonrpc() {
+    return jsonrpc;
   }
 
 
-  public void setMeta(Object meta) {
-    this.meta = meta;
+  public void setJsonrpc(String jsonrpc) {
+    this.jsonrpc = jsonrpc;
   }
 
 
-  public Transaction slot(BigDecimal slot) {
+  public Transaction result(TransactionResult result) {
     
-    this.slot = slot;
+    this.result = result;
     return this;
   }
 
    /**
-   * Get slot
-   * @return slot
+   * Get result
+   * @return result
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public BigDecimal getSlot() {
-    return slot;
+  public TransactionResult getResult() {
+    return result;
   }
 
 
-  public void setSlot(BigDecimal slot) {
-    this.slot = slot;
-  }
-
-
-  public Transaction transaction(Object transaction) {
-    
-    this.transaction = transaction;
-    return this;
-  }
-
-   /**
-   * Get transaction
-   * @return transaction
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Object getTransaction() {
-    return transaction;
-  }
-
-
-  public void setTransaction(Object transaction) {
-    this.transaction = transaction;
-  }
-
-
-  public Transaction network(NetworkEnum network) {
-    
-    this.network = network;
-    return this;
-  }
-
-   /**
-   * Get network
-   * @return network
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public NetworkEnum getNetwork() {
-    return network;
-  }
-
-
-  public void setNetwork(NetworkEnum network) {
-    this.network = network;
+  public void setResult(TransactionResult result) {
+    this.result = result;
   }
 
 
@@ -222,27 +122,23 @@ public class Transaction {
       return false;
     }
     Transaction transaction = (Transaction) o;
-    return Objects.equals(this.blockTime, transaction.blockTime) &&
-        Objects.equals(this.meta, transaction.meta) &&
-        Objects.equals(this.slot, transaction.slot) &&
-        Objects.equals(this.transaction, transaction.transaction) &&
-        Objects.equals(this.network, transaction.network);
+    return Objects.equals(this.id, transaction.id) &&
+        Objects.equals(this.jsonrpc, transaction.jsonrpc) &&
+        Objects.equals(this.result, transaction.result);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(blockTime, meta, slot, transaction, network);
+    return Objects.hash(id, jsonrpc, result);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Transaction {\n");
-    sb.append("    blockTime: ").append(toIndentedString(blockTime)).append("\n");
-    sb.append("    meta: ").append(toIndentedString(meta)).append("\n");
-    sb.append("    slot: ").append(toIndentedString(slot)).append("\n");
-    sb.append("    transaction: ").append(toIndentedString(transaction)).append("\n");
-    sb.append("    network: ").append(toIndentedString(network)).append("\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    jsonrpc: ").append(toIndentedString(jsonrpc)).append("\n");
+    sb.append("    result: ").append(toIndentedString(result)).append("\n");
     sb.append("}");
     return sb.toString();
   }

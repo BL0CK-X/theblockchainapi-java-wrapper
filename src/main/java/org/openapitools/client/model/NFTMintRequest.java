@@ -26,23 +26,16 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import org.openapitools.client.model.Wallet;
 
 /**
  * NFTMintRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-27T08:36:20.342797-08:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-07T15:47:22.277045-08:00[America/Los_Angeles]")
 public class NFTMintRequest {
-  public static final String SERIALIZED_NAME_SECRET_RECOVERY_PHRASE = "secret_recovery_phrase";
-  @SerializedName(SERIALIZED_NAME_SECRET_RECOVERY_PHRASE)
-  private String secretRecoveryPhrase;
-
-  public static final String SERIALIZED_NAME_DERIVATION_PATH = "derivation_path";
-  @SerializedName(SERIALIZED_NAME_DERIVATION_PATH)
-  private String derivationPath = "m/44/501/0/0";
-
-  public static final String SERIALIZED_NAME_PASSPHRASE = "passphrase";
-  @SerializedName(SERIALIZED_NAME_PASSPHRASE)
-  private String passphrase = "";
+  public static final String SERIALIZED_NAME_WALLET = "wallet";
+  @SerializedName(SERIALIZED_NAME_WALLET)
+  private Wallet wallet;
 
   public static final String SERIALIZED_NAME_NFT_NAME = "nft_name";
   @SerializedName(SERIALIZED_NAME_NFT_NAME)
@@ -135,6 +128,10 @@ public class NFTMintRequest {
   @SerializedName(SERIALIZED_NAME_SHARE)
   private List<Integer> share = null;
 
+  public static final String SERIALIZED_NAME_MINT_TO_PUBLIC_KEY = "mint_to_public_key";
+  @SerializedName(SERIALIZED_NAME_MINT_TO_PUBLIC_KEY)
+  private String mintToPublicKey = "The public key of the wallet provided";
+
   /**
    * This determines which network you choose to run the API calls on. We recommend first testing on the devnet, because minting an NFT costs a little above 0.01 SOL, which is about $1.60 at the time of this writing.  When you run on the mainnet-beta, each successful call will deduct approximately that much. When you run on the devnet, that amount is deducted from a simulated amount, so you are not paying with real SOL. To get SOL on the devnet,   airdrop SOL to this address using the CLI. Keep in mind that you can only do this every so often. If you are rate-limited, consider using a VPN and trying again, or just waiting. To get SOL on the mainnet-beta, you    must transfer real SOL to this account from another wallet (e.g., from another wallet you own, from an exchange, etc.). We hope to make this process easier in the future, and if you have any suggestions, please add them    as an issue on our &lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/the-blockchain-api\&quot; target&#x3D;\&quot;_blank\&quot;&gt;GitHub repository&lt;/a&gt; for the API. To get a fee estimate, make a GET requests to the &lt;a href&#x3D;\&quot;#tag/Solana-NFT/paths/~1solana~1nft~1mint~1fee/get\&quot;&gt;v1/solana/nft/mint/fee endpoint&lt;/a&gt; (details in sidebar). 
    */
@@ -187,72 +184,26 @@ public class NFTMintRequest {
   private NetworkEnum network = NetworkEnum.DEVNET;
 
 
-  public NFTMintRequest secretRecoveryPhrase(String secretRecoveryPhrase) {
+  public NFTMintRequest wallet(Wallet wallet) {
     
-    this.secretRecoveryPhrase = secretRecoveryPhrase;
+    this.wallet = wallet;
     return this;
   }
 
    /**
-   * The twelve word phrase that can be used to derive many public key addresses. To derive a public key, you need a secret recovery phrase, a derivation path, and an optional passphrase. See our Security section &lt;a href&#x3D;\&quot;#section/Security\&quot;&gt;here&lt;/a&gt;.
-   * @return secretRecoveryPhrase
+   * Get wallet
+   * @return wallet
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "The twelve word phrase that can be used to derive many public key addresses. To derive a public key, you need a secret recovery phrase, a derivation path, and an optional passphrase. See our Security section <a href=\"#section/Security\">here</a>.")
+  @ApiModelProperty(required = true, value = "")
 
-  public String getSecretRecoveryPhrase() {
-    return secretRecoveryPhrase;
+  public Wallet getWallet() {
+    return wallet;
   }
 
 
-  public void setSecretRecoveryPhrase(String secretRecoveryPhrase) {
-    this.secretRecoveryPhrase = secretRecoveryPhrase;
-  }
-
-
-  public NFTMintRequest derivationPath(String derivationPath) {
-    
-    this.derivationPath = derivationPath;
-    return this;
-  }
-
-   /**
-   * Derivation paths are used to derive the public key from the secret recovery phrase. Only certain paths are accepted.  We use \&quot;m/44/501/0/0\&quot; by default, if it is not provided. This is the path that the Phantom and Sollet wallets use. If you provide the empty string \&quot;\&quot; as the value for the derivation path, then we will use the Solana CLI default value. The SolFlare recommended path is \&quot;m/44/501/0\&quot;.  You can also arbitrarily increment the default path (\&quot;m/44/501/0/0\&quot;) to generate more wallets (e.g., \&quot;m/44/501/0/1\&quot;, \&quot;m/44/501/0/2\&quot;, ...). This is how Phantom generates more wallets.  To learn more about derivation paths, check out &lt;a href&#x3D;\&quot;https://learnmeabitcoin.com/technical/derivation-paths\&quot; target&#x3D;\&quot;_blank\&quot;&gt;this tutorial&lt;/a&gt;.
-   * @return derivationPath
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "Derivation paths are used to derive the public key from the secret recovery phrase. Only certain paths are accepted.  We use \"m/44/501/0/0\" by default, if it is not provided. This is the path that the Phantom and Sollet wallets use. If you provide the empty string \"\" as the value for the derivation path, then we will use the Solana CLI default value. The SolFlare recommended path is \"m/44/501/0\".  You can also arbitrarily increment the default path (\"m/44/501/0/0\") to generate more wallets (e.g., \"m/44/501/0/1\", \"m/44/501/0/2\", ...). This is how Phantom generates more wallets.  To learn more about derivation paths, check out <a href=\"https://learnmeabitcoin.com/technical/derivation-paths\" target=\"_blank\">this tutorial</a>.")
-
-  public String getDerivationPath() {
-    return derivationPath;
-  }
-
-
-  public void setDerivationPath(String derivationPath) {
-    this.derivationPath = derivationPath;
-  }
-
-
-  public NFTMintRequest passphrase(String passphrase) {
-    
-    this.passphrase = passphrase;
-    return this;
-  }
-
-   /**
-   * PASSPHRASE !&#x3D; PASSWORD. This is NOT your Phantom password or any other password. It is an optional string you use when creating a wallet. This provides an additional layer of security because a hacker would need both the secret recovery phrase and the passphrase to access the output public key. By default, most wallet UI extensions do not use a passphrase. (You probably did not use a passphrase.) Limited to 500 characters. 
-   * @return passphrase
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "PASSPHRASE != PASSWORD. This is NOT your Phantom password or any other password. It is an optional string you use when creating a wallet. This provides an additional layer of security because a hacker would need both the secret recovery phrase and the passphrase to access the output public key. By default, most wallet UI extensions do not use a passphrase. (You probably did not use a passphrase.) Limited to 500 characters. ")
-
-  public String getPassphrase() {
-    return passphrase;
-  }
-
-
-  public void setPassphrase(String passphrase) {
-    this.passphrase = passphrase;
+  public void setWallet(Wallet wallet) {
+    this.wallet = wallet;
   }
 
 
@@ -525,6 +476,29 @@ public class NFTMintRequest {
   }
 
 
+  public NFTMintRequest mintToPublicKey(String mintToPublicKey) {
+    
+    this.mintToPublicKey = mintToPublicKey;
+    return this;
+  }
+
+   /**
+   * Assign ownership of the NFT to the public key address given by &#x60;mint_to_public_key&#x60; 
+   * @return mintToPublicKey
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Assign ownership of the NFT to the public key address given by `mint_to_public_key` ")
+
+  public String getMintToPublicKey() {
+    return mintToPublicKey;
+  }
+
+
+  public void setMintToPublicKey(String mintToPublicKey) {
+    this.mintToPublicKey = mintToPublicKey;
+  }
+
+
   public NFTMintRequest network(NetworkEnum network) {
     
     this.network = network;
@@ -557,9 +531,7 @@ public class NFTMintRequest {
       return false;
     }
     NFTMintRequest nfTMintRequest = (NFTMintRequest) o;
-    return Objects.equals(this.secretRecoveryPhrase, nfTMintRequest.secretRecoveryPhrase) &&
-        Objects.equals(this.derivationPath, nfTMintRequest.derivationPath) &&
-        Objects.equals(this.passphrase, nfTMintRequest.passphrase) &&
+    return Objects.equals(this.wallet, nfTMintRequest.wallet) &&
         Objects.equals(this.nftName, nfTMintRequest.nftName) &&
         Objects.equals(this.nftSymbol, nfTMintRequest.nftSymbol) &&
         Objects.equals(this.nftDescription, nfTMintRequest.nftDescription) &&
@@ -571,21 +543,20 @@ public class NFTMintRequest {
         Objects.equals(this.sellerFeeBasisPoints, nfTMintRequest.sellerFeeBasisPoints) &&
         Objects.equals(this.creators, nfTMintRequest.creators) &&
         Objects.equals(this.share, nfTMintRequest.share) &&
+        Objects.equals(this.mintToPublicKey, nfTMintRequest.mintToPublicKey) &&
         Objects.equals(this.network, nfTMintRequest.network);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(secretRecoveryPhrase, derivationPath, passphrase, nftName, nftSymbol, nftDescription, nftUrl, nftMetadata, nftUploadMethod, isMutable, isMasterEdition, sellerFeeBasisPoints, creators, share, network);
+    return Objects.hash(wallet, nftName, nftSymbol, nftDescription, nftUrl, nftMetadata, nftUploadMethod, isMutable, isMasterEdition, sellerFeeBasisPoints, creators, share, mintToPublicKey, network);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class NFTMintRequest {\n");
-    sb.append("    secretRecoveryPhrase: ").append(toIndentedString(secretRecoveryPhrase)).append("\n");
-    sb.append("    derivationPath: ").append(toIndentedString(derivationPath)).append("\n");
-    sb.append("    passphrase: ").append(toIndentedString(passphrase)).append("\n");
+    sb.append("    wallet: ").append(toIndentedString(wallet)).append("\n");
     sb.append("    nftName: ").append(toIndentedString(nftName)).append("\n");
     sb.append("    nftSymbol: ").append(toIndentedString(nftSymbol)).append("\n");
     sb.append("    nftDescription: ").append(toIndentedString(nftDescription)).append("\n");
@@ -597,6 +568,7 @@ public class NFTMintRequest {
     sb.append("    sellerFeeBasisPoints: ").append(toIndentedString(sellerFeeBasisPoints)).append("\n");
     sb.append("    creators: ").append(toIndentedString(creators)).append("\n");
     sb.append("    share: ").append(toIndentedString(share)).append("\n");
+    sb.append("    mintToPublicKey: ").append(toIndentedString(mintToPublicKey)).append("\n");
     sb.append("    network: ").append(toIndentedString(network)).append("\n");
     sb.append("}");
     return sb.toString();

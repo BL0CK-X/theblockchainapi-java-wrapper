@@ -23,23 +23,16 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import org.openapitools.client.model.Wallet;
 
 /**
  * CreateTestCandyMachineRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-27T08:36:20.342797-08:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-07T15:47:22.277045-08:00[America/Los_Angeles]")
 public class CreateTestCandyMachineRequest {
-  public static final String SERIALIZED_NAME_SECRET_RECOVERY_PHRASE = "secret_recovery_phrase";
-  @SerializedName(SERIALIZED_NAME_SECRET_RECOVERY_PHRASE)
-  private String secretRecoveryPhrase;
-
-  public static final String SERIALIZED_NAME_DERIVATION_PATH = "derivation_path";
-  @SerializedName(SERIALIZED_NAME_DERIVATION_PATH)
-  private String derivationPath = "m/44/501/0/0";
-
-  public static final String SERIALIZED_NAME_PASSPHRASE = "passphrase";
-  @SerializedName(SERIALIZED_NAME_PASSPHRASE)
-  private String passphrase = "";
+  public static final String SERIALIZED_NAME_WALLET = "wallet";
+  @SerializedName(SERIALIZED_NAME_WALLET)
+  private Wallet wallet;
 
   /**
    * Gets or Sets network
@@ -93,12 +86,10 @@ public class CreateTestCandyMachineRequest {
   private NetworkEnum network = NetworkEnum.DEVNET;
 
   /**
-   * The contract you want to use to create the candy machine
+   * The contract you want to use to create the candy machine. Note: Metaplex disabled the creation of &#x60;v1&#x60; candy machines on their smart contract, and so we no longer support the creation of &#x60;v1&#x60; test candy machines. 
    */
   @JsonAdapter(CandyMachineContractVersionEnum.Adapter.class)
   public enum CandyMachineContractVersionEnum {
-    V1("v1"),
-    
     V2("v2");
 
     private String value;
@@ -141,79 +132,33 @@ public class CreateTestCandyMachineRequest {
 
   public static final String SERIALIZED_NAME_CANDY_MACHINE_CONTRACT_VERSION = "candy_machine_contract_version";
   @SerializedName(SERIALIZED_NAME_CANDY_MACHINE_CONTRACT_VERSION)
-  private CandyMachineContractVersionEnum candyMachineContractVersion = CandyMachineContractVersionEnum.V1;
+  private CandyMachineContractVersionEnum candyMachineContractVersion = CandyMachineContractVersionEnum.V2;
 
   public static final String SERIALIZED_NAME_INCLUDE_GATEKEEPER = "include_gatekeeper";
   @SerializedName(SERIALIZED_NAME_INCLUDE_GATEKEEPER)
   private Boolean includeGatekeeper = false;
 
 
-  public CreateTestCandyMachineRequest secretRecoveryPhrase(String secretRecoveryPhrase) {
+  public CreateTestCandyMachineRequest wallet(Wallet wallet) {
     
-    this.secretRecoveryPhrase = secretRecoveryPhrase;
+    this.wallet = wallet;
     return this;
   }
 
    /**
-   * The twelve word phrase that can be used to derive many public key addresses. To derive a public key, you need a secret recovery phrase, a derivation path, and an optional passphrase. See our Security section &lt;a href&#x3D;\&quot;#section/Security\&quot;&gt;here&lt;/a&gt;.
-   * @return secretRecoveryPhrase
+   * Get wallet
+   * @return wallet
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "The twelve word phrase that can be used to derive many public key addresses. To derive a public key, you need a secret recovery phrase, a derivation path, and an optional passphrase. See our Security section <a href=\"#section/Security\">here</a>.")
+  @ApiModelProperty(required = true, value = "")
 
-  public String getSecretRecoveryPhrase() {
-    return secretRecoveryPhrase;
+  public Wallet getWallet() {
+    return wallet;
   }
 
 
-  public void setSecretRecoveryPhrase(String secretRecoveryPhrase) {
-    this.secretRecoveryPhrase = secretRecoveryPhrase;
-  }
-
-
-  public CreateTestCandyMachineRequest derivationPath(String derivationPath) {
-    
-    this.derivationPath = derivationPath;
-    return this;
-  }
-
-   /**
-   * Derivation paths are used to derive the public key from the secret recovery phrase. Only certain paths are accepted.  We use \&quot;m/44/501/0/0\&quot; by default, if it is not provided. This is the path that the Phantom and Sollet wallets use. If you provide the empty string \&quot;\&quot; as the value for the derivation path, then we will use the Solana CLI default value. The SolFlare recommended path is \&quot;m/44/501/0\&quot;.  You can also arbitrarily increment the default path (\&quot;m/44/501/0/0\&quot;) to generate more wallets (e.g., \&quot;m/44/501/0/1\&quot;, \&quot;m/44/501/0/2\&quot;, ...). This is how Phantom generates more wallets.  To learn more about derivation paths, check out &lt;a href&#x3D;\&quot;https://learnmeabitcoin.com/technical/derivation-paths\&quot; target&#x3D;\&quot;_blank\&quot;&gt;this tutorial&lt;/a&gt;.
-   * @return derivationPath
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "Derivation paths are used to derive the public key from the secret recovery phrase. Only certain paths are accepted.  We use \"m/44/501/0/0\" by default, if it is not provided. This is the path that the Phantom and Sollet wallets use. If you provide the empty string \"\" as the value for the derivation path, then we will use the Solana CLI default value. The SolFlare recommended path is \"m/44/501/0\".  You can also arbitrarily increment the default path (\"m/44/501/0/0\") to generate more wallets (e.g., \"m/44/501/0/1\", \"m/44/501/0/2\", ...). This is how Phantom generates more wallets.  To learn more about derivation paths, check out <a href=\"https://learnmeabitcoin.com/technical/derivation-paths\" target=\"_blank\">this tutorial</a>.")
-
-  public String getDerivationPath() {
-    return derivationPath;
-  }
-
-
-  public void setDerivationPath(String derivationPath) {
-    this.derivationPath = derivationPath;
-  }
-
-
-  public CreateTestCandyMachineRequest passphrase(String passphrase) {
-    
-    this.passphrase = passphrase;
-    return this;
-  }
-
-   /**
-   * PASSPHRASE !&#x3D; PASSWORD. This is NOT your Phantom password or any other password. It is an optional string you use when creating a wallet. This provides an additional layer of security because a hacker would need both the secret recovery phrase and the passphrase to access the output public key. By default, most wallet UI extensions do not use a passphrase. (You probably did not use a passphrase.) Limited to 500 characters. 
-   * @return passphrase
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "PASSPHRASE != PASSWORD. This is NOT your Phantom password or any other password. It is an optional string you use when creating a wallet. This provides an additional layer of security because a hacker would need both the secret recovery phrase and the passphrase to access the output public key. By default, most wallet UI extensions do not use a passphrase. (You probably did not use a passphrase.) Limited to 500 characters. ")
-
-  public String getPassphrase() {
-    return passphrase;
-  }
-
-
-  public void setPassphrase(String passphrase) {
-    this.passphrase = passphrase;
+  public void setWallet(Wallet wallet) {
+    this.wallet = wallet;
   }
 
 
@@ -247,11 +192,11 @@ public class CreateTestCandyMachineRequest {
   }
 
    /**
-   * The contract you want to use to create the candy machine
+   * The contract you want to use to create the candy machine. Note: Metaplex disabled the creation of &#x60;v1&#x60; candy machines on their smart contract, and so we no longer support the creation of &#x60;v1&#x60; test candy machines. 
    * @return candyMachineContractVersion
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "The contract you want to use to create the candy machine")
+  @ApiModelProperty(value = "The contract you want to use to create the candy machine. Note: Metaplex disabled the creation of `v1` candy machines on their smart contract, and so we no longer support the creation of `v1` test candy machines. ")
 
   public CandyMachineContractVersionEnum getCandyMachineContractVersion() {
     return candyMachineContractVersion;
@@ -295,9 +240,7 @@ public class CreateTestCandyMachineRequest {
       return false;
     }
     CreateTestCandyMachineRequest createTestCandyMachineRequest = (CreateTestCandyMachineRequest) o;
-    return Objects.equals(this.secretRecoveryPhrase, createTestCandyMachineRequest.secretRecoveryPhrase) &&
-        Objects.equals(this.derivationPath, createTestCandyMachineRequest.derivationPath) &&
-        Objects.equals(this.passphrase, createTestCandyMachineRequest.passphrase) &&
+    return Objects.equals(this.wallet, createTestCandyMachineRequest.wallet) &&
         Objects.equals(this.network, createTestCandyMachineRequest.network) &&
         Objects.equals(this.candyMachineContractVersion, createTestCandyMachineRequest.candyMachineContractVersion) &&
         Objects.equals(this.includeGatekeeper, createTestCandyMachineRequest.includeGatekeeper);
@@ -305,16 +248,14 @@ public class CreateTestCandyMachineRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(secretRecoveryPhrase, derivationPath, passphrase, network, candyMachineContractVersion, includeGatekeeper);
+    return Objects.hash(wallet, network, candyMachineContractVersion, includeGatekeeper);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class CreateTestCandyMachineRequest {\n");
-    sb.append("    secretRecoveryPhrase: ").append(toIndentedString(secretRecoveryPhrase)).append("\n");
-    sb.append("    derivationPath: ").append(toIndentedString(derivationPath)).append("\n");
-    sb.append("    passphrase: ").append(toIndentedString(passphrase)).append("\n");
+    sb.append("    wallet: ").append(toIndentedString(wallet)).append("\n");
     sb.append("    network: ").append(toIndentedString(network)).append("\n");
     sb.append("    candyMachineContractVersion: ").append(toIndentedString(candyMachineContractVersion)).append("\n");
     sb.append("    includeGatekeeper: ").append(toIndentedString(includeGatekeeper)).append("\n");

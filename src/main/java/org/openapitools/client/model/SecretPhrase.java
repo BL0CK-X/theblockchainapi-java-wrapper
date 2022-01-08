@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * SecretPhrase
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-27T08:36:20.342797-08:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-07T15:47:22.277045-08:00[America/Los_Angeles]")
 public class SecretPhrase {
   public static final String SERIALIZED_NAME_SECRET_RECOVERY_PHRASE = "secret_recovery_phrase";
   @SerializedName(SERIALIZED_NAME_SECRET_RECOVERY_PHRASE)
@@ -41,11 +41,11 @@ public class SecretPhrase {
   }
 
    /**
-   * The twelve word phrase that can be used to derive many public key addresses. To derive a public key, you need a secret recovery phrase, a derivation path, and an optional passphrase. See our Security section &lt;a href&#x3D;\&quot;#section/Security\&quot;&gt;here&lt;/a&gt;.
+   * The twelve word phrase that can be used to derive many public key addresses (e.g., bottom army bless castle alter habit dish embody child flame smooth zone).  To derive a public key, you need a secret recovery phrase, a derivation path, and an optional passphrase.   Alternatively, you can derive a public key with a private key.
    * @return secretRecoveryPhrase
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "The twelve word phrase that can be used to derive many public key addresses. To derive a public key, you need a secret recovery phrase, a derivation path, and an optional passphrase. See our Security section <a href=\"#section/Security\">here</a>.")
+  @ApiModelProperty(value = "The twelve word phrase that can be used to derive many public key addresses (e.g., bottom army bless castle alter habit dish embody child flame smooth zone).  To derive a public key, you need a secret recovery phrase, a derivation path, and an optional passphrase.   Alternatively, you can derive a public key with a private key.")
 
   public String getSecretRecoveryPhrase() {
     return secretRecoveryPhrase;

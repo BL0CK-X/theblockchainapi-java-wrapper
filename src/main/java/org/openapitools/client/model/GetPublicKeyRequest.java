@@ -23,91 +23,38 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import org.openapitools.client.model.Wallet;
 
 /**
  * GetPublicKeyRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-27T08:36:20.342797-08:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-07T15:47:22.277045-08:00[America/Los_Angeles]")
 public class GetPublicKeyRequest {
-  public static final String SERIALIZED_NAME_SECRET_RECOVERY_PHRASE = "secret_recovery_phrase";
-  @SerializedName(SERIALIZED_NAME_SECRET_RECOVERY_PHRASE)
-  private String secretRecoveryPhrase;
-
-  public static final String SERIALIZED_NAME_DERIVATION_PATH = "derivation_path";
-  @SerializedName(SERIALIZED_NAME_DERIVATION_PATH)
-  private String derivationPath = "m/44/501/0/0";
-
-  public static final String SERIALIZED_NAME_PASSPHRASE = "passphrase";
-  @SerializedName(SERIALIZED_NAME_PASSPHRASE)
-  private String passphrase = "";
+  public static final String SERIALIZED_NAME_WALLET = "wallet";
+  @SerializedName(SERIALIZED_NAME_WALLET)
+  private Wallet wallet;
 
 
-  public GetPublicKeyRequest secretRecoveryPhrase(String secretRecoveryPhrase) {
+  public GetPublicKeyRequest wallet(Wallet wallet) {
     
-    this.secretRecoveryPhrase = secretRecoveryPhrase;
+    this.wallet = wallet;
     return this;
   }
 
    /**
-   * The twelve word phrase that can be used to derive many public key addresses. To derive a public key, you need a secret recovery phrase, a derivation path, and an optional passphrase. See our Security section &lt;a href&#x3D;\&quot;#section/Security\&quot;&gt;here&lt;/a&gt;.
-   * @return secretRecoveryPhrase
+   * Get wallet
+   * @return wallet
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "The twelve word phrase that can be used to derive many public key addresses. To derive a public key, you need a secret recovery phrase, a derivation path, and an optional passphrase. See our Security section <a href=\"#section/Security\">here</a>.")
+  @ApiModelProperty(required = true, value = "")
 
-  public String getSecretRecoveryPhrase() {
-    return secretRecoveryPhrase;
+  public Wallet getWallet() {
+    return wallet;
   }
 
 
-  public void setSecretRecoveryPhrase(String secretRecoveryPhrase) {
-    this.secretRecoveryPhrase = secretRecoveryPhrase;
-  }
-
-
-  public GetPublicKeyRequest derivationPath(String derivationPath) {
-    
-    this.derivationPath = derivationPath;
-    return this;
-  }
-
-   /**
-   * Derivation paths are used to derive the public key from the secret recovery phrase. Only certain paths are accepted.  We use \&quot;m/44/501/0/0\&quot; by default, if it is not provided. This is the path that the Phantom and Sollet wallets use. If you provide the empty string \&quot;\&quot; as the value for the derivation path, then we will use the Solana CLI default value. The SolFlare recommended path is \&quot;m/44/501/0\&quot;.  You can also arbitrarily increment the default path (\&quot;m/44/501/0/0\&quot;) to generate more wallets (e.g., \&quot;m/44/501/0/1\&quot;, \&quot;m/44/501/0/2\&quot;, ...). This is how Phantom generates more wallets.  To learn more about derivation paths, check out &lt;a href&#x3D;\&quot;https://learnmeabitcoin.com/technical/derivation-paths\&quot; target&#x3D;\&quot;_blank\&quot;&gt;this tutorial&lt;/a&gt;.
-   * @return derivationPath
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "Derivation paths are used to derive the public key from the secret recovery phrase. Only certain paths are accepted.  We use \"m/44/501/0/0\" by default, if it is not provided. This is the path that the Phantom and Sollet wallets use. If you provide the empty string \"\" as the value for the derivation path, then we will use the Solana CLI default value. The SolFlare recommended path is \"m/44/501/0\".  You can also arbitrarily increment the default path (\"m/44/501/0/0\") to generate more wallets (e.g., \"m/44/501/0/1\", \"m/44/501/0/2\", ...). This is how Phantom generates more wallets.  To learn more about derivation paths, check out <a href=\"https://learnmeabitcoin.com/technical/derivation-paths\" target=\"_blank\">this tutorial</a>.")
-
-  public String getDerivationPath() {
-    return derivationPath;
-  }
-
-
-  public void setDerivationPath(String derivationPath) {
-    this.derivationPath = derivationPath;
-  }
-
-
-  public GetPublicKeyRequest passphrase(String passphrase) {
-    
-    this.passphrase = passphrase;
-    return this;
-  }
-
-   /**
-   * PASSPHRASE !&#x3D; PASSWORD. This is NOT your Phantom password or any other password. It is an optional string you use when creating a wallet. This provides an additional layer of security because a hacker would need both the secret recovery phrase and the passphrase to access the output public key. By default, most wallet UI extensions do not use a passphrase. (You probably did not use a passphrase.) Limited to 500 characters. 
-   * @return passphrase
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "PASSPHRASE != PASSWORD. This is NOT your Phantom password or any other password. It is an optional string you use when creating a wallet. This provides an additional layer of security because a hacker would need both the secret recovery phrase and the passphrase to access the output public key. By default, most wallet UI extensions do not use a passphrase. (You probably did not use a passphrase.) Limited to 500 characters. ")
-
-  public String getPassphrase() {
-    return passphrase;
-  }
-
-
-  public void setPassphrase(String passphrase) {
-    this.passphrase = passphrase;
+  public void setWallet(Wallet wallet) {
+    this.wallet = wallet;
   }
 
 
@@ -120,23 +67,19 @@ public class GetPublicKeyRequest {
       return false;
     }
     GetPublicKeyRequest getPublicKeyRequest = (GetPublicKeyRequest) o;
-    return Objects.equals(this.secretRecoveryPhrase, getPublicKeyRequest.secretRecoveryPhrase) &&
-        Objects.equals(this.derivationPath, getPublicKeyRequest.derivationPath) &&
-        Objects.equals(this.passphrase, getPublicKeyRequest.passphrase);
+    return Objects.equals(this.wallet, getPublicKeyRequest.wallet);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(secretRecoveryPhrase, derivationPath, passphrase);
+    return Objects.hash(wallet);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetPublicKeyRequest {\n");
-    sb.append("    secretRecoveryPhrase: ").append(toIndentedString(secretRecoveryPhrase)).append("\n");
-    sb.append("    derivationPath: ").append(toIndentedString(derivationPath)).append("\n");
-    sb.append("    passphrase: ").append(toIndentedString(passphrase)).append("\n");
+    sb.append("    wallet: ").append(toIndentedString(wallet)).append("\n");
     sb.append("}");
     return sb.toString();
   }

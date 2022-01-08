@@ -23,27 +23,20 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import org.openapitools.client.model.Wallet;
 
 /**
  * MintNFTRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-27T08:36:20.342797-08:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-07T15:47:22.277045-08:00[America/Los_Angeles]")
 public class MintNFTRequest {
+  public static final String SERIALIZED_NAME_WALLET = "wallet";
+  @SerializedName(SERIALIZED_NAME_WALLET)
+  private Wallet wallet;
+
   public static final String SERIALIZED_NAME_CONFIG_ADDRESS = "config_address";
   @SerializedName(SERIALIZED_NAME_CONFIG_ADDRESS)
   private String configAddress;
-
-  public static final String SERIALIZED_NAME_SECRET_RECOVERY_PHRASE = "secret_recovery_phrase";
-  @SerializedName(SERIALIZED_NAME_SECRET_RECOVERY_PHRASE)
-  private String secretRecoveryPhrase;
-
-  public static final String SERIALIZED_NAME_DERIVATION_PATH = "derivation_path";
-  @SerializedName(SERIALIZED_NAME_DERIVATION_PATH)
-  private String derivationPath = "m/44/501/0/0";
-
-  public static final String SERIALIZED_NAME_PASSPHRASE = "passphrase";
-  @SerializedName(SERIALIZED_NAME_PASSPHRASE)
-  private String passphrase = "";
 
   /**
    * Gets or Sets network
@@ -148,6 +141,29 @@ public class MintNFTRequest {
   private CandyMachineContractVersionEnum candyMachineContractVersion = CandyMachineContractVersionEnum.V1;
 
 
+  public MintNFTRequest wallet(Wallet wallet) {
+    
+    this.wallet = wallet;
+    return this;
+  }
+
+   /**
+   * Get wallet
+   * @return wallet
+  **/
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "")
+
+  public Wallet getWallet() {
+    return wallet;
+  }
+
+
+  public void setWallet(Wallet wallet) {
+    this.wallet = wallet;
+  }
+
+
   public MintNFTRequest configAddress(String configAddress) {
     
     this.configAddress = configAddress;
@@ -155,11 +171,11 @@ public class MintNFTRequest {
   }
 
    /**
-   * The config address of the candy machine. You can retrieve this if you have the candy machine ID using &lt;a href&#x3D;\&quot;#operation/solanaGetCandyMachineDetails\&quot;&gt;this endpoint&lt;/a&gt; and retrieving the &#x60;config_address&#x60; from the response.. 
+   * The config address of the candy machine. You can retrieve this if you have the candy machine ID using &lt;a href&#x3D;\&quot;#operation/solanaGetCandyMachineDetails\&quot;&gt;this endpoint&lt;/a&gt; and retrieving the &#x60;config_address&#x60; from the response.  A candy machine ID is the same thing as a configuration address for v2 candy machines. 
    * @return configAddress
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "The config address of the candy machine. You can retrieve this if you have the candy machine ID using <a href=\"#operation/solanaGetCandyMachineDetails\">this endpoint</a> and retrieving the `config_address` from the response.. ")
+  @ApiModelProperty(required = true, value = "The config address of the candy machine. You can retrieve this if you have the candy machine ID using <a href=\"#operation/solanaGetCandyMachineDetails\">this endpoint</a> and retrieving the `config_address` from the response.  A candy machine ID is the same thing as a configuration address for v2 candy machines. ")
 
   public String getConfigAddress() {
     return configAddress;
@@ -168,75 +184,6 @@ public class MintNFTRequest {
 
   public void setConfigAddress(String configAddress) {
     this.configAddress = configAddress;
-  }
-
-
-  public MintNFTRequest secretRecoveryPhrase(String secretRecoveryPhrase) {
-    
-    this.secretRecoveryPhrase = secretRecoveryPhrase;
-    return this;
-  }
-
-   /**
-   * The twelve word phrase that can be used to derive many public key addresses. To derive a public key, you need a secret recovery phrase, a derivation path, and an optional passphrase. See our Security section &lt;a href&#x3D;\&quot;#section/Security\&quot;&gt;here&lt;/a&gt;.
-   * @return secretRecoveryPhrase
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "The twelve word phrase that can be used to derive many public key addresses. To derive a public key, you need a secret recovery phrase, a derivation path, and an optional passphrase. See our Security section <a href=\"#section/Security\">here</a>.")
-
-  public String getSecretRecoveryPhrase() {
-    return secretRecoveryPhrase;
-  }
-
-
-  public void setSecretRecoveryPhrase(String secretRecoveryPhrase) {
-    this.secretRecoveryPhrase = secretRecoveryPhrase;
-  }
-
-
-  public MintNFTRequest derivationPath(String derivationPath) {
-    
-    this.derivationPath = derivationPath;
-    return this;
-  }
-
-   /**
-   * Derivation paths are used to derive the public key from the secret recovery phrase. Only certain paths are accepted.  We use \&quot;m/44/501/0/0\&quot; by default, if it is not provided. This is the path that the Phantom and Sollet wallets use. If you provide the empty string \&quot;\&quot; as the value for the derivation path, then we will use the Solana CLI default value. The SolFlare recommended path is \&quot;m/44/501/0\&quot;.  You can also arbitrarily increment the default path (\&quot;m/44/501/0/0\&quot;) to generate more wallets (e.g., \&quot;m/44/501/0/1\&quot;, \&quot;m/44/501/0/2\&quot;, ...). This is how Phantom generates more wallets.  To learn more about derivation paths, check out &lt;a href&#x3D;\&quot;https://learnmeabitcoin.com/technical/derivation-paths\&quot; target&#x3D;\&quot;_blank\&quot;&gt;this tutorial&lt;/a&gt;.
-   * @return derivationPath
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "Derivation paths are used to derive the public key from the secret recovery phrase. Only certain paths are accepted.  We use \"m/44/501/0/0\" by default, if it is not provided. This is the path that the Phantom and Sollet wallets use. If you provide the empty string \"\" as the value for the derivation path, then we will use the Solana CLI default value. The SolFlare recommended path is \"m/44/501/0\".  You can also arbitrarily increment the default path (\"m/44/501/0/0\") to generate more wallets (e.g., \"m/44/501/0/1\", \"m/44/501/0/2\", ...). This is how Phantom generates more wallets.  To learn more about derivation paths, check out <a href=\"https://learnmeabitcoin.com/technical/derivation-paths\" target=\"_blank\">this tutorial</a>.")
-
-  public String getDerivationPath() {
-    return derivationPath;
-  }
-
-
-  public void setDerivationPath(String derivationPath) {
-    this.derivationPath = derivationPath;
-  }
-
-
-  public MintNFTRequest passphrase(String passphrase) {
-    
-    this.passphrase = passphrase;
-    return this;
-  }
-
-   /**
-   * PASSPHRASE !&#x3D; PASSWORD. This is NOT your Phantom password or any other password. It is an optional string you use when creating a wallet. This provides an additional layer of security because a hacker would need both the secret recovery phrase and the passphrase to access the output public key. By default, most wallet UI extensions do not use a passphrase. (You probably did not use a passphrase.) Limited to 500 characters. 
-   * @return passphrase
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "PASSPHRASE != PASSWORD. This is NOT your Phantom password or any other password. It is an optional string you use when creating a wallet. This provides an additional layer of security because a hacker would need both the secret recovery phrase and the passphrase to access the output public key. By default, most wallet UI extensions do not use a passphrase. (You probably did not use a passphrase.) Limited to 500 characters. ")
-
-  public String getPassphrase() {
-    return passphrase;
-  }
-
-
-  public void setPassphrase(String passphrase) {
-    this.passphrase = passphrase;
   }
 
 
@@ -295,27 +242,23 @@ public class MintNFTRequest {
       return false;
     }
     MintNFTRequest mintNFTRequest = (MintNFTRequest) o;
-    return Objects.equals(this.configAddress, mintNFTRequest.configAddress) &&
-        Objects.equals(this.secretRecoveryPhrase, mintNFTRequest.secretRecoveryPhrase) &&
-        Objects.equals(this.derivationPath, mintNFTRequest.derivationPath) &&
-        Objects.equals(this.passphrase, mintNFTRequest.passphrase) &&
+    return Objects.equals(this.wallet, mintNFTRequest.wallet) &&
+        Objects.equals(this.configAddress, mintNFTRequest.configAddress) &&
         Objects.equals(this.network, mintNFTRequest.network) &&
         Objects.equals(this.candyMachineContractVersion, mintNFTRequest.candyMachineContractVersion);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(configAddress, secretRecoveryPhrase, derivationPath, passphrase, network, candyMachineContractVersion);
+    return Objects.hash(wallet, configAddress, network, candyMachineContractVersion);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class MintNFTRequest {\n");
+    sb.append("    wallet: ").append(toIndentedString(wallet)).append("\n");
     sb.append("    configAddress: ").append(toIndentedString(configAddress)).append("\n");
-    sb.append("    secretRecoveryPhrase: ").append(toIndentedString(secretRecoveryPhrase)).append("\n");
-    sb.append("    derivationPath: ").append(toIndentedString(derivationPath)).append("\n");
-    sb.append("    passphrase: ").append(toIndentedString(passphrase)).append("\n");
     sb.append("    network: ").append(toIndentedString(network)).append("\n");
     sb.append("    candyMachineContractVersion: ").append(toIndentedString(candyMachineContractVersion)).append("\n");
     sb.append("}");

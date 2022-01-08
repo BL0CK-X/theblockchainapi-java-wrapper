@@ -31,7 +31,7 @@ import org.openapitools.client.model.GetAllNFTsResponseUnmintedNfts;
 /**
  * GetAllNFTsResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-27T08:36:20.342797-08:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-07T15:47:22.277045-08:00[America/Los_Angeles]")
 public class GetAllNFTsResponse {
   public static final String SERIALIZED_NAME_MINTED_NFTS = "minted_nfts";
   @SerializedName(SERIALIZED_NAME_MINTED_NFTS)
@@ -44,6 +44,10 @@ public class GetAllNFTsResponse {
   public static final String SERIALIZED_NAME_ALL_NFTS = "all_nfts";
   @SerializedName(SERIALIZED_NAME_ALL_NFTS)
   private List<GetAllNFTsResponseUnmintedNfts> allNfts = null;
+
+  public static final String SERIALIZED_NAME_ACCURATE = "accurate";
+  @SerializedName(SERIALIZED_NAME_ACCURATE)
+  private Boolean accurate;
 
 
   public GetAllNFTsResponse mintedNfts(List<GetAllNFTsResponseMintedNfts> mintedNfts) {
@@ -139,6 +143,29 @@ public class GetAllNFTsResponse {
   }
 
 
+  public GetAllNFTsResponse accurate(Boolean accurate) {
+    
+    this.accurate = accurate;
+    return this;
+  }
+
+   /**
+   * Whether or not the division of NFTs among minted and unminted is accurate. If it is not accurate, then it is possible that NFTs have been included in the &#x60;minted&#x60; list that are not actually minted. If it is accurate, then the split of  minted and unminted is correct. &#x60;v1&#x60; candy machines always return a correct minted/unminted split.  
+   * @return accurate
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Whether or not the division of NFTs among minted and unminted is accurate. If it is not accurate, then it is possible that NFTs have been included in the `minted` list that are not actually minted. If it is accurate, then the split of  minted and unminted is correct. `v1` candy machines always return a correct minted/unminted split.  ")
+
+  public Boolean getAccurate() {
+    return accurate;
+  }
+
+
+  public void setAccurate(Boolean accurate) {
+    this.accurate = accurate;
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -150,12 +177,13 @@ public class GetAllNFTsResponse {
     GetAllNFTsResponse getAllNFTsResponse = (GetAllNFTsResponse) o;
     return Objects.equals(this.mintedNfts, getAllNFTsResponse.mintedNfts) &&
         Objects.equals(this.unmintedNfts, getAllNFTsResponse.unmintedNfts) &&
-        Objects.equals(this.allNfts, getAllNFTsResponse.allNfts);
+        Objects.equals(this.allNfts, getAllNFTsResponse.allNfts) &&
+        Objects.equals(this.accurate, getAllNFTsResponse.accurate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(mintedNfts, unmintedNfts, allNfts);
+    return Objects.hash(mintedNfts, unmintedNfts, allNfts, accurate);
   }
 
   @Override
@@ -165,6 +193,7 @@ public class GetAllNFTsResponse {
     sb.append("    mintedNfts: ").append(toIndentedString(mintedNfts)).append("\n");
     sb.append("    unmintedNfts: ").append(toIndentedString(unmintedNfts)).append("\n");
     sb.append("    allNfts: ").append(toIndentedString(allNfts)).append("\n");
+    sb.append("    accurate: ").append(toIndentedString(accurate)).append("\n");
     sb.append("}");
     return sb.toString();
   }

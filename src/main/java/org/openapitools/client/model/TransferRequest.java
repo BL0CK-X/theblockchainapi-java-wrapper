@@ -23,27 +23,20 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import org.openapitools.client.model.Wallet;
 
 /**
  * TransferRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-27T08:36:20.342797-08:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-01-07T15:47:22.277045-08:00[America/Los_Angeles]")
 public class TransferRequest {
   public static final String SERIALIZED_NAME_RECIPIENT_ADDRESS = "recipient_address";
   @SerializedName(SERIALIZED_NAME_RECIPIENT_ADDRESS)
   private String recipientAddress;
 
-  public static final String SERIALIZED_NAME_SECRET_RECOVERY_PHRASE = "secret_recovery_phrase";
-  @SerializedName(SERIALIZED_NAME_SECRET_RECOVERY_PHRASE)
-  private String secretRecoveryPhrase;
-
-  public static final String SERIALIZED_NAME_DERIVATION_PATH = "derivation_path";
-  @SerializedName(SERIALIZED_NAME_DERIVATION_PATH)
-  private String derivationPath = "m/44/501/0/0";
-
-  public static final String SERIALIZED_NAME_PASSPHRASE = "passphrase";
-  @SerializedName(SERIALIZED_NAME_PASSPHRASE)
-  private String passphrase = "";
+  public static final String SERIALIZED_NAME_WALLET = "wallet";
+  @SerializedName(SERIALIZED_NAME_WALLET)
+  private Wallet wallet;
 
   public static final String SERIALIZED_NAME_TOKEN_ADDRESS = "token_address";
   @SerializedName(SERIALIZED_NAME_TOKEN_ADDRESS)
@@ -128,72 +121,26 @@ public class TransferRequest {
   }
 
 
-  public TransferRequest secretRecoveryPhrase(String secretRecoveryPhrase) {
+  public TransferRequest wallet(Wallet wallet) {
     
-    this.secretRecoveryPhrase = secretRecoveryPhrase;
+    this.wallet = wallet;
     return this;
   }
 
    /**
-   * The twelve word phrase that can be used to derive many public key addresses. To derive a public key, you need a secret recovery phrase, a derivation path, and an optional passphrase. See our Security section &lt;a href&#x3D;\&quot;#section/Security\&quot;&gt;here&lt;/a&gt;.
-   * @return secretRecoveryPhrase
+   * Get wallet
+   * @return wallet
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "The twelve word phrase that can be used to derive many public key addresses. To derive a public key, you need a secret recovery phrase, a derivation path, and an optional passphrase. See our Security section <a href=\"#section/Security\">here</a>.")
+  @ApiModelProperty(required = true, value = "")
 
-  public String getSecretRecoveryPhrase() {
-    return secretRecoveryPhrase;
+  public Wallet getWallet() {
+    return wallet;
   }
 
 
-  public void setSecretRecoveryPhrase(String secretRecoveryPhrase) {
-    this.secretRecoveryPhrase = secretRecoveryPhrase;
-  }
-
-
-  public TransferRequest derivationPath(String derivationPath) {
-    
-    this.derivationPath = derivationPath;
-    return this;
-  }
-
-   /**
-   * Derivation paths are used to derive the public key from the secret recovery phrase. Only certain paths are accepted.  We use \&quot;m/44/501/0/0\&quot; by default, if it is not provided. This is the path that the Phantom and Sollet wallets use. If you provide the empty string \&quot;\&quot; as the value for the derivation path, then we will use the Solana CLI default value. The SolFlare recommended path is \&quot;m/44/501/0\&quot;.  You can also arbitrarily increment the default path (\&quot;m/44/501/0/0\&quot;) to generate more wallets (e.g., \&quot;m/44/501/0/1\&quot;, \&quot;m/44/501/0/2\&quot;, ...). This is how Phantom generates more wallets.  To learn more about derivation paths, check out &lt;a href&#x3D;\&quot;https://learnmeabitcoin.com/technical/derivation-paths\&quot; target&#x3D;\&quot;_blank\&quot;&gt;this tutorial&lt;/a&gt;.
-   * @return derivationPath
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "Derivation paths are used to derive the public key from the secret recovery phrase. Only certain paths are accepted.  We use \"m/44/501/0/0\" by default, if it is not provided. This is the path that the Phantom and Sollet wallets use. If you provide the empty string \"\" as the value for the derivation path, then we will use the Solana CLI default value. The SolFlare recommended path is \"m/44/501/0\".  You can also arbitrarily increment the default path (\"m/44/501/0/0\") to generate more wallets (e.g., \"m/44/501/0/1\", \"m/44/501/0/2\", ...). This is how Phantom generates more wallets.  To learn more about derivation paths, check out <a href=\"https://learnmeabitcoin.com/technical/derivation-paths\" target=\"_blank\">this tutorial</a>.")
-
-  public String getDerivationPath() {
-    return derivationPath;
-  }
-
-
-  public void setDerivationPath(String derivationPath) {
-    this.derivationPath = derivationPath;
-  }
-
-
-  public TransferRequest passphrase(String passphrase) {
-    
-    this.passphrase = passphrase;
-    return this;
-  }
-
-   /**
-   * PASSPHRASE !&#x3D; PASSWORD. This is NOT your Phantom password or any other password. It is an optional string you use when creating a wallet. This provides an additional layer of security because a hacker would need both the secret recovery phrase and the passphrase to access the output public key. By default, most wallet UI extensions do not use a passphrase. (You probably did not use a passphrase.) Limited to 500 characters. 
-   * @return passphrase
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "PASSPHRASE != PASSWORD. This is NOT your Phantom password or any other password. It is an optional string you use when creating a wallet. This provides an additional layer of security because a hacker would need both the secret recovery phrase and the passphrase to access the output public key. By default, most wallet UI extensions do not use a passphrase. (You probably did not use a passphrase.) Limited to 500 characters. ")
-
-  public String getPassphrase() {
-    return passphrase;
-  }
-
-
-  public void setPassphrase(String passphrase) {
-    this.passphrase = passphrase;
+  public void setWallet(Wallet wallet) {
+    this.wallet = wallet;
   }
 
 
@@ -250,11 +197,11 @@ public class TransferRequest {
   }
 
    /**
-   * The quantity of the token or NFT you want to send. If sending an NFT, there is no need to supply this value.  This value must be a string. You can supply a float value (e.g., \&quot;0.0005\&quot;). 
+   * This value must be a string. What you provide here depends on if you are sending an NFT, an SPL token, or SOL.  - NFT: This must be &#39;1&#39;. - SPL Token: This must be an integer in string format. To convert from what you see on a wallet UI (e.g., 1 ATLAS, 1 USDC) to an integer value, you have to multiply that value by 10^&lt;i&gt;x&lt;/i&gt; where &lt;i&gt;x&lt;/i&gt; is the number of decimals. For example, to transfer 0.2 USDC, if USDC uses 6 decimals, then the amount is 0.2 * 10^6 &#x3D; 200000. You can get the number of decimals for a given SPL token &lt;a href&#x3D;\&quot;#operation/solanaGetSPLToken\&quot;&gt;here&lt;/a&gt;. - SOL: Supply this value denominated in SOL in a string format. This does not need to be an integer. For example, if you want to send 0.0005 SOL, then amount &#x3D; \&quot;0.0005\&quot;.
    * @return amount
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "The quantity of the token or NFT you want to send. If sending an NFT, there is no need to supply this value.  This value must be a string. You can supply a float value (e.g., \"0.0005\"). ")
+  @ApiModelProperty(value = "This value must be a string. What you provide here depends on if you are sending an NFT, an SPL token, or SOL.  - NFT: This must be '1'. - SPL Token: This must be an integer in string format. To convert from what you see on a wallet UI (e.g., 1 ATLAS, 1 USDC) to an integer value, you have to multiply that value by 10^<i>x</i> where <i>x</i> is the number of decimals. For example, to transfer 0.2 USDC, if USDC uses 6 decimals, then the amount is 0.2 * 10^6 = 200000. You can get the number of decimals for a given SPL token <a href=\"#operation/solanaGetSPLToken\">here</a>. - SOL: Supply this value denominated in SOL in a string format. This does not need to be an integer. For example, if you want to send 0.0005 SOL, then amount = \"0.0005\".")
 
   public String getAmount() {
     return amount;
@@ -276,9 +223,7 @@ public class TransferRequest {
     }
     TransferRequest transferRequest = (TransferRequest) o;
     return Objects.equals(this.recipientAddress, transferRequest.recipientAddress) &&
-        Objects.equals(this.secretRecoveryPhrase, transferRequest.secretRecoveryPhrase) &&
-        Objects.equals(this.derivationPath, transferRequest.derivationPath) &&
-        Objects.equals(this.passphrase, transferRequest.passphrase) &&
+        Objects.equals(this.wallet, transferRequest.wallet) &&
         Objects.equals(this.tokenAddress, transferRequest.tokenAddress) &&
         Objects.equals(this.network, transferRequest.network) &&
         Objects.equals(this.amount, transferRequest.amount);
@@ -286,7 +231,7 @@ public class TransferRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(recipientAddress, secretRecoveryPhrase, derivationPath, passphrase, tokenAddress, network, amount);
+    return Objects.hash(recipientAddress, wallet, tokenAddress, network, amount);
   }
 
   @Override
@@ -294,9 +239,7 @@ public class TransferRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class TransferRequest {\n");
     sb.append("    recipientAddress: ").append(toIndentedString(recipientAddress)).append("\n");
-    sb.append("    secretRecoveryPhrase: ").append(toIndentedString(secretRecoveryPhrase)).append("\n");
-    sb.append("    derivationPath: ").append(toIndentedString(derivationPath)).append("\n");
-    sb.append("    passphrase: ").append(toIndentedString(passphrase)).append("\n");
+    sb.append("    wallet: ").append(toIndentedString(wallet)).append("\n");
     sb.append("    tokenAddress: ").append(toIndentedString(tokenAddress)).append("\n");
     sb.append("    network: ").append(toIndentedString(network)).append("\n");
     sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
