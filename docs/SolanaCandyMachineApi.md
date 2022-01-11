@@ -1,6 +1,6 @@
 # SolanaCandyMachineApi
 
-All URIs are relative to *https://api.theblockchainapi.com/v1*
+All URIs are relative to *https://api.blockchainapi.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -33,7 +33,7 @@ import org.openapitools.client.api.SolanaCandyMachineApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.theblockchainapi.com/v1");
+    defaultClient.setBasePath("https://api.blockchainapi.com/v1");
     
     // Configure API key authorization: APIKeyID
     ApiKeyAuth APIKeyID = (ApiKeyAuth) defaultClient.getAuthentication("APIKeyID");
@@ -111,7 +111,7 @@ import org.openapitools.client.api.SolanaCandyMachineApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.theblockchainapi.com/v1");
+    defaultClient.setBasePath("https://api.blockchainapi.com/v1");
     
     // Configure API key authorization: APIKeyID
     ApiKeyAuth APIKeyID = (ApiKeyAuth) defaultClient.getAuthentication("APIKeyID");
@@ -192,7 +192,7 @@ import org.openapitools.client.api.SolanaCandyMachineApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.theblockchainapi.com/v1");
+    defaultClient.setBasePath("https://api.blockchainapi.com/v1");
     
     // Configure API key authorization: APIKeyID
     ApiKeyAuth APIKeyID = (ApiKeyAuth) defaultClient.getAuthentication("APIKeyID");
@@ -270,7 +270,7 @@ import org.openapitools.client.api.SolanaCandyMachineApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.theblockchainapi.com/v1");
+    defaultClient.setBasePath("https://api.blockchainapi.com/v1");
     
     // Configure API key authorization: APIKeyID
     ApiKeyAuth APIKeyID = (ApiKeyAuth) defaultClient.getAuthentication("APIKeyID");
@@ -344,7 +344,7 @@ import org.openapitools.client.api.SolanaCandyMachineApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.theblockchainapi.com/v1");
+    defaultClient.setBasePath("https://api.blockchainapi.com/v1");
     
     // Configure API key authorization: APIKeyID
     ApiKeyAuth APIKeyID = (ApiKeyAuth) defaultClient.getAuthentication("APIKeyID");
@@ -422,7 +422,7 @@ import org.openapitools.client.api.SolanaCandyMachineApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.theblockchainapi.com/v1");
+    defaultClient.setBasePath("https://api.blockchainapi.com/v1");
     
     // Configure API key authorization: APIKeyID
     ApiKeyAuth APIKeyID = (ApiKeyAuth) defaultClient.getAuthentication("APIKeyID");

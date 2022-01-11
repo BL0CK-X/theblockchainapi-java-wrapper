@@ -140,10 +140,3 @@ src/main/java/org/openapitools/client/model/TransferRequest.java
 src/main/java/org/openapitools/client/model/TransferResponse.java
 src/main/java/org/openapitools/client/model/UploadFileRequest.java
 src/main/java/org/openapitools/client/model/Wallet.java
-src/test/java/org/openapitools/client/api/SolanaSplTokenApiTest.java
-src/test/java/org/openapitools/client/model/B58PrivateKeyTest.java
-src/test/java/org/openapitools/client/model/GeneratePrivateKeyTest.java
-src/test/java/org/openapitools/client/model/GetSPLTokenResponseTest.java
-src/test/java/org/openapitools/client/model/PrivateKeyTest.java
-src/test/java/org/openapitools/client/model/SecretRecoveryPhraseTest.java
-src/test/java/org/openapitools/client/model/WalletTest.java
