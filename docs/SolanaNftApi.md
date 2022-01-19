@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 Create an NFT on Solana
 
-&lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-nft/create-an-nft\&quot; target&#x3D;\&quot;_blank\&quot;&gt;See examples (Python, JavaScript)&lt;/a&gt;.  Create a Metaplex NFT on Solana. Read more on this &lt;a href&#x3D;\&quot;https://blog.theblockchainapi.com/2021/11/16/a-note-on-nfts.html\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;.  To add attributes to the NFT, add them to a JSON file and upload that to Arweave/IPFS/Filecoin. The JSON file should follow this format: &lt;a href&#x3D;\&quot;https://docs.metaplex.com/nft-standard\&quot; target&#x3D;\&quot;_blank\&quot;&gt;NFT Standard.&lt;/a&gt; (See the \&quot;URI JSON Schema\&quot; section in that article). Then supply the link to the JSON file in &#x60;nft_url&#x60;. You don&#39;t need to use &#x60;nft_metadata&#x60;.  &#x60;Cost: 2 Credits&#x60; (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
+&lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/the-blockchain-api/tree/main/examples/solana-nft/create-an-nft\&quot; target&#x3D;\&quot;_blank\&quot;&gt;See examples (Python, JavaScript)&lt;/a&gt;.  Create a Metaplex NFT on Solana.   Read more on this &lt;a href&#x3D;\&quot;https://blog.blockchainapi.com/2021/11/16/a-note-on-nfts.html\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;.  Note: Please see &lt;a href&#x3D;\&quot;https://blog.blockchainapi.com/2022/01/18/how-to-format-off-chain-nft-metadata.html\&quot; target&#x3D;\&quot;_blank\&quot;&gt;this article&lt;/a&gt; to learn more about what &#x60;nft_upload_method&#x60; means and how storing the metadata of an NFT works.  If you&#39;re using &#x60;nft_upload_method &#x3D; \&quot;LINK\&quot;&#x60;, then to add attributes to the NFT or an image, add them to a JSON file and upload that to Arweave/IPFS/Filecoin. See the JSON format &lt;a href&#x3D;\&quot;https://blog.blockchainapi.com/2022/01/18/how-to-format-off-chain-nft-metadata.html\&quot;&gt;here&lt;/a&gt;.  Then supply the link to the JSON file in &#x60;nft_url&#x60;.   NOTE: Don&#39;t use &#x60;nft_metadata&#x60;. Values provided here do not do anything at the moment. We are fixing this soon.  &#x60;Cost: 2 Credits&#x60; (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
 
 ### Example
 ```java
@@ -127,7 +127,7 @@ public class Example {
     //APISecretKey.setApiKeyPrefix("Token");
 
     SolanaNftApi apiInstance = new SolanaNftApi(defaultClient);
-    String network = "mainnet-beta"; // String | The network ID (devnet, mainnet-beta)
+    String network = "devnet"; // String | The network ID
     String mintAddress = "EEr5yQpNXf7Bru6Rt5podx56HGW9CEehXqgRGh2wa71w"; // String | The mint address of the NFT
     try {
       NFT result = apiInstance.solanaGetNFT(network, mintAddress);
@@ -147,7 +147,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **network** | **String**| The network ID (devnet, mainnet-beta) |
+ **network** | **String**| The network ID | [enum: devnet, mainnet-beta]
  **mintAddress** | **String**| The mint address of the NFT |
 
 ### Return type
@@ -281,7 +281,7 @@ public class Example {
     //APISecretKey.setApiKeyPrefix("Token");
 
     SolanaNftApi apiInstance = new SolanaNftApi(defaultClient);
-    String network = "mainnet-beta"; // String | The network ID (devnet, mainnet-beta)
+    String network = "devnet"; // String | The network ID
     String mintAddress = "4zH3Rwm1QXdfTSUqsYmeUBY4QqQmQEXJVbv4ErSK736Q"; // String | The mint address of the NFT
     try {
       NFTOwnerResponse result = apiInstance.solanaGetNFTOwner(network, mintAddress);
@@ -301,7 +301,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **network** | **String**| The network ID (devnet, mainnet-beta) |
+ **network** | **String**| The network ID | [enum: devnet, mainnet-beta]
  **mintAddress** | **String**| The mint address of the NFT |
 
 ### Return type

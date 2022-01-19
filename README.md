@@ -2,7 +2,7 @@
 
 The Blockchain API
 - API version: null
-  - Build date: 2022-01-10T17:38:57.777416-08:00[America/Los_Angeles]
+  - Build date: 2022-01-18T21:45:13.207180-08:00[America/Los_Angeles]
 
 # About
 
@@ -36,7 +36,7 @@ Got a feature request? Submit it as an issue on <a target=\"_blank\" href=\"http
             height=\"40px\" 
             src=\"https://theblockchainapi-docs.s3.amazonaws.com/icons/email.svg\"
         />
-        <figcaption style=\"textAlign:center;\">Email us: info@theblockchainapi.com</figcaption>
+        <figcaption style=\"textAlign:center;\">Email us: info@blockchainapi.com</figcaption>
     </figure>
 </a> <a href=\"https://discord.gg/d49yzrZRAF\" target=\"_blank\">
     <figure>
@@ -244,6 +244,10 @@ Class | Method | HTTP request | Description
 *SolanaNftApi* | [**solanaGetNFTOwner**](docs/SolanaNftApi.md#solanaGetNFTOwner) | **GET** /solana/nft/{network}/{mint_address}/owner | Get owner of an NFT
 *SolanaNftApi* | [**solanaGetNFTsCandyMachineId**](docs/SolanaNftApi.md#solanaGetNFTsCandyMachineId) | **POST** /solana/nft/candy_machine_id | Get the ID of the candy machine of an NFT 
 *SolanaNftApi* | [**solanaSearchNFTs**](docs/SolanaNftApi.md#solanaSearchNFTs) | **POST** /solana/nft/search | Search NFTs on Solana
+*SolanaNftMarketplacesApi* | [**solanaBuyNFT**](docs/SolanaNftMarketplacesApi.md#solanaBuyNFT) | **POST** /solana/nft/marketplaces/{exchange}/buy/{network}/{mint_address} | Buy
+*SolanaNftMarketplacesApi* | [**solanaDelistNFT**](docs/SolanaNftMarketplacesApi.md#solanaDelistNFT) | **POST** /solana/nft/marketplaces/{exchange}/delist/{network}/{mint_address} | Delist
+*SolanaNftMarketplacesApi* | [**solanaGetNFTListing**](docs/SolanaNftMarketplacesApi.md#solanaGetNFTListing) | **GET** /solana/nft/marketplaces/listing/{network}/{mint_address} | Get NFT Listing
+*SolanaNftMarketplacesApi* | [**solanaListNFT**](docs/SolanaNftMarketplacesApi.md#solanaListNFT) | **POST** /solana/nft/marketplaces/{exchange}/list/{network}/{mint_address} | List
 *SolanaSplTokenApi* | [**solanaGetSPLToken**](docs/SolanaSplTokenApi.md#solanaGetSPLToken) | **GET** /solana/spl-token/{network}/{public_key} | Get SPL token metadata
 *SolanaTransactionApi* | [**solanaGetTransaction**](docs/SolanaTransactionApi.md#solanaGetTransaction) | **GET** /solana/transaction/{network}/{tx_signature} | Get the details of a transaction made on Solana
 *SolanaWalletApi* | [**solanaDeriveAssociatedTokenAccountAddress**](docs/SolanaWalletApi.md#solanaDeriveAssociatedTokenAccountAddress) | **GET** /solana/wallet/{public_key}/associated_token_account/{mint_address} | Derive an associated token account address
@@ -270,9 +274,13 @@ Class | Method | HTTP request | Description
  - [B58PrivateKey](docs/B58PrivateKey.md)
  - [BalanceRequest](docs/BalanceRequest.md)
  - [BalanceResponse](docs/BalanceResponse.md)
+ - [BuyRequest](docs/BuyRequest.md)
+ - [BuyResponse](docs/BuyResponse.md)
  - [CandyMachineSearchRequest](docs/CandyMachineSearchRequest.md)
  - [CreateTestCandyMachineRequest](docs/CreateTestCandyMachineRequest.md)
  - [CreateTestCandyMachineResponse](docs/CreateTestCandyMachineResponse.md)
+ - [DelistRequest](docs/DelistRequest.md)
+ - [DelistResponse](docs/DelistResponse.md)
  - [GeneratePrivateKey](docs/GeneratePrivateKey.md)
  - [GetAllNFTsResponse](docs/GetAllNFTsResponse.md)
  - [GetAllNFTsResponseMintedNfts](docs/GetAllNFTsResponseMintedNfts.md)
@@ -284,9 +292,12 @@ Class | Method | HTTP request | Description
  - [GetCandyMetadataResponse](docs/GetCandyMetadataResponse.md)
  - [GetCandyMetadataResponseCreators](docs/GetCandyMetadataResponseCreators.md)
  - [GetFileResponse](docs/GetFileResponse.md)
+ - [GetNFTListingResponse](docs/GetNFTListingResponse.md)
  - [GetPublicKeyRequest](docs/GetPublicKeyRequest.md)
  - [GetSPLTokenResponse](docs/GetSPLTokenResponse.md)
  - [ListNFTsResponse](docs/ListNFTsResponse.md)
+ - [ListRequest](docs/ListRequest.md)
+ - [ListResponse](docs/ListResponse.md)
  - [MintNFTErrorResponse](docs/MintNFTErrorResponse.md)
  - [MintNFTRequest](docs/MintNFTRequest.md)
  - [MintNFTResponse](docs/MintNFTResponse.md)
