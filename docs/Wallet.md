@@ -2,7 +2,7 @@
 
 # Wallet
 
-The wallet authentication information required to sign transactions.  Click the `>` arrow next to \"wallet\" on the left to see more details. See our Security section <a href=\"#section/Security\">here</a>. 
+The wallet authentication information used to sign and submit the transaction.  Click the `>` arrow next to \"wallet\" on the left to see more details. See our Security section <a href=\"#section/Security\">here</a>. 
 
 ## Properties
 
