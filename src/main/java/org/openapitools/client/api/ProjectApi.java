@@ -27,11 +27,11 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import org.openapitools.client.model.InlineObject;
 import org.openapitools.client.model.Project;
 import org.openapitools.client.model.ProjectCreateRequest;
 import org.openapitools.client.model.ProjectDeploymentURL;
 import org.openapitools.client.model.StatItem;
-import org.openapitools.client.model.UNKNOWN_BASE_TYPE;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -178,8 +178,8 @@ public class ProjectApi {
     }
     /**
      * Build call for createProjectVersion
-     * @param UNKNOWN_PARAMETER_NAME The ID of the project. Created and returned when a project is created. (required)
-     * @param UNKNOWN_PARAMETER_NAME2 The version of the project. (required)
+     * @param projectId The ID of the project. Created and returned when a project is created. (required)
+     * @param version The version of the project. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -192,13 +192,13 @@ public class ProjectApi {
         <tr><td> 402 </td><td> Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createProjectVersionCall( UNKNOWN_PARAMETER_NAME,  UNKNOWN_PARAMETER_NAME2, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call createProjectVersionCall(String projectId, String version, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/project/{project_id}/{version}"
-            .replaceAll("\\{" + "project_id" + "\\}", localVarApiClient.escapeString(UNKNOWN_PARAMETER_NAME.toString()))
-            .replaceAll("\\{" + "version" + "\\}", localVarApiClient.escapeString(UNKNOWN_PARAMETER_NAME2.toString()));
+            .replaceAll("\\{" + "project_id" + "\\}", localVarApiClient.escapeString(projectId.toString()))
+            .replaceAll("\\{" + "version" + "\\}", localVarApiClient.escapeString(version.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -225,20 +225,20 @@ public class ProjectApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createProjectVersionValidateBeforeCall( UNKNOWN_PARAMETER_NAME,  UNKNOWN_PARAMETER_NAME2, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createProjectVersionValidateBeforeCall(String projectId, String version, final ApiCallback _callback) throws ApiException {
         
-        // verify the required parameter 'UNKNOWN_PARAMETER_NAME' is set
-        if (UNKNOWN_PARAMETER_NAME == null) {
-            throw new ApiException("Missing the required parameter 'UNKNOWN_PARAMETER_NAME' when calling createProjectVersion(Async)");
+        // verify the required parameter 'projectId' is set
+        if (projectId == null) {
+            throw new ApiException("Missing the required parameter 'projectId' when calling createProjectVersion(Async)");
         }
         
-        // verify the required parameter 'UNKNOWN_PARAMETER_NAME2' is set
-        if (UNKNOWN_PARAMETER_NAME2 == null) {
-            throw new ApiException("Missing the required parameter 'UNKNOWN_PARAMETER_NAME2' when calling createProjectVersion(Async)");
+        // verify the required parameter 'version' is set
+        if (version == null) {
+            throw new ApiException("Missing the required parameter 'version' when calling createProjectVersion(Async)");
         }
         
 
-        okhttp3.Call localVarCall = createProjectVersionCall(UNKNOWN_PARAMETER_NAME, UNKNOWN_PARAMETER_NAME2, _callback);
+        okhttp3.Call localVarCall = createProjectVersionCall(projectId, version, _callback);
         return localVarCall;
 
     }
@@ -246,8 +246,8 @@ public class ProjectApi {
     /**
      * Create a new project version 
      * A complete example and walkthrough of the program can be found &lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/api-developer-program\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;.  Create a new version for the project. The version must be higher than all existing versions. This will duplicate the existing project&#39;s latest version and auto-deploy it. To update these endpoints, simply redeploy on this project&#39;s versions.  When a project is first created, it uses the default \&quot;0.0.1\&quot; version.  &#x60;Cost: 0 Credit&#x60; (Free) (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
-     * @param UNKNOWN_PARAMETER_NAME The ID of the project. Created and returned when a project is created. (required)
-     * @param UNKNOWN_PARAMETER_NAME2 The version of the project. (required)
+     * @param projectId The ID of the project. Created and returned when a project is created. (required)
+     * @param version The version of the project. (required)
      * @return Project
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -259,16 +259,16 @@ public class ProjectApi {
         <tr><td> 402 </td><td> Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. </td><td>  -  </td></tr>
      </table>
      */
-    public Project createProjectVersion( UNKNOWN_PARAMETER_NAME,  UNKNOWN_PARAMETER_NAME2) throws ApiException {
-        ApiResponse<Project> localVarResp = createProjectVersionWithHttpInfo(UNKNOWN_PARAMETER_NAME, UNKNOWN_PARAMETER_NAME2);
+    public Project createProjectVersion(String projectId, String version) throws ApiException {
+        ApiResponse<Project> localVarResp = createProjectVersionWithHttpInfo(projectId, version);
         return localVarResp.getData();
     }
 
     /**
      * Create a new project version 
      * A complete example and walkthrough of the program can be found &lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/api-developer-program\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;.  Create a new version for the project. The version must be higher than all existing versions. This will duplicate the existing project&#39;s latest version and auto-deploy it. To update these endpoints, simply redeploy on this project&#39;s versions.  When a project is first created, it uses the default \&quot;0.0.1\&quot; version.  &#x60;Cost: 0 Credit&#x60; (Free) (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
-     * @param UNKNOWN_PARAMETER_NAME The ID of the project. Created and returned when a project is created. (required)
-     * @param UNKNOWN_PARAMETER_NAME2 The version of the project. (required)
+     * @param projectId The ID of the project. Created and returned when a project is created. (required)
+     * @param version The version of the project. (required)
      * @return ApiResponse&lt;Project&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -280,8 +280,8 @@ public class ProjectApi {
         <tr><td> 402 </td><td> Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Project> createProjectVersionWithHttpInfo( UNKNOWN_PARAMETER_NAME,  UNKNOWN_PARAMETER_NAME2) throws ApiException {
-        okhttp3.Call localVarCall = createProjectVersionValidateBeforeCall(UNKNOWN_PARAMETER_NAME, UNKNOWN_PARAMETER_NAME2, null);
+    public ApiResponse<Project> createProjectVersionWithHttpInfo(String projectId, String version) throws ApiException {
+        okhttp3.Call localVarCall = createProjectVersionValidateBeforeCall(projectId, version, null);
         Type localVarReturnType = new TypeToken<Project>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -289,8 +289,8 @@ public class ProjectApi {
     /**
      * Create a new project version  (asynchronously)
      * A complete example and walkthrough of the program can be found &lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/api-developer-program\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;.  Create a new version for the project. The version must be higher than all existing versions. This will duplicate the existing project&#39;s latest version and auto-deploy it. To update these endpoints, simply redeploy on this project&#39;s versions.  When a project is first created, it uses the default \&quot;0.0.1\&quot; version.  &#x60;Cost: 0 Credit&#x60; (Free) (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
-     * @param UNKNOWN_PARAMETER_NAME The ID of the project. Created and returned when a project is created. (required)
-     * @param UNKNOWN_PARAMETER_NAME2 The version of the project. (required)
+     * @param projectId The ID of the project. Created and returned when a project is created. (required)
+     * @param version The version of the project. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -303,16 +303,16 @@ public class ProjectApi {
         <tr><td> 402 </td><td> Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createProjectVersionAsync( UNKNOWN_PARAMETER_NAME,  UNKNOWN_PARAMETER_NAME2, final ApiCallback<Project> _callback) throws ApiException {
+    public okhttp3.Call createProjectVersionAsync(String projectId, String version, final ApiCallback<Project> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = createProjectVersionValidateBeforeCall(UNKNOWN_PARAMETER_NAME, UNKNOWN_PARAMETER_NAME2, _callback);
+        okhttp3.Call localVarCall = createProjectVersionValidateBeforeCall(projectId, version, _callback);
         Type localVarReturnType = new TypeToken<Project>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for deleteProject
-     * @param UNKNOWN_PARAMETER_NAME The ID of the project. Created and returned when a project is created. (required)
+     * @param projectId The ID of the project. Created and returned when a project is created. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -325,12 +325,12 @@ public class ProjectApi {
         <tr><td> 402 </td><td> Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteProjectCall( UNKNOWN_PARAMETER_NAME, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteProjectCall(String projectId, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/project/{project_id}"
-            .replaceAll("\\{" + "project_id" + "\\}", localVarApiClient.escapeString(UNKNOWN_PARAMETER_NAME.toString()));
+            .replaceAll("\\{" + "project_id" + "\\}", localVarApiClient.escapeString(projectId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -357,15 +357,15 @@ public class ProjectApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteProjectValidateBeforeCall( UNKNOWN_PARAMETER_NAME, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteProjectValidateBeforeCall(String projectId, final ApiCallback _callback) throws ApiException {
         
-        // verify the required parameter 'UNKNOWN_PARAMETER_NAME' is set
-        if (UNKNOWN_PARAMETER_NAME == null) {
-            throw new ApiException("Missing the required parameter 'UNKNOWN_PARAMETER_NAME' when calling deleteProject(Async)");
+        // verify the required parameter 'projectId' is set
+        if (projectId == null) {
+            throw new ApiException("Missing the required parameter 'projectId' when calling deleteProject(Async)");
         }
         
 
-        okhttp3.Call localVarCall = deleteProjectCall(UNKNOWN_PARAMETER_NAME, _callback);
+        okhttp3.Call localVarCall = deleteProjectCall(projectId, _callback);
         return localVarCall;
 
     }
@@ -373,7 +373,7 @@ public class ProjectApi {
     /**
      * Delete a project 
      * A complete example and walkthrough of the program can be found &lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/api-developer-program\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;.  Deletes a project. This will remove the mini-API entirely from our system.   &#x60;Cost: 0 Credit&#x60; (Free) (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
-     * @param UNKNOWN_PARAMETER_NAME The ID of the project. Created and returned when a project is created. (required)
+     * @param projectId The ID of the project. Created and returned when a project is created. (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -384,14 +384,14 @@ public class ProjectApi {
         <tr><td> 402 </td><td> Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. </td><td>  -  </td></tr>
      </table>
      */
-    public void deleteProject( UNKNOWN_PARAMETER_NAME) throws ApiException {
-        deleteProjectWithHttpInfo(UNKNOWN_PARAMETER_NAME);
+    public void deleteProject(String projectId) throws ApiException {
+        deleteProjectWithHttpInfo(projectId);
     }
 
     /**
      * Delete a project 
      * A complete example and walkthrough of the program can be found &lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/api-developer-program\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;.  Deletes a project. This will remove the mini-API entirely from our system.   &#x60;Cost: 0 Credit&#x60; (Free) (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
-     * @param UNKNOWN_PARAMETER_NAME The ID of the project. Created and returned when a project is created. (required)
+     * @param projectId The ID of the project. Created and returned when a project is created. (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -403,15 +403,15 @@ public class ProjectApi {
         <tr><td> 402 </td><td> Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> deleteProjectWithHttpInfo( UNKNOWN_PARAMETER_NAME) throws ApiException {
-        okhttp3.Call localVarCall = deleteProjectValidateBeforeCall(UNKNOWN_PARAMETER_NAME, null);
+    public ApiResponse<Void> deleteProjectWithHttpInfo(String projectId) throws ApiException {
+        okhttp3.Call localVarCall = deleteProjectValidateBeforeCall(projectId, null);
         return localVarApiClient.execute(localVarCall);
     }
 
     /**
      * Delete a project  (asynchronously)
      * A complete example and walkthrough of the program can be found &lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/api-developer-program\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;.  Deletes a project. This will remove the mini-API entirely from our system.   &#x60;Cost: 0 Credit&#x60; (Free) (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
-     * @param UNKNOWN_PARAMETER_NAME The ID of the project. Created and returned when a project is created. (required)
+     * @param projectId The ID of the project. Created and returned when a project is created. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -424,16 +424,16 @@ public class ProjectApi {
         <tr><td> 402 </td><td> Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteProjectAsync( UNKNOWN_PARAMETER_NAME, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call deleteProjectAsync(String projectId, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = deleteProjectValidateBeforeCall(UNKNOWN_PARAMETER_NAME, _callback);
+        okhttp3.Call localVarCall = deleteProjectValidateBeforeCall(projectId, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
      * Build call for deleteProjectVersion
-     * @param UNKNOWN_PARAMETER_NAME The ID of the project. Created and returned when a project is created. (required)
-     * @param UNKNOWN_PARAMETER_NAME2 The version of the project. (required)
+     * @param projectId The ID of the project. Created and returned when a project is created. (required)
+     * @param version The version of the project. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -446,13 +446,13 @@ public class ProjectApi {
         <tr><td> 402 </td><td> Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteProjectVersionCall( UNKNOWN_PARAMETER_NAME,  UNKNOWN_PARAMETER_NAME2, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call deleteProjectVersionCall(String projectId, String version, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/project/{project_id}/{version}"
-            .replaceAll("\\{" + "project_id" + "\\}", localVarApiClient.escapeString(UNKNOWN_PARAMETER_NAME.toString()))
-            .replaceAll("\\{" + "version" + "\\}", localVarApiClient.escapeString(UNKNOWN_PARAMETER_NAME2.toString()));
+            .replaceAll("\\{" + "project_id" + "\\}", localVarApiClient.escapeString(projectId.toString()))
+            .replaceAll("\\{" + "version" + "\\}", localVarApiClient.escapeString(version.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -479,20 +479,20 @@ public class ProjectApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call deleteProjectVersionValidateBeforeCall( UNKNOWN_PARAMETER_NAME,  UNKNOWN_PARAMETER_NAME2, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call deleteProjectVersionValidateBeforeCall(String projectId, String version, final ApiCallback _callback) throws ApiException {
         
-        // verify the required parameter 'UNKNOWN_PARAMETER_NAME' is set
-        if (UNKNOWN_PARAMETER_NAME == null) {
-            throw new ApiException("Missing the required parameter 'UNKNOWN_PARAMETER_NAME' when calling deleteProjectVersion(Async)");
+        // verify the required parameter 'projectId' is set
+        if (projectId == null) {
+            throw new ApiException("Missing the required parameter 'projectId' when calling deleteProjectVersion(Async)");
         }
         
-        // verify the required parameter 'UNKNOWN_PARAMETER_NAME2' is set
-        if (UNKNOWN_PARAMETER_NAME2 == null) {
-            throw new ApiException("Missing the required parameter 'UNKNOWN_PARAMETER_NAME2' when calling deleteProjectVersion(Async)");
+        // verify the required parameter 'version' is set
+        if (version == null) {
+            throw new ApiException("Missing the required parameter 'version' when calling deleteProjectVersion(Async)");
         }
         
 
-        okhttp3.Call localVarCall = deleteProjectVersionCall(UNKNOWN_PARAMETER_NAME, UNKNOWN_PARAMETER_NAME2, _callback);
+        okhttp3.Call localVarCall = deleteProjectVersionCall(projectId, version, _callback);
         return localVarCall;
 
     }
@@ -500,8 +500,8 @@ public class ProjectApi {
     /**
      * Delete a project version 
      * A complete example and walkthrough of the program can be found &lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/api-developer-program\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;.  Delete a version for the project. There must always be at least one version deployed, so you cannot delete the last remaining version of the project. This will auto-deploy the project and update its documentation, if necessary.  &#x60;Cost: 0 Credit&#x60; (Free) (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
-     * @param UNKNOWN_PARAMETER_NAME The ID of the project. Created and returned when a project is created. (required)
-     * @param UNKNOWN_PARAMETER_NAME2 The version of the project. (required)
+     * @param projectId The ID of the project. Created and returned when a project is created. (required)
+     * @param version The version of the project. (required)
      * @return Project
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -513,16 +513,16 @@ public class ProjectApi {
         <tr><td> 402 </td><td> Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. </td><td>  -  </td></tr>
      </table>
      */
-    public Project deleteProjectVersion( UNKNOWN_PARAMETER_NAME,  UNKNOWN_PARAMETER_NAME2) throws ApiException {
-        ApiResponse<Project> localVarResp = deleteProjectVersionWithHttpInfo(UNKNOWN_PARAMETER_NAME, UNKNOWN_PARAMETER_NAME2);
+    public Project deleteProjectVersion(String projectId, String version) throws ApiException {
+        ApiResponse<Project> localVarResp = deleteProjectVersionWithHttpInfo(projectId, version);
         return localVarResp.getData();
     }
 
     /**
      * Delete a project version 
      * A complete example and walkthrough of the program can be found &lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/api-developer-program\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;.  Delete a version for the project. There must always be at least one version deployed, so you cannot delete the last remaining version of the project. This will auto-deploy the project and update its documentation, if necessary.  &#x60;Cost: 0 Credit&#x60; (Free) (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
-     * @param UNKNOWN_PARAMETER_NAME The ID of the project. Created and returned when a project is created. (required)
-     * @param UNKNOWN_PARAMETER_NAME2 The version of the project. (required)
+     * @param projectId The ID of the project. Created and returned when a project is created. (required)
+     * @param version The version of the project. (required)
      * @return ApiResponse&lt;Project&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -534,8 +534,8 @@ public class ProjectApi {
         <tr><td> 402 </td><td> Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Project> deleteProjectVersionWithHttpInfo( UNKNOWN_PARAMETER_NAME,  UNKNOWN_PARAMETER_NAME2) throws ApiException {
-        okhttp3.Call localVarCall = deleteProjectVersionValidateBeforeCall(UNKNOWN_PARAMETER_NAME, UNKNOWN_PARAMETER_NAME2, null);
+    public ApiResponse<Project> deleteProjectVersionWithHttpInfo(String projectId, String version) throws ApiException {
+        okhttp3.Call localVarCall = deleteProjectVersionValidateBeforeCall(projectId, version, null);
         Type localVarReturnType = new TypeToken<Project>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -543,8 +543,8 @@ public class ProjectApi {
     /**
      * Delete a project version  (asynchronously)
      * A complete example and walkthrough of the program can be found &lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/api-developer-program\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;.  Delete a version for the project. There must always be at least one version deployed, so you cannot delete the last remaining version of the project. This will auto-deploy the project and update its documentation, if necessary.  &#x60;Cost: 0 Credit&#x60; (Free) (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
-     * @param UNKNOWN_PARAMETER_NAME The ID of the project. Created and returned when a project is created. (required)
-     * @param UNKNOWN_PARAMETER_NAME2 The version of the project. (required)
+     * @param projectId The ID of the project. Created and returned when a project is created. (required)
+     * @param version The version of the project. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -557,16 +557,16 @@ public class ProjectApi {
         <tr><td> 402 </td><td> Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call deleteProjectVersionAsync( UNKNOWN_PARAMETER_NAME,  UNKNOWN_PARAMETER_NAME2, final ApiCallback<Project> _callback) throws ApiException {
+    public okhttp3.Call deleteProjectVersionAsync(String projectId, String version, final ApiCallback<Project> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = deleteProjectVersionValidateBeforeCall(UNKNOWN_PARAMETER_NAME, UNKNOWN_PARAMETER_NAME2, _callback);
+        okhttp3.Call localVarCall = deleteProjectVersionValidateBeforeCall(projectId, version, _callback);
         Type localVarReturnType = new TypeToken<Project>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for getProject
-     * @param UNKNOWN_PARAMETER_NAME The ID of the project. Created and returned when a project is created. (required)
+     * @param projectId The ID of the project. Created and returned when a project is created. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -579,12 +579,12 @@ public class ProjectApi {
         <tr><td> 402 </td><td> Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getProjectCall( UNKNOWN_PARAMETER_NAME, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getProjectCall(String projectId, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/project/{project_id}"
-            .replaceAll("\\{" + "project_id" + "\\}", localVarApiClient.escapeString(UNKNOWN_PARAMETER_NAME.toString()));
+            .replaceAll("\\{" + "project_id" + "\\}", localVarApiClient.escapeString(projectId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -611,15 +611,15 @@ public class ProjectApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getProjectValidateBeforeCall( UNKNOWN_PARAMETER_NAME, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getProjectValidateBeforeCall(String projectId, final ApiCallback _callback) throws ApiException {
         
-        // verify the required parameter 'UNKNOWN_PARAMETER_NAME' is set
-        if (UNKNOWN_PARAMETER_NAME == null) {
-            throw new ApiException("Missing the required parameter 'UNKNOWN_PARAMETER_NAME' when calling getProject(Async)");
+        // verify the required parameter 'projectId' is set
+        if (projectId == null) {
+            throw new ApiException("Missing the required parameter 'projectId' when calling getProject(Async)");
         }
         
 
-        okhttp3.Call localVarCall = getProjectCall(UNKNOWN_PARAMETER_NAME, _callback);
+        okhttp3.Call localVarCall = getProjectCall(projectId, _callback);
         return localVarCall;
 
     }
@@ -627,7 +627,7 @@ public class ProjectApi {
     /**
      * Get a project&#39;s metadata 
      * A complete example and walkthrough of the program can be found &lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/api-developer-program\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;.  Update your project&#39;s metadata. None of these parameters are required. Just provide the parameters that you would like to update.  &#x60;Cost: 0 Credit&#x60; (Free) (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
-     * @param UNKNOWN_PARAMETER_NAME The ID of the project. Created and returned when a project is created. (required)
+     * @param projectId The ID of the project. Created and returned when a project is created. (required)
      * @return Project
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -639,15 +639,15 @@ public class ProjectApi {
         <tr><td> 402 </td><td> Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. </td><td>  -  </td></tr>
      </table>
      */
-    public Project getProject( UNKNOWN_PARAMETER_NAME) throws ApiException {
-        ApiResponse<Project> localVarResp = getProjectWithHttpInfo(UNKNOWN_PARAMETER_NAME);
+    public Project getProject(String projectId) throws ApiException {
+        ApiResponse<Project> localVarResp = getProjectWithHttpInfo(projectId);
         return localVarResp.getData();
     }
 
     /**
      * Get a project&#39;s metadata 
      * A complete example and walkthrough of the program can be found &lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/api-developer-program\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;.  Update your project&#39;s metadata. None of these parameters are required. Just provide the parameters that you would like to update.  &#x60;Cost: 0 Credit&#x60; (Free) (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
-     * @param UNKNOWN_PARAMETER_NAME The ID of the project. Created and returned when a project is created. (required)
+     * @param projectId The ID of the project. Created and returned when a project is created. (required)
      * @return ApiResponse&lt;Project&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -659,8 +659,8 @@ public class ProjectApi {
         <tr><td> 402 </td><td> Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Project> getProjectWithHttpInfo( UNKNOWN_PARAMETER_NAME) throws ApiException {
-        okhttp3.Call localVarCall = getProjectValidateBeforeCall(UNKNOWN_PARAMETER_NAME, null);
+    public ApiResponse<Project> getProjectWithHttpInfo(String projectId) throws ApiException {
+        okhttp3.Call localVarCall = getProjectValidateBeforeCall(projectId, null);
         Type localVarReturnType = new TypeToken<Project>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -668,7 +668,7 @@ public class ProjectApi {
     /**
      * Get a project&#39;s metadata  (asynchronously)
      * A complete example and walkthrough of the program can be found &lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/api-developer-program\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;.  Update your project&#39;s metadata. None of these parameters are required. Just provide the parameters that you would like to update.  &#x60;Cost: 0 Credit&#x60; (Free) (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
-     * @param UNKNOWN_PARAMETER_NAME The ID of the project. Created and returned when a project is created. (required)
+     * @param projectId The ID of the project. Created and returned when a project is created. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -681,16 +681,16 @@ public class ProjectApi {
         <tr><td> 402 </td><td> Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getProjectAsync( UNKNOWN_PARAMETER_NAME, final ApiCallback<Project> _callback) throws ApiException {
+    public okhttp3.Call getProjectAsync(String projectId, final ApiCallback<Project> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getProjectValidateBeforeCall(UNKNOWN_PARAMETER_NAME, _callback);
+        okhttp3.Call localVarCall = getProjectValidateBeforeCall(projectId, _callback);
         Type localVarReturnType = new TypeToken<Project>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for getProjectDeploymentStatus
-     * @param UNKNOWN_PARAMETER_NAME The ID of the project. Created and returned when a project is created. (required)
+     * @param projectId The ID of the project. Created and returned when a project is created. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -703,12 +703,12 @@ public class ProjectApi {
         <tr><td> 402 </td><td> Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getProjectDeploymentStatusCall( UNKNOWN_PARAMETER_NAME, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getProjectDeploymentStatusCall(String projectId, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/project/{project_id}/deploy/status"
-            .replaceAll("\\{" + "project_id" + "\\}", localVarApiClient.escapeString(UNKNOWN_PARAMETER_NAME.toString()));
+            .replaceAll("\\{" + "project_id" + "\\}", localVarApiClient.escapeString(projectId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -735,15 +735,15 @@ public class ProjectApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getProjectDeploymentStatusValidateBeforeCall( UNKNOWN_PARAMETER_NAME, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getProjectDeploymentStatusValidateBeforeCall(String projectId, final ApiCallback _callback) throws ApiException {
         
-        // verify the required parameter 'UNKNOWN_PARAMETER_NAME' is set
-        if (UNKNOWN_PARAMETER_NAME == null) {
-            throw new ApiException("Missing the required parameter 'UNKNOWN_PARAMETER_NAME' when calling getProjectDeploymentStatus(Async)");
+        // verify the required parameter 'projectId' is set
+        if (projectId == null) {
+            throw new ApiException("Missing the required parameter 'projectId' when calling getProjectDeploymentStatus(Async)");
         }
         
 
-        okhttp3.Call localVarCall = getProjectDeploymentStatusCall(UNKNOWN_PARAMETER_NAME, _callback);
+        okhttp3.Call localVarCall = getProjectDeploymentStatusCall(projectId, _callback);
         return localVarCall;
 
     }
@@ -751,7 +751,7 @@ public class ProjectApi {
     /**
      * Get deployment status 
      * A complete example and walkthrough of the program can be found &lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/api-developer-program\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;.  Get the deployment status for the project after uploading the binary. Will be: &#x60;DEPLOYED&#x60; or NOT &#x60;DEPLOYED&#x60;.  After it is &#x60;DEPLOYED&#x60;, you can then make requests to your API.  &#x60;Cost: 0 Credit&#x60; (Free) (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
-     * @param UNKNOWN_PARAMETER_NAME The ID of the project. Created and returned when a project is created. (required)
+     * @param projectId The ID of the project. Created and returned when a project is created. (required)
      * @return Object
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -763,15 +763,15 @@ public class ProjectApi {
         <tr><td> 402 </td><td> Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. </td><td>  -  </td></tr>
      </table>
      */
-    public Object getProjectDeploymentStatus( UNKNOWN_PARAMETER_NAME) throws ApiException {
-        ApiResponse<Object> localVarResp = getProjectDeploymentStatusWithHttpInfo(UNKNOWN_PARAMETER_NAME);
+    public Object getProjectDeploymentStatus(String projectId) throws ApiException {
+        ApiResponse<Object> localVarResp = getProjectDeploymentStatusWithHttpInfo(projectId);
         return localVarResp.getData();
     }
 
     /**
      * Get deployment status 
      * A complete example and walkthrough of the program can be found &lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/api-developer-program\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;.  Get the deployment status for the project after uploading the binary. Will be: &#x60;DEPLOYED&#x60; or NOT &#x60;DEPLOYED&#x60;.  After it is &#x60;DEPLOYED&#x60;, you can then make requests to your API.  &#x60;Cost: 0 Credit&#x60; (Free) (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
-     * @param UNKNOWN_PARAMETER_NAME The ID of the project. Created and returned when a project is created. (required)
+     * @param projectId The ID of the project. Created and returned when a project is created. (required)
      * @return ApiResponse&lt;Object&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -783,8 +783,8 @@ public class ProjectApi {
         <tr><td> 402 </td><td> Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Object> getProjectDeploymentStatusWithHttpInfo( UNKNOWN_PARAMETER_NAME) throws ApiException {
-        okhttp3.Call localVarCall = getProjectDeploymentStatusValidateBeforeCall(UNKNOWN_PARAMETER_NAME, null);
+    public ApiResponse<Object> getProjectDeploymentStatusWithHttpInfo(String projectId) throws ApiException {
+        okhttp3.Call localVarCall = getProjectDeploymentStatusValidateBeforeCall(projectId, null);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -792,7 +792,7 @@ public class ProjectApi {
     /**
      * Get deployment status  (asynchronously)
      * A complete example and walkthrough of the program can be found &lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/api-developer-program\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;.  Get the deployment status for the project after uploading the binary. Will be: &#x60;DEPLOYED&#x60; or NOT &#x60;DEPLOYED&#x60;.  After it is &#x60;DEPLOYED&#x60;, you can then make requests to your API.  &#x60;Cost: 0 Credit&#x60; (Free) (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
-     * @param UNKNOWN_PARAMETER_NAME The ID of the project. Created and returned when a project is created. (required)
+     * @param projectId The ID of the project. Created and returned when a project is created. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -805,17 +805,17 @@ public class ProjectApi {
         <tr><td> 402 </td><td> Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getProjectDeploymentStatusAsync( UNKNOWN_PARAMETER_NAME, final ApiCallback<Object> _callback) throws ApiException {
+    public okhttp3.Call getProjectDeploymentStatusAsync(String projectId, final ApiCallback<Object> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getProjectDeploymentStatusValidateBeforeCall(UNKNOWN_PARAMETER_NAME, _callback);
+        okhttp3.Call localVarCall = getProjectDeploymentStatusValidateBeforeCall(projectId, _callback);
         Type localVarReturnType = new TypeToken<Object>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for getProjectDeploymentURL
-     * @param UNKNOWN_PARAMETER_NAME The ID of the project. Created and returned when a project is created. (required)
-     * @param UNKNOWN_BASE_TYPE  (optional)
+     * @param projectId The ID of the project. Created and returned when a project is created. (required)
+     * @param inlineObject  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -828,12 +828,12 @@ public class ProjectApi {
         <tr><td> 402 </td><td> Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getProjectDeploymentURLCall( UNKNOWN_PARAMETER_NAME, UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = UNKNOWN_BASE_TYPE;
+    public okhttp3.Call getProjectDeploymentURLCall(String projectId, InlineObject inlineObject, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = inlineObject;
 
         // create path and map variables
         String localVarPath = "/project/{project_id}/deploy/url"
-            .replaceAll("\\{" + "project_id" + "\\}", localVarApiClient.escapeString(UNKNOWN_PARAMETER_NAME.toString()));
+            .replaceAll("\\{" + "project_id" + "\\}", localVarApiClient.escapeString(projectId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -860,15 +860,15 @@ public class ProjectApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getProjectDeploymentURLValidateBeforeCall( UNKNOWN_PARAMETER_NAME, UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getProjectDeploymentURLValidateBeforeCall(String projectId, InlineObject inlineObject, final ApiCallback _callback) throws ApiException {
         
-        // verify the required parameter 'UNKNOWN_PARAMETER_NAME' is set
-        if (UNKNOWN_PARAMETER_NAME == null) {
-            throw new ApiException("Missing the required parameter 'UNKNOWN_PARAMETER_NAME' when calling getProjectDeploymentURL(Async)");
+        // verify the required parameter 'projectId' is set
+        if (projectId == null) {
+            throw new ApiException("Missing the required parameter 'projectId' when calling getProjectDeploymentURL(Async)");
         }
         
 
-        okhttp3.Call localVarCall = getProjectDeploymentURLCall(UNKNOWN_PARAMETER_NAME, UNKNOWN_BASE_TYPE, _callback);
+        okhttp3.Call localVarCall = getProjectDeploymentURLCall(projectId, inlineObject, _callback);
         return localVarCall;
 
     }
@@ -876,8 +876,8 @@ public class ProjectApi {
     /**
      * Get the deployment URL 
      * A complete example and walkthrough of the program can be found &lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/api-developer-program\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;.  Get the deployment URL for the project.  &#x60;Cost: 0 Credit&#x60; (Free) (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
-     * @param UNKNOWN_PARAMETER_NAME The ID of the project. Created and returned when a project is created. (required)
-     * @param UNKNOWN_BASE_TYPE  (optional)
+     * @param projectId The ID of the project. Created and returned when a project is created. (required)
+     * @param inlineObject  (optional)
      * @return ProjectDeploymentURL
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -889,16 +889,16 @@ public class ProjectApi {
         <tr><td> 402 </td><td> Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. </td><td>  -  </td></tr>
      </table>
      */
-    public ProjectDeploymentURL getProjectDeploymentURL( UNKNOWN_PARAMETER_NAME, UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE) throws ApiException {
-        ApiResponse<ProjectDeploymentURL> localVarResp = getProjectDeploymentURLWithHttpInfo(UNKNOWN_PARAMETER_NAME, UNKNOWN_BASE_TYPE);
+    public ProjectDeploymentURL getProjectDeploymentURL(String projectId, InlineObject inlineObject) throws ApiException {
+        ApiResponse<ProjectDeploymentURL> localVarResp = getProjectDeploymentURLWithHttpInfo(projectId, inlineObject);
         return localVarResp.getData();
     }
 
     /**
      * Get the deployment URL 
      * A complete example and walkthrough of the program can be found &lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/api-developer-program\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;.  Get the deployment URL for the project.  &#x60;Cost: 0 Credit&#x60; (Free) (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
-     * @param UNKNOWN_PARAMETER_NAME The ID of the project. Created and returned when a project is created. (required)
-     * @param UNKNOWN_BASE_TYPE  (optional)
+     * @param projectId The ID of the project. Created and returned when a project is created. (required)
+     * @param inlineObject  (optional)
      * @return ApiResponse&lt;ProjectDeploymentURL&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -910,8 +910,8 @@ public class ProjectApi {
         <tr><td> 402 </td><td> Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ProjectDeploymentURL> getProjectDeploymentURLWithHttpInfo( UNKNOWN_PARAMETER_NAME, UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE) throws ApiException {
-        okhttp3.Call localVarCall = getProjectDeploymentURLValidateBeforeCall(UNKNOWN_PARAMETER_NAME, UNKNOWN_BASE_TYPE, null);
+    public ApiResponse<ProjectDeploymentURL> getProjectDeploymentURLWithHttpInfo(String projectId, InlineObject inlineObject) throws ApiException {
+        okhttp3.Call localVarCall = getProjectDeploymentURLValidateBeforeCall(projectId, inlineObject, null);
         Type localVarReturnType = new TypeToken<ProjectDeploymentURL>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -919,8 +919,8 @@ public class ProjectApi {
     /**
      * Get the deployment URL  (asynchronously)
      * A complete example and walkthrough of the program can be found &lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/api-developer-program\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;.  Get the deployment URL for the project.  &#x60;Cost: 0 Credit&#x60; (Free) (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
-     * @param UNKNOWN_PARAMETER_NAME The ID of the project. Created and returned when a project is created. (required)
-     * @param UNKNOWN_BASE_TYPE  (optional)
+     * @param projectId The ID of the project. Created and returned when a project is created. (required)
+     * @param inlineObject  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -933,16 +933,16 @@ public class ProjectApi {
         <tr><td> 402 </td><td> Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getProjectDeploymentURLAsync( UNKNOWN_PARAMETER_NAME, UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE, final ApiCallback<ProjectDeploymentURL> _callback) throws ApiException {
+    public okhttp3.Call getProjectDeploymentURLAsync(String projectId, InlineObject inlineObject, final ApiCallback<ProjectDeploymentURL> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getProjectDeploymentURLValidateBeforeCall(UNKNOWN_PARAMETER_NAME, UNKNOWN_BASE_TYPE, _callback);
+        okhttp3.Call localVarCall = getProjectDeploymentURLValidateBeforeCall(projectId, inlineObject, _callback);
         Type localVarReturnType = new TypeToken<ProjectDeploymentURL>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for getProjectStats
-     * @param UNKNOWN_PARAMETER_NAME The ID of the project. Created and returned when a project is created. (required)
+     * @param projectId The ID of the project. Created and returned when a project is created. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -955,12 +955,12 @@ public class ProjectApi {
         <tr><td> 402 </td><td> Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getProjectStatsCall( UNKNOWN_PARAMETER_NAME, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getProjectStatsCall(String projectId, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/project/{project_id}/stats"
-            .replaceAll("\\{" + "project_id" + "\\}", localVarApiClient.escapeString(UNKNOWN_PARAMETER_NAME.toString()));
+            .replaceAll("\\{" + "project_id" + "\\}", localVarApiClient.escapeString(projectId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -987,15 +987,15 @@ public class ProjectApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getProjectStatsValidateBeforeCall( UNKNOWN_PARAMETER_NAME, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getProjectStatsValidateBeforeCall(String projectId, final ApiCallback _callback) throws ApiException {
         
-        // verify the required parameter 'UNKNOWN_PARAMETER_NAME' is set
-        if (UNKNOWN_PARAMETER_NAME == null) {
-            throw new ApiException("Missing the required parameter 'UNKNOWN_PARAMETER_NAME' when calling getProjectStats(Async)");
+        // verify the required parameter 'projectId' is set
+        if (projectId == null) {
+            throw new ApiException("Missing the required parameter 'projectId' when calling getProjectStats(Async)");
         }
         
 
-        okhttp3.Call localVarCall = getProjectStatsCall(UNKNOWN_PARAMETER_NAME, _callback);
+        okhttp3.Call localVarCall = getProjectStatsCall(projectId, _callback);
         return localVarCall;
 
     }
@@ -1003,7 +1003,7 @@ public class ProjectApi {
     /**
      * Get a project&#39;s stats 
      * A complete example and walkthrough of the program can be found &lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/api-developer-program\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;.  Get the usage stats for your mini-API.  &#x60;Cost: 0 Credit&#x60; (Free) (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
-     * @param UNKNOWN_PARAMETER_NAME The ID of the project. Created and returned when a project is created. (required)
+     * @param projectId The ID of the project. Created and returned when a project is created. (required)
      * @return List&lt;StatItem&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1015,15 +1015,15 @@ public class ProjectApi {
         <tr><td> 402 </td><td> Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. </td><td>  -  </td></tr>
      </table>
      */
-    public List<StatItem> getProjectStats( UNKNOWN_PARAMETER_NAME) throws ApiException {
-        ApiResponse<List<StatItem>> localVarResp = getProjectStatsWithHttpInfo(UNKNOWN_PARAMETER_NAME);
+    public List<StatItem> getProjectStats(String projectId) throws ApiException {
+        ApiResponse<List<StatItem>> localVarResp = getProjectStatsWithHttpInfo(projectId);
         return localVarResp.getData();
     }
 
     /**
      * Get a project&#39;s stats 
      * A complete example and walkthrough of the program can be found &lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/api-developer-program\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;.  Get the usage stats for your mini-API.  &#x60;Cost: 0 Credit&#x60; (Free) (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
-     * @param UNKNOWN_PARAMETER_NAME The ID of the project. Created and returned when a project is created. (required)
+     * @param projectId The ID of the project. Created and returned when a project is created. (required)
      * @return ApiResponse&lt;List&lt;StatItem&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1035,8 +1035,8 @@ public class ProjectApi {
         <tr><td> 402 </td><td> Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<StatItem>> getProjectStatsWithHttpInfo( UNKNOWN_PARAMETER_NAME) throws ApiException {
-        okhttp3.Call localVarCall = getProjectStatsValidateBeforeCall(UNKNOWN_PARAMETER_NAME, null);
+    public ApiResponse<List<StatItem>> getProjectStatsWithHttpInfo(String projectId) throws ApiException {
+        okhttp3.Call localVarCall = getProjectStatsValidateBeforeCall(projectId, null);
         Type localVarReturnType = new TypeToken<List<StatItem>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1044,7 +1044,7 @@ public class ProjectApi {
     /**
      * Get a project&#39;s stats  (asynchronously)
      * A complete example and walkthrough of the program can be found &lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/api-developer-program\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;.  Get the usage stats for your mini-API.  &#x60;Cost: 0 Credit&#x60; (Free) (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
-     * @param UNKNOWN_PARAMETER_NAME The ID of the project. Created and returned when a project is created. (required)
+     * @param projectId The ID of the project. Created and returned when a project is created. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1057,9 +1057,9 @@ public class ProjectApi {
         <tr><td> 402 </td><td> Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getProjectStatsAsync( UNKNOWN_PARAMETER_NAME, final ApiCallback<List<StatItem>> _callback) throws ApiException {
+    public okhttp3.Call getProjectStatsAsync(String projectId, final ApiCallback<List<StatItem>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getProjectStatsValidateBeforeCall(UNKNOWN_PARAMETER_NAME, _callback);
+        okhttp3.Call localVarCall = getProjectStatsValidateBeforeCall(projectId, _callback);
         Type localVarReturnType = new TypeToken<List<StatItem>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -1180,7 +1180,7 @@ public class ProjectApi {
     }
     /**
      * Build call for updateProject
-     * @param UNKNOWN_PARAMETER_NAME The ID of the project. Created and returned when a project is created. (required)
+     * @param projectId The ID of the project. Created and returned when a project is created. (required)
      * @param projectCreateRequest  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -1194,12 +1194,12 @@ public class ProjectApi {
         <tr><td> 402 </td><td> Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateProjectCall( UNKNOWN_PARAMETER_NAME, ProjectCreateRequest projectCreateRequest, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateProjectCall(String projectId, ProjectCreateRequest projectCreateRequest, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = projectCreateRequest;
 
         // create path and map variables
         String localVarPath = "/project/{project_id}"
-            .replaceAll("\\{" + "project_id" + "\\}", localVarApiClient.escapeString(UNKNOWN_PARAMETER_NAME.toString()));
+            .replaceAll("\\{" + "project_id" + "\\}", localVarApiClient.escapeString(projectId.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -1226,15 +1226,15 @@ public class ProjectApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateProjectValidateBeforeCall( UNKNOWN_PARAMETER_NAME, ProjectCreateRequest projectCreateRequest, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateProjectValidateBeforeCall(String projectId, ProjectCreateRequest projectCreateRequest, final ApiCallback _callback) throws ApiException {
         
-        // verify the required parameter 'UNKNOWN_PARAMETER_NAME' is set
-        if (UNKNOWN_PARAMETER_NAME == null) {
-            throw new ApiException("Missing the required parameter 'UNKNOWN_PARAMETER_NAME' when calling updateProject(Async)");
+        // verify the required parameter 'projectId' is set
+        if (projectId == null) {
+            throw new ApiException("Missing the required parameter 'projectId' when calling updateProject(Async)");
         }
         
 
-        okhttp3.Call localVarCall = updateProjectCall(UNKNOWN_PARAMETER_NAME, projectCreateRequest, _callback);
+        okhttp3.Call localVarCall = updateProjectCall(projectId, projectCreateRequest, _callback);
         return localVarCall;
 
     }
@@ -1242,7 +1242,7 @@ public class ProjectApi {
     /**
      * Update a project 
      * A complete example and walkthrough of the program can be found &lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/api-developer-program\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;.  Update your project&#39;s metadata. None of these parameters are required. Just provide the parameters that you would like to update.  &#x60;Cost: 0 Credit&#x60; (Free) (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
-     * @param UNKNOWN_PARAMETER_NAME The ID of the project. Created and returned when a project is created. (required)
+     * @param projectId The ID of the project. Created and returned when a project is created. (required)
      * @param projectCreateRequest  (optional)
      * @return Project
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1255,15 +1255,15 @@ public class ProjectApi {
         <tr><td> 402 </td><td> Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. </td><td>  -  </td></tr>
      </table>
      */
-    public Project updateProject( UNKNOWN_PARAMETER_NAME, ProjectCreateRequest projectCreateRequest) throws ApiException {
-        ApiResponse<Project> localVarResp = updateProjectWithHttpInfo(UNKNOWN_PARAMETER_NAME, projectCreateRequest);
+    public Project updateProject(String projectId, ProjectCreateRequest projectCreateRequest) throws ApiException {
+        ApiResponse<Project> localVarResp = updateProjectWithHttpInfo(projectId, projectCreateRequest);
         return localVarResp.getData();
     }
 
     /**
      * Update a project 
      * A complete example and walkthrough of the program can be found &lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/api-developer-program\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;.  Update your project&#39;s metadata. None of these parameters are required. Just provide the parameters that you would like to update.  &#x60;Cost: 0 Credit&#x60; (Free) (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
-     * @param UNKNOWN_PARAMETER_NAME The ID of the project. Created and returned when a project is created. (required)
+     * @param projectId The ID of the project. Created and returned when a project is created. (required)
      * @param projectCreateRequest  (optional)
      * @return ApiResponse&lt;Project&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -1276,8 +1276,8 @@ public class ProjectApi {
         <tr><td> 402 </td><td> Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Project> updateProjectWithHttpInfo( UNKNOWN_PARAMETER_NAME, ProjectCreateRequest projectCreateRequest) throws ApiException {
-        okhttp3.Call localVarCall = updateProjectValidateBeforeCall(UNKNOWN_PARAMETER_NAME, projectCreateRequest, null);
+    public ApiResponse<Project> updateProjectWithHttpInfo(String projectId, ProjectCreateRequest projectCreateRequest) throws ApiException {
+        okhttp3.Call localVarCall = updateProjectValidateBeforeCall(projectId, projectCreateRequest, null);
         Type localVarReturnType = new TypeToken<Project>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1285,7 +1285,7 @@ public class ProjectApi {
     /**
      * Update a project  (asynchronously)
      * A complete example and walkthrough of the program can be found &lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/api-developer-program\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;.  Update your project&#39;s metadata. None of these parameters are required. Just provide the parameters that you would like to update.  &#x60;Cost: 0 Credit&#x60; (Free) (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
-     * @param UNKNOWN_PARAMETER_NAME The ID of the project. Created and returned when a project is created. (required)
+     * @param projectId The ID of the project. Created and returned when a project is created. (required)
      * @param projectCreateRequest  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -1299,17 +1299,17 @@ public class ProjectApi {
         <tr><td> 402 </td><td> Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateProjectAsync( UNKNOWN_PARAMETER_NAME, ProjectCreateRequest projectCreateRequest, final ApiCallback<Project> _callback) throws ApiException {
+    public okhttp3.Call updateProjectAsync(String projectId, ProjectCreateRequest projectCreateRequest, final ApiCallback<Project> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = updateProjectValidateBeforeCall(UNKNOWN_PARAMETER_NAME, projectCreateRequest, _callback);
+        okhttp3.Call localVarCall = updateProjectValidateBeforeCall(projectId, projectCreateRequest, _callback);
         Type localVarReturnType = new TypeToken<Project>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for updateProjectDocumentation
-     * @param UNKNOWN_PARAMETER_NAME The ID of the project. Created and returned when a project is created. (required)
-     * @param UNKNOWN_PARAMETER_NAME2 The version of the project. (required)
+     * @param projectId The ID of the project. Created and returned when a project is created. (required)
+     * @param version The version of the project. (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1322,13 +1322,13 @@ public class ProjectApi {
         <tr><td> 402 </td><td> Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateProjectDocumentationCall( UNKNOWN_PARAMETER_NAME,  UNKNOWN_PARAMETER_NAME2, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call updateProjectDocumentationCall(String projectId, String version, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
         String localVarPath = "/project/{project_id}/{version}/documentation"
-            .replaceAll("\\{" + "project_id" + "\\}", localVarApiClient.escapeString(UNKNOWN_PARAMETER_NAME.toString()))
-            .replaceAll("\\{" + "version" + "\\}", localVarApiClient.escapeString(UNKNOWN_PARAMETER_NAME2.toString()));
+            .replaceAll("\\{" + "project_id" + "\\}", localVarApiClient.escapeString(projectId.toString()))
+            .replaceAll("\\{" + "version" + "\\}", localVarApiClient.escapeString(version.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -1355,20 +1355,20 @@ public class ProjectApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call updateProjectDocumentationValidateBeforeCall( UNKNOWN_PARAMETER_NAME,  UNKNOWN_PARAMETER_NAME2, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call updateProjectDocumentationValidateBeforeCall(String projectId, String version, final ApiCallback _callback) throws ApiException {
         
-        // verify the required parameter 'UNKNOWN_PARAMETER_NAME' is set
-        if (UNKNOWN_PARAMETER_NAME == null) {
-            throw new ApiException("Missing the required parameter 'UNKNOWN_PARAMETER_NAME' when calling updateProjectDocumentation(Async)");
+        // verify the required parameter 'projectId' is set
+        if (projectId == null) {
+            throw new ApiException("Missing the required parameter 'projectId' when calling updateProjectDocumentation(Async)");
         }
         
-        // verify the required parameter 'UNKNOWN_PARAMETER_NAME2' is set
-        if (UNKNOWN_PARAMETER_NAME2 == null) {
-            throw new ApiException("Missing the required parameter 'UNKNOWN_PARAMETER_NAME2' when calling updateProjectDocumentation(Async)");
+        // verify the required parameter 'version' is set
+        if (version == null) {
+            throw new ApiException("Missing the required parameter 'version' when calling updateProjectDocumentation(Async)");
         }
         
 
-        okhttp3.Call localVarCall = updateProjectDocumentationCall(UNKNOWN_PARAMETER_NAME, UNKNOWN_PARAMETER_NAME2, _callback);
+        okhttp3.Call localVarCall = updateProjectDocumentationCall(projectId, version, _callback);
         return localVarCall;
 
     }
@@ -1376,8 +1376,8 @@ public class ProjectApi {
     /**
      * Update the project&#39;s documentation 
      * A complete example and walkthrough of the program can be found &lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/api-developer-program\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;.  Update your project&#39;s documentation.   Your project&#39;s documentation can only represent *one* version of your API.  Thus, when you call this, the &#x60;current_documentation_version&#x60; attribute of your project is set to the version supplied in the call.  &#x60;Cost: 0 Credit&#x60; (Free) (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
-     * @param UNKNOWN_PARAMETER_NAME The ID of the project. Created and returned when a project is created. (required)
-     * @param UNKNOWN_PARAMETER_NAME2 The version of the project. (required)
+     * @param projectId The ID of the project. Created and returned when a project is created. (required)
+     * @param version The version of the project. (required)
      * @return Project
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1389,16 +1389,16 @@ public class ProjectApi {
         <tr><td> 402 </td><td> Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. </td><td>  -  </td></tr>
      </table>
      */
-    public Project updateProjectDocumentation( UNKNOWN_PARAMETER_NAME,  UNKNOWN_PARAMETER_NAME2) throws ApiException {
-        ApiResponse<Project> localVarResp = updateProjectDocumentationWithHttpInfo(UNKNOWN_PARAMETER_NAME, UNKNOWN_PARAMETER_NAME2);
+    public Project updateProjectDocumentation(String projectId, String version) throws ApiException {
+        ApiResponse<Project> localVarResp = updateProjectDocumentationWithHttpInfo(projectId, version);
         return localVarResp.getData();
     }
 
     /**
      * Update the project&#39;s documentation 
      * A complete example and walkthrough of the program can be found &lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/api-developer-program\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;.  Update your project&#39;s documentation.   Your project&#39;s documentation can only represent *one* version of your API.  Thus, when you call this, the &#x60;current_documentation_version&#x60; attribute of your project is set to the version supplied in the call.  &#x60;Cost: 0 Credit&#x60; (Free) (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
-     * @param UNKNOWN_PARAMETER_NAME The ID of the project. Created and returned when a project is created. (required)
-     * @param UNKNOWN_PARAMETER_NAME2 The version of the project. (required)
+     * @param projectId The ID of the project. Created and returned when a project is created. (required)
+     * @param version The version of the project. (required)
      * @return ApiResponse&lt;Project&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1410,8 +1410,8 @@ public class ProjectApi {
         <tr><td> 402 </td><td> Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Project> updateProjectDocumentationWithHttpInfo( UNKNOWN_PARAMETER_NAME,  UNKNOWN_PARAMETER_NAME2) throws ApiException {
-        okhttp3.Call localVarCall = updateProjectDocumentationValidateBeforeCall(UNKNOWN_PARAMETER_NAME, UNKNOWN_PARAMETER_NAME2, null);
+    public ApiResponse<Project> updateProjectDocumentationWithHttpInfo(String projectId, String version) throws ApiException {
+        okhttp3.Call localVarCall = updateProjectDocumentationValidateBeforeCall(projectId, version, null);
         Type localVarReturnType = new TypeToken<Project>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1419,8 +1419,8 @@ public class ProjectApi {
     /**
      * Update the project&#39;s documentation  (asynchronously)
      * A complete example and walkthrough of the program can be found &lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/api-developer-program\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;.  Update your project&#39;s documentation.   Your project&#39;s documentation can only represent *one* version of your API.  Thus, when you call this, the &#x60;current_documentation_version&#x60; attribute of your project is set to the version supplied in the call.  &#x60;Cost: 0 Credit&#x60; (Free) (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
-     * @param UNKNOWN_PARAMETER_NAME The ID of the project. Created and returned when a project is created. (required)
-     * @param UNKNOWN_PARAMETER_NAME2 The version of the project. (required)
+     * @param projectId The ID of the project. Created and returned when a project is created. (required)
+     * @param version The version of the project. (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1433,9 +1433,9 @@ public class ProjectApi {
         <tr><td> 402 </td><td> Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call updateProjectDocumentationAsync( UNKNOWN_PARAMETER_NAME,  UNKNOWN_PARAMETER_NAME2, final ApiCallback<Project> _callback) throws ApiException {
+    public okhttp3.Call updateProjectDocumentationAsync(String projectId, String version, final ApiCallback<Project> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = updateProjectDocumentationValidateBeforeCall(UNKNOWN_PARAMETER_NAME, UNKNOWN_PARAMETER_NAME2, _callback);
+        okhttp3.Call localVarCall = updateProjectDocumentationValidateBeforeCall(projectId, version, _callback);
         Type localVarReturnType = new TypeToken<Project>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

@@ -28,7 +28,7 @@ import java.math.BigDecimal;
 /**
  * GetNFTListingResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-03-15T12:06:18.396945-07:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-03-22T18:48:51.223575-07:00[America/Los_Angeles]")
 public class GetNFTListingResponse {
   /**
    * The ID of the exchange where the NFT is listed 

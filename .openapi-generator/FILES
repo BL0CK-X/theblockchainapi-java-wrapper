@@ -42,6 +42,7 @@ docs/GetNFTListingResponse.md
 docs/GetPublicKeyRequest.md
 docs/GetSPLTokenResponse.md
 docs/Group.md
+docs/InlineObject.md
 docs/ListNFTsResponse.md
 docs/ListRequest.md
 docs/ListResponse.md
@@ -156,6 +157,7 @@ src/main/java/org/openapitools/client/model/GetNFTListingResponse.java
 src/main/java/org/openapitools/client/model/GetPublicKeyRequest.java
 src/main/java/org/openapitools/client/model/GetSPLTokenResponse.java
 src/main/java/org/openapitools/client/model/Group.java
+src/main/java/org/openapitools/client/model/InlineObject.java
 src/main/java/org/openapitools/client/model/ListNFTsResponse.java
 src/main/java/org/openapitools/client/model/ListRequest.java
 src/main/java/org/openapitools/client/model/ListResponse.java
@@ -190,13 +192,3 @@ src/main/java/org/openapitools/client/model/TransferResponse.java
 src/main/java/org/openapitools/client/model/TransferResponseCompiled.java
 src/main/java/org/openapitools/client/model/UploadFileRequest.java
 src/main/java/org/openapitools/client/model/Wallet.java
-src/test/java/org/openapitools/client/api/EndpointApiTest.java
-src/test/java/org/openapitools/client/api/ProjectApiTest.java
-src/test/java/org/openapitools/client/model/EndpointReferenceTest.java
-src/test/java/org/openapitools/client/model/EndpointTest.java
-src/test/java/org/openapitools/client/model/GroupTest.java
-src/test/java/org/openapitools/client/model/ParameterSpecificationTest.java
-src/test/java/org/openapitools/client/model/ProjectCreateRequestTest.java
-src/test/java/org/openapitools/client/model/ProjectDeploymentURLTest.java
-src/test/java/org/openapitools/client/model/ProjectTest.java
-src/test/java/org/openapitools/client/model/StatItemTest.java

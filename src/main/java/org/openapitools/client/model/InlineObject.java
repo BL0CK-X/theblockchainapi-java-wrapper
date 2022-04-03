@@ -23,37 +23,26 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.math.BigDecimal;
 
 /**
- * BalanceResponse
+ * InlineObject
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-03-22T18:48:51.223575-07:00[America/Los_Angeles]")
-public class BalanceResponse {
-  public static final String SERIALIZED_NAME_BALANCE = "balance";
-  @SerializedName(SERIALIZED_NAME_BALANCE)
-  private BigDecimal balance;
-
-  public static final String SERIALIZED_NAME_INTEGER_BALANCE = "integer_balance";
-  @SerializedName(SERIALIZED_NAME_INTEGER_BALANCE)
-  private BigDecimal integerBalance;
-
-  public static final String SERIALIZED_NAME_DECIMALS = "decimals";
-  @SerializedName(SERIALIZED_NAME_DECIMALS)
-  private BigDecimal decimals;
-
+public class InlineObject {
   /**
-   * Gets or Sets network
+   * The platform for which the binary was compiled. Note that Darwin &#x3D; Mac.
    */
-  @JsonAdapter(NetworkEnum.Adapter.class)
-  public enum NetworkEnum {
-    DEVNET("devnet"),
+  @JsonAdapter(PlatformEnum.Adapter.class)
+  public enum PlatformEnum {
+    DARWIN("Darwin"),
     
-    MAINNET_BETA("mainnet-beta");
+    LINUX("Linux"),
+    
+    WINDOWS("Windows");
 
     private String value;
 
-    NetworkEnum(String value) {
+    PlatformEnum(String value) {
       this.value = value;
     }
 
@@ -66,8 +55,8 @@ public class BalanceResponse {
       return String.valueOf(value);
     }
 
-    public static NetworkEnum fromValue(String value) {
-      for (NetworkEnum b : NetworkEnum.values()) {
+    public static PlatformEnum fromValue(String value) {
+      for (PlatformEnum b : PlatformEnum.values()) {
         if (b.value.equals(value)) {
           return b;
         }
@@ -75,188 +64,45 @@ public class BalanceResponse {
       throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
-    public static class Adapter extends TypeAdapter<NetworkEnum> {
+    public static class Adapter extends TypeAdapter<PlatformEnum> {
       @Override
-      public void write(final JsonWriter jsonWriter, final NetworkEnum enumeration) throws IOException {
+      public void write(final JsonWriter jsonWriter, final PlatformEnum enumeration) throws IOException {
         jsonWriter.value(enumeration.getValue());
       }
 
       @Override
-      public NetworkEnum read(final JsonReader jsonReader) throws IOException {
+      public PlatformEnum read(final JsonReader jsonReader) throws IOException {
         String value =  jsonReader.nextString();
-        return NetworkEnum.fromValue(value);
+        return PlatformEnum.fromValue(value);
       }
     }
   }
 
-  public static final String SERIALIZED_NAME_NETWORK = "network";
-  @SerializedName(SERIALIZED_NAME_NETWORK)
-  private NetworkEnum network;
+  public static final String SERIALIZED_NAME_PLATFORM = "platform";
+  @SerializedName(SERIALIZED_NAME_PLATFORM)
+  private PlatformEnum platform;
 
-  /**
-   * Not included if retreiving an SPL token/NFT balance
-   */
-  @JsonAdapter(UnitEnum.Adapter.class)
-  public enum UnitEnum {
-    LAMPORT("lamport"),
+
+  public InlineObject platform(PlatformEnum platform) {
     
-    SOL("sol");
-
-    private String value;
-
-    UnitEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static UnitEnum fromValue(String value) {
-      for (UnitEnum b : UnitEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<UnitEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final UnitEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public UnitEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return UnitEnum.fromValue(value);
-      }
-    }
-  }
-
-  public static final String SERIALIZED_NAME_UNIT = "unit";
-  @SerializedName(SERIALIZED_NAME_UNIT)
-  private UnitEnum unit;
-
-
-  public BalanceResponse balance(BigDecimal balance) {
-    
-    this.balance = balance;
+    this.platform = platform;
     return this;
   }
 
    /**
-   * The balance of the token in the wallet
-   * @return balance
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "The balance of the token in the wallet")
-
-  public BigDecimal getBalance() {
-    return balance;
-  }
-
-
-  public void setBalance(BigDecimal balance) {
-    this.balance = balance;
-  }
-
-
-  public BalanceResponse integerBalance(BigDecimal integerBalance) {
-    
-    this.integerBalance = integerBalance;
-    return this;
-  }
-
-   /**
-   * Not included if retreiving SOL balance
-   * @return integerBalance
+   * The platform for which the binary was compiled. Note that Darwin &#x3D; Mac.
+   * @return platform
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Not included if retreiving SOL balance")
+  @ApiModelProperty(value = "The platform for which the binary was compiled. Note that Darwin = Mac.")
 
-  public BigDecimal getIntegerBalance() {
-    return integerBalance;
+  public PlatformEnum getPlatform() {
+    return platform;
   }
 
 
-  public void setIntegerBalance(BigDecimal integerBalance) {
-    this.integerBalance = integerBalance;
-  }
-
-
-  public BalanceResponse decimals(BigDecimal decimals) {
-    
-    this.decimals = decimals;
-    return this;
-  }
-
-   /**
-   * Not included if retreiving SOL balance. Sometimes not included if the balance of the token is &#39;0&#39;.
-   * @return decimals
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "Not included if retreiving SOL balance. Sometimes not included if the balance of the token is '0'.")
-
-  public BigDecimal getDecimals() {
-    return decimals;
-  }
-
-
-  public void setDecimals(BigDecimal decimals) {
-    this.decimals = decimals;
-  }
-
-
-  public BalanceResponse network(NetworkEnum network) {
-    
-    this.network = network;
-    return this;
-  }
-
-   /**
-   * Get network
-   * @return network
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
-  public NetworkEnum getNetwork() {
-    return network;
-  }
-
-
-  public void setNetwork(NetworkEnum network) {
-    this.network = network;
-  }
-
-
-  public BalanceResponse unit(UnitEnum unit) {
-    
-    this.unit = unit;
-    return this;
-  }
-
-   /**
-   * Not included if retreiving an SPL token/NFT balance
-   * @return unit
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "Not included if retreiving an SPL token/NFT balance")
-
-  public UnitEnum getUnit() {
-    return unit;
-  }
-
-
-  public void setUnit(UnitEnum unit) {
-    this.unit = unit;
+  public void setPlatform(PlatformEnum platform) {
+    this.platform = platform;
   }
 
 
@@ -268,28 +114,20 @@ public class BalanceResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    BalanceResponse balanceResponse = (BalanceResponse) o;
-    return Objects.equals(this.balance, balanceResponse.balance) &&
-        Objects.equals(this.integerBalance, balanceResponse.integerBalance) &&
-        Objects.equals(this.decimals, balanceResponse.decimals) &&
-        Objects.equals(this.network, balanceResponse.network) &&
-        Objects.equals(this.unit, balanceResponse.unit);
+    InlineObject inlineObject = (InlineObject) o;
+    return Objects.equals(this.platform, inlineObject.platform);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(balance, integerBalance, decimals, network, unit);
+    return Objects.hash(platform);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class BalanceResponse {\n");
-    sb.append("    balance: ").append(toIndentedString(balance)).append("\n");
-    sb.append("    integerBalance: ").append(toIndentedString(integerBalance)).append("\n");
-    sb.append("    decimals: ").append(toIndentedString(decimals)).append("\n");
-    sb.append("    network: ").append(toIndentedString(network)).append("\n");
-    sb.append("    unit: ").append(toIndentedString(unit)).append("\n");
+    sb.append("class InlineObject {\n");
+    sb.append("    platform: ").append(toIndentedString(platform)).append("\n");
     sb.append("}");
     return sb.toString();
   }

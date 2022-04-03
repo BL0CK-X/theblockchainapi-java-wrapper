@@ -13,8 +13,6 @@
 
 package org.openapitools.client.model;
 
-import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -23,287 +21,31 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.math.BigDecimal;
+import org.junit.Assert;
+import org.junit.Ignore;
+import org.junit.Test;
+
 
 /**
- * BalanceResponse
+ * Model tests for InlineObject
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-03-22T18:48:51.223575-07:00[America/Los_Angeles]")
-public class BalanceResponse {
-  public static final String SERIALIZED_NAME_BALANCE = "balance";
-  @SerializedName(SERIALIZED_NAME_BALANCE)
-  private BigDecimal balance;
+public class InlineObjectTest {
+    private final InlineObject model = new InlineObject();
 
-  public static final String SERIALIZED_NAME_INTEGER_BALANCE = "integer_balance";
-  @SerializedName(SERIALIZED_NAME_INTEGER_BALANCE)
-  private BigDecimal integerBalance;
-
-  public static final String SERIALIZED_NAME_DECIMALS = "decimals";
-  @SerializedName(SERIALIZED_NAME_DECIMALS)
-  private BigDecimal decimals;
-
-  /**
-   * Gets or Sets network
-   */
-  @JsonAdapter(NetworkEnum.Adapter.class)
-  public enum NetworkEnum {
-    DEVNET("devnet"),
-    
-    MAINNET_BETA("mainnet-beta");
-
-    private String value;
-
-    NetworkEnum(String value) {
-      this.value = value;
+    /**
+     * Model tests for InlineObject
+     */
+    @Test
+    public void testInlineObject() {
+        // TODO: test InlineObject
     }
 
-    public String getValue() {
-      return value;
+    /**
+     * Test the property 'platform'
+     */
+    @Test
+    public void platformTest() {
+        // TODO: test platform
     }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static NetworkEnum fromValue(String value) {
-      for (NetworkEnum b : NetworkEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<NetworkEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final NetworkEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public NetworkEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return NetworkEnum.fromValue(value);
-      }
-    }
-  }
-
-  public static final String SERIALIZED_NAME_NETWORK = "network";
-  @SerializedName(SERIALIZED_NAME_NETWORK)
-  private NetworkEnum network;
-
-  /**
-   * Not included if retreiving an SPL token/NFT balance
-   */
-  @JsonAdapter(UnitEnum.Adapter.class)
-  public enum UnitEnum {
-    LAMPORT("lamport"),
-    
-    SOL("sol");
-
-    private String value;
-
-    UnitEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static UnitEnum fromValue(String value) {
-      for (UnitEnum b : UnitEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<UnitEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final UnitEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public UnitEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return UnitEnum.fromValue(value);
-      }
-    }
-  }
-
-  public static final String SERIALIZED_NAME_UNIT = "unit";
-  @SerializedName(SERIALIZED_NAME_UNIT)
-  private UnitEnum unit;
-
-
-  public BalanceResponse balance(BigDecimal balance) {
-    
-    this.balance = balance;
-    return this;
-  }
-
-   /**
-   * The balance of the token in the wallet
-   * @return balance
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "The balance of the token in the wallet")
-
-  public BigDecimal getBalance() {
-    return balance;
-  }
-
-
-  public void setBalance(BigDecimal balance) {
-    this.balance = balance;
-  }
-
-
-  public BalanceResponse integerBalance(BigDecimal integerBalance) {
-    
-    this.integerBalance = integerBalance;
-    return this;
-  }
-
-   /**
-   * Not included if retreiving SOL balance
-   * @return integerBalance
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "Not included if retreiving SOL balance")
-
-  public BigDecimal getIntegerBalance() {
-    return integerBalance;
-  }
-
-
-  public void setIntegerBalance(BigDecimal integerBalance) {
-    this.integerBalance = integerBalance;
-  }
-
-
-  public BalanceResponse decimals(BigDecimal decimals) {
-    
-    this.decimals = decimals;
-    return this;
-  }
-
-   /**
-   * Not included if retreiving SOL balance. Sometimes not included if the balance of the token is &#39;0&#39;.
-   * @return decimals
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "Not included if retreiving SOL balance. Sometimes not included if the balance of the token is '0'.")
-
-  public BigDecimal getDecimals() {
-    return decimals;
-  }
-
-
-  public void setDecimals(BigDecimal decimals) {
-    this.decimals = decimals;
-  }
-
-
-  public BalanceResponse network(NetworkEnum network) {
-    
-    this.network = network;
-    return this;
-  }
-
-   /**
-   * Get network
-   * @return network
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
-  public NetworkEnum getNetwork() {
-    return network;
-  }
-
-
-  public void setNetwork(NetworkEnum network) {
-    this.network = network;
-  }
-
-
-  public BalanceResponse unit(UnitEnum unit) {
-    
-    this.unit = unit;
-    return this;
-  }
-
-   /**
-   * Not included if retreiving an SPL token/NFT balance
-   * @return unit
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "Not included if retreiving an SPL token/NFT balance")
-
-  public UnitEnum getUnit() {
-    return unit;
-  }
-
-
-  public void setUnit(UnitEnum unit) {
-    this.unit = unit;
-  }
-
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    BalanceResponse balanceResponse = (BalanceResponse) o;
-    return Objects.equals(this.balance, balanceResponse.balance) &&
-        Objects.equals(this.integerBalance, balanceResponse.integerBalance) &&
-        Objects.equals(this.decimals, balanceResponse.decimals) &&
-        Objects.equals(this.network, balanceResponse.network) &&
-        Objects.equals(this.unit, balanceResponse.unit);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(balance, integerBalance, decimals, network, unit);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class BalanceResponse {\n");
-    sb.append("    balance: ").append(toIndentedString(balance)).append("\n");
-    sb.append("    integerBalance: ").append(toIndentedString(integerBalance)).append("\n");
-    sb.append("    decimals: ").append(toIndentedString(decimals)).append("\n");
-    sb.append("    network: ").append(toIndentedString(network)).append("\n");
-    sb.append("    unit: ").append(toIndentedString(unit)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
 
 }
-

@@ -1992,6 +1992,8 @@ paths:
         in: path
         name: project_id
         required: true
+        schema:
+          type: string
         style: simple
       responses:
         "200":
@@ -2028,6 +2030,8 @@ paths:
         in: path
         name: project_id
         required: true
+        schema:
+          type: string
         style: simple
       responses:
         "200":
@@ -2067,6 +2071,8 @@ paths:
         in: path
         name: project_id
         required: true
+        schema:
+          type: string
         style: simple
       requestBody:
         content:
@@ -2113,6 +2119,8 @@ paths:
         in: path
         name: project_id
         required: true
+        schema:
+          type: string
         style: simple
       - description: The version of the project.
         example: 2
@@ -2120,6 +2128,8 @@ paths:
         in: path
         name: version
         required: true
+        schema:
+          type: string
         style: simple
       responses:
         "200":
@@ -2162,6 +2172,8 @@ paths:
         in: path
         name: project_id
         required: true
+        schema:
+          type: string
         style: simple
       - description: The version of the project.
         example: 2
@@ -2169,6 +2181,8 @@ paths:
         in: path
         name: version
         required: true
+        schema:
+          type: string
         style: simple
       responses:
         "200":
@@ -2210,8 +2224,11 @@ paths:
         in: path
         name: project_id
         required: true
+        schema:
+          type: string
         style: simple
       requestBody:
+        $ref: '#/components/requestBodies/inline_object'
         content:
           application/json:
             schema:
@@ -2226,6 +2243,7 @@ paths:
                   - Linux
                   - Windows
                   type: string
+              type: object
       responses:
         "200":
           content:
@@ -2268,6 +2286,8 @@ paths:
         in: path
         name: project_id
         required: true
+        schema:
+          type: string
         style: simple
       responses:
         "200":
@@ -2322,6 +2342,8 @@ paths:
         in: path
         name: project_id
         required: true
+        schema:
+          type: string
         style: simple
       responses:
         "200":
@@ -2400,6 +2422,8 @@ paths:
         in: path
         name: project_id
         required: true
+        schema:
+          type: string
         style: simple
       - description: The version of the project.
         example: 2
@@ -2407,6 +2431,8 @@ paths:
         in: path
         name: version
         required: true
+        schema:
+          type: string
         style: simple
       responses:
         "200":
@@ -2578,6 +2604,12 @@ paths:
       - Endpoint
       x-accepts: application/json
 components:
+  requestBodies:
+    inline_object:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/inline_object'
   schemas:
     UploadFileRequest:
       properties:
@@ -4441,6 +4473,7 @@ components:
           items:
             $ref: '#/components/schemas/Group'
           type: array
+      type: object
     ParameterSpecification:
       example:
         type: string
@@ -4646,6 +4679,7 @@ components:
           description: |
             Information necessary to sign the upload URL
           type: object
+      type: object
     StatItem:
       example:
         time_stamp: 1642491000
@@ -4700,6 +4734,19 @@ components:
       - path
       - project_id
       - version
+    inline_object:
+      example:
+        platform: Windows
+      properties:
+        platform:
+          description: The platform for which the binary was compiled. Note that Darwin
+            = Mac.
+          enum:
+          - Darwin
+          - Linux
+          - Windows
+          type: string
+      type: object
     Account_context:
       properties:
         slot:

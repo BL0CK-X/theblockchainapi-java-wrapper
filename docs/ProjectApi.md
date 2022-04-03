@@ -97,7 +97,7 @@ Name | Type | Description  | Notes
 
 <a name="createProjectVersion"></a>
 # **createProjectVersion**
-> Project createProjectVersion(UNKNOWN_PARAMETER_NAME, UNKNOWN_PARAMETER_NAME2)
+> Project createProjectVersion(projectId, version)
 
 Create a new project version 
 
@@ -131,10 +131,10 @@ public class Example {
     //APISecretKey.setApiKeyPrefix("Token");
 
     ProjectApi apiInstance = new ProjectApi(defaultClient);
-     UNKNOWN_PARAMETER_NAME = new null(); //  | The ID of the project. Created and returned when a project is created.
-     UNKNOWN_PARAMETER_NAME2 = new null(); //  | The version of the project.
+    String projectId = "L3cPm0cJlf5MeDXzGLQJJ4vlzndJCC"; // String | The ID of the project. Created and returned when a project is created.
+    String version = "2"; // String | The version of the project.
     try {
-      Project result = apiInstance.createProjectVersion(UNKNOWN_PARAMETER_NAME, UNKNOWN_PARAMETER_NAME2);
+      Project result = apiInstance.createProjectVersion(projectId, version);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ProjectApi#createProjectVersion");
@@ -151,8 +151,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **UNKNOWN_PARAMETER_NAME** | [****](.md)| The ID of the project. Created and returned when a project is created. |
- **UNKNOWN_PARAMETER_NAME2** | [****](.md)| The version of the project. |
+ **projectId** | **String**| The ID of the project. Created and returned when a project is created. |
+ **version** | **String**| The version of the project. |
 
 ### Return type
 
@@ -177,7 +177,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteProject"></a>
 # **deleteProject**
-> deleteProject(UNKNOWN_PARAMETER_NAME)
+> deleteProject(projectId)
 
 Delete a project 
 
@@ -211,9 +211,9 @@ public class Example {
     //APISecretKey.setApiKeyPrefix("Token");
 
     ProjectApi apiInstance = new ProjectApi(defaultClient);
-     UNKNOWN_PARAMETER_NAME = new null(); //  | The ID of the project. Created and returned when a project is created.
+    String projectId = "L3cPm0cJlf5MeDXzGLQJJ4vlzndJCC"; // String | The ID of the project. Created and returned when a project is created.
     try {
-      apiInstance.deleteProject(UNKNOWN_PARAMETER_NAME);
+      apiInstance.deleteProject(projectId);
     } catch (ApiException e) {
       System.err.println("Exception when calling ProjectApi#deleteProject");
       System.err.println("Status code: " + e.getCode());
@@ -229,7 +229,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **UNKNOWN_PARAMETER_NAME** | [****](.md)| The ID of the project. Created and returned when a project is created. |
+ **projectId** | **String**| The ID of the project. Created and returned when a project is created. |
 
 ### Return type
 
@@ -254,7 +254,7 @@ null (empty response body)
 
 <a name="deleteProjectVersion"></a>
 # **deleteProjectVersion**
-> Project deleteProjectVersion(UNKNOWN_PARAMETER_NAME, UNKNOWN_PARAMETER_NAME2)
+> Project deleteProjectVersion(projectId, version)
 
 Delete a project version 
 
@@ -288,10 +288,10 @@ public class Example {
     //APISecretKey.setApiKeyPrefix("Token");
 
     ProjectApi apiInstance = new ProjectApi(defaultClient);
-     UNKNOWN_PARAMETER_NAME = new null(); //  | The ID of the project. Created and returned when a project is created.
-     UNKNOWN_PARAMETER_NAME2 = new null(); //  | The version of the project.
+    String projectId = "L3cPm0cJlf5MeDXzGLQJJ4vlzndJCC"; // String | The ID of the project. Created and returned when a project is created.
+    String version = "2"; // String | The version of the project.
     try {
-      Project result = apiInstance.deleteProjectVersion(UNKNOWN_PARAMETER_NAME, UNKNOWN_PARAMETER_NAME2);
+      Project result = apiInstance.deleteProjectVersion(projectId, version);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ProjectApi#deleteProjectVersion");
@@ -308,8 +308,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **UNKNOWN_PARAMETER_NAME** | [****](.md)| The ID of the project. Created and returned when a project is created. |
- **UNKNOWN_PARAMETER_NAME2** | [****](.md)| The version of the project. |
+ **projectId** | **String**| The ID of the project. Created and returned when a project is created. |
+ **version** | **String**| The version of the project. |
 
 ### Return type
 
@@ -334,7 +334,7 @@ Name | Type | Description  | Notes
 
 <a name="getProject"></a>
 # **getProject**
-> Project getProject(UNKNOWN_PARAMETER_NAME)
+> Project getProject(projectId)
 
 Get a project&#39;s metadata 
 
@@ -368,9 +368,9 @@ public class Example {
     //APISecretKey.setApiKeyPrefix("Token");
 
     ProjectApi apiInstance = new ProjectApi(defaultClient);
-     UNKNOWN_PARAMETER_NAME = new null(); //  | The ID of the project. Created and returned when a project is created.
+    String projectId = "L3cPm0cJlf5MeDXzGLQJJ4vlzndJCC"; // String | The ID of the project. Created and returned when a project is created.
     try {
-      Project result = apiInstance.getProject(UNKNOWN_PARAMETER_NAME);
+      Project result = apiInstance.getProject(projectId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ProjectApi#getProject");
@@ -387,7 +387,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **UNKNOWN_PARAMETER_NAME** | [****](.md)| The ID of the project. Created and returned when a project is created. |
+ **projectId** | **String**| The ID of the project. Created and returned when a project is created. |
 
 ### Return type
 
@@ -412,7 +412,7 @@ Name | Type | Description  | Notes
 
 <a name="getProjectDeploymentStatus"></a>
 # **getProjectDeploymentStatus**
-> Object getProjectDeploymentStatus(UNKNOWN_PARAMETER_NAME)
+> Object getProjectDeploymentStatus(projectId)
 
 Get deployment status 
 
@@ -446,9 +446,9 @@ public class Example {
     //APISecretKey.setApiKeyPrefix("Token");
 
     ProjectApi apiInstance = new ProjectApi(defaultClient);
-     UNKNOWN_PARAMETER_NAME = new null(); //  | The ID of the project. Created and returned when a project is created.
+    String projectId = "L3cPm0cJlf5MeDXzGLQJJ4vlzndJCC"; // String | The ID of the project. Created and returned when a project is created.
     try {
-      Object result = apiInstance.getProjectDeploymentStatus(UNKNOWN_PARAMETER_NAME);
+      Object result = apiInstance.getProjectDeploymentStatus(projectId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ProjectApi#getProjectDeploymentStatus");
@@ -465,7 +465,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **UNKNOWN_PARAMETER_NAME** | [****](.md)| The ID of the project. Created and returned when a project is created. |
+ **projectId** | **String**| The ID of the project. Created and returned when a project is created. |
 
 ### Return type
 
@@ -490,7 +490,7 @@ Name | Type | Description  | Notes
 
 <a name="getProjectDeploymentURL"></a>
 # **getProjectDeploymentURL**
-> ProjectDeploymentURL getProjectDeploymentURL(UNKNOWN_PARAMETER_NAME, UNKNOWN_BASE_TYPE)
+> ProjectDeploymentURL getProjectDeploymentURL(projectId, inlineObject)
 
 Get the deployment URL 
 
@@ -524,10 +524,10 @@ public class Example {
     //APISecretKey.setApiKeyPrefix("Token");
 
     ProjectApi apiInstance = new ProjectApi(defaultClient);
-     UNKNOWN_PARAMETER_NAME = new null(); //  | The ID of the project. Created and returned when a project is created.
-    UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = new UNKNOWN_BASE_TYPE(); // UNKNOWN_BASE_TYPE | 
+    String projectId = "L3cPm0cJlf5MeDXzGLQJJ4vlzndJCC"; // String | The ID of the project. Created and returned when a project is created.
+    InlineObject inlineObject = new InlineObject(); // InlineObject | 
     try {
-      ProjectDeploymentURL result = apiInstance.getProjectDeploymentURL(UNKNOWN_PARAMETER_NAME, UNKNOWN_BASE_TYPE);
+      ProjectDeploymentURL result = apiInstance.getProjectDeploymentURL(projectId, inlineObject);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ProjectApi#getProjectDeploymentURL");
@@ -544,8 +544,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **UNKNOWN_PARAMETER_NAME** | [****](.md)| The ID of the project. Created and returned when a project is created. |
- **UNKNOWN_BASE_TYPE** | [**UNKNOWN_BASE_TYPE**](UNKNOWN_BASE_TYPE.md)|  | [optional]
+ **projectId** | **String**| The ID of the project. Created and returned when a project is created. |
+ **inlineObject** | [**InlineObject**](InlineObject.md)|  | [optional]
 
 ### Return type
 
@@ -570,7 +570,7 @@ Name | Type | Description  | Notes
 
 <a name="getProjectStats"></a>
 # **getProjectStats**
-> List&lt;StatItem&gt; getProjectStats(UNKNOWN_PARAMETER_NAME)
+> List&lt;StatItem&gt; getProjectStats(projectId)
 
 Get a project&#39;s stats 
 
@@ -604,9 +604,9 @@ public class Example {
     //APISecretKey.setApiKeyPrefix("Token");
 
     ProjectApi apiInstance = new ProjectApi(defaultClient);
-     UNKNOWN_PARAMETER_NAME = new null(); //  | The ID of the project. Created and returned when a project is created.
+    String projectId = "L3cPm0cJlf5MeDXzGLQJJ4vlzndJCC"; // String | The ID of the project. Created and returned when a project is created.
     try {
-      List<StatItem> result = apiInstance.getProjectStats(UNKNOWN_PARAMETER_NAME);
+      List<StatItem> result = apiInstance.getProjectStats(projectId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ProjectApi#getProjectStats");
@@ -623,7 +623,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **UNKNOWN_PARAMETER_NAME** | [****](.md)| The ID of the project. Created and returned when a project is created. |
+ **projectId** | **String**| The ID of the project. Created and returned when a project is created. |
 
 ### Return type
 
@@ -722,7 +722,7 @@ This endpoint does not need any parameter.
 
 <a name="updateProject"></a>
 # **updateProject**
-> Project updateProject(UNKNOWN_PARAMETER_NAME, projectCreateRequest)
+> Project updateProject(projectId, projectCreateRequest)
 
 Update a project 
 
@@ -756,10 +756,10 @@ public class Example {
     //APISecretKey.setApiKeyPrefix("Token");
 
     ProjectApi apiInstance = new ProjectApi(defaultClient);
-     UNKNOWN_PARAMETER_NAME = new null(); //  | The ID of the project. Created and returned when a project is created.
+    String projectId = "L3cPm0cJlf5MeDXzGLQJJ4vlzndJCC"; // String | The ID of the project. Created and returned when a project is created.
     ProjectCreateRequest projectCreateRequest = new ProjectCreateRequest(); // ProjectCreateRequest | 
     try {
-      Project result = apiInstance.updateProject(UNKNOWN_PARAMETER_NAME, projectCreateRequest);
+      Project result = apiInstance.updateProject(projectId, projectCreateRequest);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ProjectApi#updateProject");
@@ -776,7 +776,7 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **UNKNOWN_PARAMETER_NAME** | [****](.md)| The ID of the project. Created and returned when a project is created. |
+ **projectId** | **String**| The ID of the project. Created and returned when a project is created. |
  **projectCreateRequest** | [**ProjectCreateRequest**](ProjectCreateRequest.md)|  | [optional]
 
 ### Return type
@@ -802,7 +802,7 @@ Name | Type | Description  | Notes
 
 <a name="updateProjectDocumentation"></a>
 # **updateProjectDocumentation**
-> Project updateProjectDocumentation(UNKNOWN_PARAMETER_NAME, UNKNOWN_PARAMETER_NAME2)
+> Project updateProjectDocumentation(projectId, version)
 
 Update the project&#39;s documentation 
 
@@ -836,10 +836,10 @@ public class Example {
     //APISecretKey.setApiKeyPrefix("Token");
 
     ProjectApi apiInstance = new ProjectApi(defaultClient);
-     UNKNOWN_PARAMETER_NAME = new null(); //  | The ID of the project. Created and returned when a project is created.
-     UNKNOWN_PARAMETER_NAME2 = new null(); //  | The version of the project.
+    String projectId = "L3cPm0cJlf5MeDXzGLQJJ4vlzndJCC"; // String | The ID of the project. Created and returned when a project is created.
+    String version = "2"; // String | The version of the project.
     try {
-      Project result = apiInstance.updateProjectDocumentation(UNKNOWN_PARAMETER_NAME, UNKNOWN_PARAMETER_NAME2);
+      Project result = apiInstance.updateProjectDocumentation(projectId, version);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ProjectApi#updateProjectDocumentation");
@@ -856,8 +856,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **UNKNOWN_PARAMETER_NAME** | [****](.md)| The ID of the project. Created and returned when a project is created. |
- **UNKNOWN_PARAMETER_NAME2** | [****](.md)| The version of the project. |
+ **projectId** | **String**| The ID of the project. Created and returned when a project is created. |
+ **version** | **String**| The version of the project. |
 
 ### Return type
 

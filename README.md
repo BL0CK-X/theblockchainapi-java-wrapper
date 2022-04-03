@@ -2,7 +2,7 @@
 
 The Blockchain API
 - API version: null
-  - Build date: 2022-03-15T12:06:18.396945-07:00[America/Los_Angeles]
+  - Build date: 2022-03-22T18:48:51.223575-07:00[America/Los_Angeles]
 
 # About
 
@@ -321,6 +321,7 @@ Class | Method | HTTP request | Description
  - [GetPublicKeyRequest](docs/GetPublicKeyRequest.md)
  - [GetSPLTokenResponse](docs/GetSPLTokenResponse.md)
  - [Group](docs/Group.md)
+ - [InlineObject](docs/InlineObject.md)
  - [ListNFTsResponse](docs/ListNFTsResponse.md)
  - [ListRequest](docs/ListRequest.md)
  - [ListResponse](docs/ListResponse.md)
