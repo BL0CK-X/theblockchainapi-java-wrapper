@@ -32,7 +32,7 @@ import org.openapitools.client.model.SolanaTransactionMadeResponse;
 /**
  * GeneralTransactionResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-30T09:58:36.085380-07:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-30T11:04:39.768692-07:00[America/Los_Angeles]")
 public class GeneralTransactionResponse {
   public static final String SERIALIZED_NAME_TRANSACTION_BLOCKCHAIN_IDENTIFIER = "transaction_blockchain_identifier";
   @SerializedName(SERIALIZED_NAME_TRANSACTION_BLOCKCHAIN_IDENTIFIER)

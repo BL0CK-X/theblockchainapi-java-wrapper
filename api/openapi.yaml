@@ -698,18 +698,6 @@ paths:
         schema:
           type: string
         style: simple
-      - description: |
-          The identifier of the token (e.g., `mint_address` on `Solana` or `token_address` on `Ethereum`)
-        explode: false
-        in: path
-        name: blockchain_identifier
-        required: true
-        schema:
-          enum:
-          - ethereum
-          - solana
-          type: string
-        style: simple
       requestBody:
         content:
           application/json:
@@ -814,7 +802,7 @@ paths:
       - Token
       x-accepts: application/json
   /{blockchain}/{network}/all_tokens:
-    post:
+    get:
       description: "<a href=\"https://github.com/BL0CK-X/blockchain-api\" target=\"\
         _blank\">See examples (Python, JavaScript) [Coming Soon]</a>.\n    \nList\
         \ all tokens.\n\n`Cost: 1 Credit` (<a href=\"#section/Pricing\">See Pricing</a>)"

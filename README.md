@@ -2,7 +2,7 @@
 
 The Blockchain API
 - API version: null
-  - Build date: 2022-05-30T09:58:36.085380-07:00[America/Los_Angeles]
+  - Build date: 2022-05-30T11:04:39.768692-07:00[America/Los_Angeles]
 
 # About
 
@@ -287,7 +287,7 @@ Class | Method | HTTP request | Description
 *SolanaWalletApi* | [**solanaGetWalletTransactions**](docs/SolanaWalletApi.md#solanaGetWalletTransactions) | **GET** /solana/wallet/{network}/{public_key}/transactions | Get address&#39;s associated transaction signatures
 *SolanaWalletApi* | [**solanaTransfer**](docs/SolanaWalletApi.md#solanaTransfer) | **POST** /solana/wallet/transfer | Transfer SOL, a token, or an NFT to another address
 *TokenApi* | [**getTokenMetadata**](docs/TokenApi.md#getTokenMetadata) | **GET** /{blockchain}/{network}/token/{token_blockchain_identifier} | Get a token&#39;s metadata
-*TokenApi* | [**listAllTokens**](docs/TokenApi.md#listAllTokens) | **POST** /{blockchain}/{network}/all_tokens | List all tokens
+*TokenApi* | [**listAllTokens**](docs/TokenApi.md#listAllTokens) | **GET** /{blockchain}/{network}/all_tokens | List all tokens
 *TransactionApi* | [**getTransaction**](docs/TransactionApi.md#getTransaction) | **GET** /{blockchain}/transaction/{network}/{transaction_blockchain_identifier} | Get the details of a transaction made on a blockchain
 *WalletApi* | [**derivePrivateKey**](docs/WalletApi.md#derivePrivateKey) | **POST** /{blockchain}/wallet/private_key | Derive private key
 *WalletApi* | [**deriveWalletIdentifier**](docs/WalletApi.md#deriveWalletIdentifier) | **POST** /{blockchain}/wallet/identifier | Derive wallet identifier

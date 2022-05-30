@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * InlineObject
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-30T09:58:36.085380-07:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-30T11:04:39.768692-07:00[America/Los_Angeles]")
 public class InlineObject {
   /**
    * The platform for which the binary was compiled. Note that Darwin &#x3D; Mac.

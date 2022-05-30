@@ -93,7 +93,7 @@ Name | Type | Description  | Notes
 
 <a name="getNameForBlockchainIdentifier"></a>
 # **getNameForBlockchainIdentifier**
-> InputName getNameForBlockchainIdentifier(blockchain, network, blockchainIdentifier, inputBlockchainIdentifier)
+> InputName getNameForBlockchainIdentifier(blockchain, network, inputBlockchainIdentifier)
 
 Get the name
 
@@ -129,10 +129,9 @@ public class Example {
     NameServiceApi apiInstance = new NameServiceApi(defaultClient);
     String blockchain = "ethereum"; // String | The blockchain you want to use 
     String network = "ropsten"; // String | The network of the blockchain you selected  - Solana: `devnet`, `mainnet-beta` - Ethereum: `ropsten`, `mainnet`  Defaults when not provided (not applicable to path parameters): - Solana: `devnet` - Ethereum: `ropsten`
-    String blockchainIdentifier = "ethereum"; // String | The identifier of the token (e.g., `mint_address` on `Solana` or `token_address` on `Ethereum`) 
     InputBlockchainIdentifier inputBlockchainIdentifier = new InputBlockchainIdentifier(); // InputBlockchainIdentifier | 
     try {
-      InputName result = apiInstance.getNameForBlockchainIdentifier(blockchain, network, blockchainIdentifier, inputBlockchainIdentifier);
+      InputName result = apiInstance.getNameForBlockchainIdentifier(blockchain, network, inputBlockchainIdentifier);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling NameServiceApi#getNameForBlockchainIdentifier");
@@ -151,7 +150,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **blockchain** | **String**| The blockchain you want to use  | [enum: ethereum, solana]
  **network** | **String**| The network of the blockchain you selected  - Solana: &#x60;devnet&#x60;, &#x60;mainnet-beta&#x60; - Ethereum: &#x60;ropsten&#x60;, &#x60;mainnet&#x60;  Defaults when not provided (not applicable to path parameters): - Solana: &#x60;devnet&#x60; - Ethereum: &#x60;ropsten&#x60; |
- **blockchainIdentifier** | **String**| The identifier of the token (e.g., &#x60;mint_address&#x60; on &#x60;Solana&#x60; or &#x60;token_address&#x60; on &#x60;Ethereum&#x60;)  | [enum: ethereum, solana]
  **inputBlockchainIdentifier** | [**InputBlockchainIdentifier**](InputBlockchainIdentifier.md)|  | [optional]
 
 ### Return type

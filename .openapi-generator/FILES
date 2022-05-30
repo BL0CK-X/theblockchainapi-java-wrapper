@@ -254,8 +254,3 @@ src/main/java/org/openapitools/client/model/TransferResponse.java
 src/main/java/org/openapitools/client/model/TransferResponseCompiled.java
 src/main/java/org/openapitools/client/model/Wallet.java
 src/main/java/org/openapitools/client/model/WalletIdentifiers.java
-src/test/java/org/openapitools/client/api/NameServiceApiTest.java
-src/test/java/org/openapitools/client/api/TokenApiTest.java
-src/test/java/org/openapitools/client/model/InputBlockchainIdentifierTest.java
-src/test/java/org/openapitools/client/model/InputNameTest.java
-src/test/java/org/openapitools/client/model/TokenMetadataResponseTest.java

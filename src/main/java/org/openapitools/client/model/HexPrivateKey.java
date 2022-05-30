@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * HexPrivateKey
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-30T09:58:36.085380-07:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-30T11:04:39.768692-07:00[America/Los_Angeles]")
 public class HexPrivateKey {
   public static final String SERIALIZED_NAME_HEX_PRIVATE_KEY = "hex_private_key";
   @SerializedName(SERIALIZED_NAME_HEX_PRIVATE_KEY)

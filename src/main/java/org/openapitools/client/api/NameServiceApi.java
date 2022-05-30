@@ -235,7 +235,6 @@ public class NameServiceApi {
      * Build call for getNameForBlockchainIdentifier
      * @param blockchain The blockchain you want to use  (required)
      * @param network The network of the blockchain you selected  - Solana: &#x60;devnet&#x60;, &#x60;mainnet-beta&#x60; - Ethereum: &#x60;ropsten&#x60;, &#x60;mainnet&#x60;  Defaults when not provided (not applicable to path parameters): - Solana: &#x60;devnet&#x60; - Ethereum: &#x60;ropsten&#x60; (required)
-     * @param blockchainIdentifier The identifier of the token (e.g., &#x60;mint_address&#x60; on &#x60;Solana&#x60; or &#x60;token_address&#x60; on &#x60;Ethereum&#x60;)  (required)
      * @param inputBlockchainIdentifier  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -250,7 +249,7 @@ public class NameServiceApi {
         <tr><td> 404 </td><td> Task not found. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getNameForBlockchainIdentifierCall(String blockchain, String network, String blockchainIdentifier, InputBlockchainIdentifier inputBlockchainIdentifier, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getNameForBlockchainIdentifierCall(String blockchain, String network, InputBlockchainIdentifier inputBlockchainIdentifier, final ApiCallback _callback) throws ApiException {
         String basePath = null;
 
         // Operation Servers
@@ -270,8 +269,7 @@ public class NameServiceApi {
         // create path and map variables
         String localVarPath = "/{blockchain}/{network}/name_service/blockchain_identifier_to_name"
             .replaceAll("\\{" + "blockchain" + "\\}", localVarApiClient.escapeString(blockchain.toString()))
-            .replaceAll("\\{" + "network" + "\\}", localVarApiClient.escapeString(network.toString()))
-            .replaceAll("\\{" + "blockchain_identifier" + "\\}", localVarApiClient.escapeString(blockchainIdentifier.toString()));
+            .replaceAll("\\{" + "network" + "\\}", localVarApiClient.escapeString(network.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -300,7 +298,7 @@ public class NameServiceApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getNameForBlockchainIdentifierValidateBeforeCall(String blockchain, String network, String blockchainIdentifier, InputBlockchainIdentifier inputBlockchainIdentifier, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getNameForBlockchainIdentifierValidateBeforeCall(String blockchain, String network, InputBlockchainIdentifier inputBlockchainIdentifier, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'blockchain' is set
         if (blockchain == null) {
@@ -312,13 +310,8 @@ public class NameServiceApi {
             throw new ApiException("Missing the required parameter 'network' when calling getNameForBlockchainIdentifier(Async)");
         }
         
-        // verify the required parameter 'blockchainIdentifier' is set
-        if (blockchainIdentifier == null) {
-            throw new ApiException("Missing the required parameter 'blockchainIdentifier' when calling getNameForBlockchainIdentifier(Async)");
-        }
-        
 
-        okhttp3.Call localVarCall = getNameForBlockchainIdentifierCall(blockchain, network, blockchainIdentifier, inputBlockchainIdentifier, _callback);
+        okhttp3.Call localVarCall = getNameForBlockchainIdentifierCall(blockchain, network, inputBlockchainIdentifier, _callback);
         return localVarCall;
 
     }
@@ -328,7 +321,6 @@ public class NameServiceApi {
      * &lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/blockchain-api\&quot; target&#x3D;\&quot;_blank\&quot;&gt;See examples (Python, JavaScript) [Coming Soon]&lt;/a&gt;.      Get the name from a blockchain identifier.  e.g., Input &#x60;0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045&#x60; and output &#x60;vitalik.eth&#x60;  &#x60;Cost: 0.25 Credit&#x60; (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
      * @param blockchain The blockchain you want to use  (required)
      * @param network The network of the blockchain you selected  - Solana: &#x60;devnet&#x60;, &#x60;mainnet-beta&#x60; - Ethereum: &#x60;ropsten&#x60;, &#x60;mainnet&#x60;  Defaults when not provided (not applicable to path parameters): - Solana: &#x60;devnet&#x60; - Ethereum: &#x60;ropsten&#x60; (required)
-     * @param blockchainIdentifier The identifier of the token (e.g., &#x60;mint_address&#x60; on &#x60;Solana&#x60; or &#x60;token_address&#x60; on &#x60;Ethereum&#x60;)  (required)
      * @param inputBlockchainIdentifier  (optional)
      * @return InputName
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -342,8 +334,8 @@ public class NameServiceApi {
         <tr><td> 404 </td><td> Task not found. </td><td>  -  </td></tr>
      </table>
      */
-    public InputName getNameForBlockchainIdentifier(String blockchain, String network, String blockchainIdentifier, InputBlockchainIdentifier inputBlockchainIdentifier) throws ApiException {
-        ApiResponse<InputName> localVarResp = getNameForBlockchainIdentifierWithHttpInfo(blockchain, network, blockchainIdentifier, inputBlockchainIdentifier);
+    public InputName getNameForBlockchainIdentifier(String blockchain, String network, InputBlockchainIdentifier inputBlockchainIdentifier) throws ApiException {
+        ApiResponse<InputName> localVarResp = getNameForBlockchainIdentifierWithHttpInfo(blockchain, network, inputBlockchainIdentifier);
         return localVarResp.getData();
     }
 
@@ -352,7 +344,6 @@ public class NameServiceApi {
      * &lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/blockchain-api\&quot; target&#x3D;\&quot;_blank\&quot;&gt;See examples (Python, JavaScript) [Coming Soon]&lt;/a&gt;.      Get the name from a blockchain identifier.  e.g., Input &#x60;0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045&#x60; and output &#x60;vitalik.eth&#x60;  &#x60;Cost: 0.25 Credit&#x60; (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
      * @param blockchain The blockchain you want to use  (required)
      * @param network The network of the blockchain you selected  - Solana: &#x60;devnet&#x60;, &#x60;mainnet-beta&#x60; - Ethereum: &#x60;ropsten&#x60;, &#x60;mainnet&#x60;  Defaults when not provided (not applicable to path parameters): - Solana: &#x60;devnet&#x60; - Ethereum: &#x60;ropsten&#x60; (required)
-     * @param blockchainIdentifier The identifier of the token (e.g., &#x60;mint_address&#x60; on &#x60;Solana&#x60; or &#x60;token_address&#x60; on &#x60;Ethereum&#x60;)  (required)
      * @param inputBlockchainIdentifier  (optional)
      * @return ApiResponse&lt;InputName&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -366,8 +357,8 @@ public class NameServiceApi {
         <tr><td> 404 </td><td> Task not found. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<InputName> getNameForBlockchainIdentifierWithHttpInfo(String blockchain, String network, String blockchainIdentifier, InputBlockchainIdentifier inputBlockchainIdentifier) throws ApiException {
-        okhttp3.Call localVarCall = getNameForBlockchainIdentifierValidateBeforeCall(blockchain, network, blockchainIdentifier, inputBlockchainIdentifier, null);
+    public ApiResponse<InputName> getNameForBlockchainIdentifierWithHttpInfo(String blockchain, String network, InputBlockchainIdentifier inputBlockchainIdentifier) throws ApiException {
+        okhttp3.Call localVarCall = getNameForBlockchainIdentifierValidateBeforeCall(blockchain, network, inputBlockchainIdentifier, null);
         Type localVarReturnType = new TypeToken<InputName>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -377,7 +368,6 @@ public class NameServiceApi {
      * &lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/blockchain-api\&quot; target&#x3D;\&quot;_blank\&quot;&gt;See examples (Python, JavaScript) [Coming Soon]&lt;/a&gt;.      Get the name from a blockchain identifier.  e.g., Input &#x60;0xd8dA6BF26964aF9D7eEd9e03E53415D37aA96045&#x60; and output &#x60;vitalik.eth&#x60;  &#x60;Cost: 0.25 Credit&#x60; (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
      * @param blockchain The blockchain you want to use  (required)
      * @param network The network of the blockchain you selected  - Solana: &#x60;devnet&#x60;, &#x60;mainnet-beta&#x60; - Ethereum: &#x60;ropsten&#x60;, &#x60;mainnet&#x60;  Defaults when not provided (not applicable to path parameters): - Solana: &#x60;devnet&#x60; - Ethereum: &#x60;ropsten&#x60; (required)
-     * @param blockchainIdentifier The identifier of the token (e.g., &#x60;mint_address&#x60; on &#x60;Solana&#x60; or &#x60;token_address&#x60; on &#x60;Ethereum&#x60;)  (required)
      * @param inputBlockchainIdentifier  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -392,9 +382,9 @@ public class NameServiceApi {
         <tr><td> 404 </td><td> Task not found. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getNameForBlockchainIdentifierAsync(String blockchain, String network, String blockchainIdentifier, InputBlockchainIdentifier inputBlockchainIdentifier, final ApiCallback<InputName> _callback) throws ApiException {
+    public okhttp3.Call getNameForBlockchainIdentifierAsync(String blockchain, String network, InputBlockchainIdentifier inputBlockchainIdentifier, final ApiCallback<InputName> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getNameForBlockchainIdentifierValidateBeforeCall(blockchain, network, blockchainIdentifier, inputBlockchainIdentifier, _callback);
+        okhttp3.Call localVarCall = getNameForBlockchainIdentifierValidateBeforeCall(blockchain, network, inputBlockchainIdentifier, _callback);
         Type localVarReturnType = new TypeToken<InputName>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

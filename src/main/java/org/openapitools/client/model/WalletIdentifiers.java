@@ -34,7 +34,7 @@ import org.openapitools.client.model.SolanaPublicKey;
  * The wallet indentification information. Click the &#x60;&gt;&#x60; arrow next to \&quot;wallet\&quot; on the left to see more details. 
  */
 @ApiModel(description = "The wallet indentification information. Click the `>` arrow next to \"wallet\" on the left to see more details. ")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-30T09:58:36.085380-07:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-30T11:04:39.768692-07:00[America/Los_Angeles]")
 public class WalletIdentifiers {
   public static final String SERIALIZED_NAME_HEX_PUBLIC_ADDRESS = "hex_public_address";
   @SerializedName(SERIALIZED_NAME_HEX_PUBLIC_ADDRESS)
