@@ -28,7 +28,7 @@ import java.math.BigDecimal;
 /**
  * TransactionResult
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-03-22T18:48:51.223575-07:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-30T09:58:36.085380-07:00[America/Los_Angeles]")
 public class TransactionResult {
   public static final String SERIALIZED_NAME_BLOCK_TIME = "block_time";
   @SerializedName(SERIALIZED_NAME_BLOCK_TIME)
@@ -46,6 +46,8 @@ public class TransactionResult {
   @SerializedName(SERIALIZED_NAME_TRANSACTION)
   private Object transaction;
 
+  public TransactionResult() { 
+  }
 
   public TransactionResult blockTime(BigDecimal blockTime) {
     

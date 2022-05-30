@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * BalanceRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-03-22T18:48:51.223575-07:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-30T09:58:36.085380-07:00[America/Los_Angeles]")
 public class BalanceRequest {
   public static final String SERIALIZED_NAME_PUBLIC_KEY = "public_key";
   @SerializedName(SERIALIZED_NAME_PUBLIC_KEY)
@@ -139,6 +139,8 @@ public class BalanceRequest {
   @SerializedName(SERIALIZED_NAME_MINT_ADDRESS)
   private String mintAddress = "null";
 
+  public BalanceRequest() { 
+  }
 
   public BalanceRequest publicKey(String publicKey) {
     

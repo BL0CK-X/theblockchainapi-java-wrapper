@@ -29,7 +29,7 @@ import org.openapitools.client.model.AccountValue;
 /**
  * Account
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-03-22T18:48:51.223575-07:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-30T09:58:36.085380-07:00[America/Los_Angeles]")
 public class Account {
   public static final String SERIALIZED_NAME_CONTEXT = "context";
   @SerializedName(SERIALIZED_NAME_CONTEXT)
@@ -39,6 +39,8 @@ public class Account {
   @SerializedName(SERIALIZED_NAME_VALUE)
   private AccountValue value;
 
+  public Account() { 
+  }
 
   public Account context(AccountContext context) {
     

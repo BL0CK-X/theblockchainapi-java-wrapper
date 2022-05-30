@@ -30,7 +30,7 @@ import org.openapitools.jackson.nullable.JsonNullable;
 /**
  * NFTAnalyticsResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-03-22T18:48:51.223575-07:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-26T09:40:45.678369-07:00[America/Los_Angeles]")
 public class NFTAnalyticsResponse {
   public static final String SERIALIZED_NAME_START_TIME = "start_time";
   @SerializedName(SERIALIZED_NAME_START_TIME)
@@ -52,6 +52,8 @@ public class NFTAnalyticsResponse {
   @SerializedName(SERIALIZED_NAME_VOLUME)
   private BigDecimal volume;
 
+  public NFTAnalyticsResponse() { 
+  }
 
   public NFTAnalyticsResponse startTime(Object startTime) {
     

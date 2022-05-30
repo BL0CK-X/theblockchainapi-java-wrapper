@@ -31,44 +31,40 @@ import org.openapitools.client.model.Wallet;
 /**
  * NFTMintRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-03-22T18:48:51.223575-07:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-30T09:58:36.085380-07:00[America/Los_Angeles]")
 public class NFTMintRequest {
   public static final String SERIALIZED_NAME_WALLET = "wallet";
   @SerializedName(SERIALIZED_NAME_WALLET)
   private Wallet wallet;
 
-  public static final String SERIALIZED_NAME_NFT_NAME = "nft_name";
-  @SerializedName(SERIALIZED_NAME_NFT_NAME)
-  private String nftName = "";
+  public static final String SERIALIZED_NAME_RETURN_COMPILED_TRANSACTION = "return_compiled_transaction";
+  @SerializedName(SERIALIZED_NAME_RETURN_COMPILED_TRANSACTION)
+  private Boolean returnCompiledTransaction = false;
 
-  public static final String SERIALIZED_NAME_NFT_SYMBOL = "nft_symbol";
-  @SerializedName(SERIALIZED_NAME_NFT_SYMBOL)
-  private String nftSymbol = "";
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
+  private String name = "";
 
-  public static final String SERIALIZED_NAME_NFT_DESCRIPTION = "nft_description";
-  @SerializedName(SERIALIZED_NAME_NFT_DESCRIPTION)
-  private String nftDescription = "";
+  public static final String SERIALIZED_NAME_SYMBOL = "symbol";
+  @SerializedName(SERIALIZED_NAME_SYMBOL)
+  private String symbol = "";
 
-  public static final String SERIALIZED_NAME_NFT_URL = "nft_url";
-  @SerializedName(SERIALIZED_NAME_NFT_URL)
-  private String nftUrl = "";
-
-  public static final String SERIALIZED_NAME_NFT_METADATA = "nft_metadata";
-  @SerializedName(SERIALIZED_NAME_NFT_METADATA)
-  private String nftMetadata = "{}";
+  public static final String SERIALIZED_NAME_DESCRIPTION = "description";
+  @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  private String description = "";
 
   /**
-   * When you choose S3, all of the nft_description, nft_name, nft_symbol, nft_metadata, and nft_url are put into a json dictionary and uploaded to S3 as a text file.  This is uploaded to an AWS S3 bucket we own, and is an option we provide at no charge. The S3 link to this file is stored on the NFT on the blockchain.   When you choose LINK, the nft_url you provide is stored on the blockchain, and the nft_metadata and nft_description are ignored and not stored anywhere. S3 is then NOT used. 
+   * When you choose &#x60;S3&#x60;, all of the &#x60;name&#x60;, &#x60;description&#x60;, &#x60;symbol&#x60;, &#x60;uri_metadata&#x60;, and &#x60;image_url&#x60; are put into a JSON dictionary and uploaded to S3 as a JSON file.  This is uploaded to an AWS S3 bucket we own, and is an option we provide at no charge. The S3 link to this file is stored in the NFT&#39;s account on the blockchain. Learn more  &lt;a href&#x3D;\&quot;https://blockchainapi.com/2022/01/18/how-to-format-off-chain-nft-metadata.html\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;.  When you choose &#x60;URI&#x60;, the &#x60;uri&#x60; you provide is stored on the blockchain, and the &#x60;uri_metadata&#x60;, &#x60;description&#x60;, and &#x60;image_url&#x60; are ignored and not stored anywhere. &#x60;S3&#x60; is NOT involved in this case.   An example of a &#x60;uri&#x60; you would provide is an Arweave URL, like this: &#x60;https://arweave.net/_Y8tETU3FbAFZSM1wXNeWPweWwrW9K6oSF1SYi_bH9A&#x60;.
    */
-  @JsonAdapter(NftUploadMethodEnum.Adapter.class)
-  public enum NftUploadMethodEnum {
+  @JsonAdapter(UploadMethodEnum.Adapter.class)
+  public enum UploadMethodEnum {
     S3("S3"),
     
-    LINK("LINK");
+    URI("URI");
 
     private String value;
 
-    NftUploadMethodEnum(String value) {
+    UploadMethodEnum(String value) {
       this.value = value;
     }
 
@@ -81,8 +77,8 @@ public class NFTMintRequest {
       return String.valueOf(value);
     }
 
-    public static NftUploadMethodEnum fromValue(String value) {
-      for (NftUploadMethodEnum b : NftUploadMethodEnum.values()) {
+    public static UploadMethodEnum fromValue(String value) {
+      for (UploadMethodEnum b : UploadMethodEnum.values()) {
         if (b.value.equals(value)) {
           return b;
         }
@@ -90,23 +86,35 @@ public class NFTMintRequest {
       throw new IllegalArgumentException("Unexpected value '" + value + "'");
     }
 
-    public static class Adapter extends TypeAdapter<NftUploadMethodEnum> {
+    public static class Adapter extends TypeAdapter<UploadMethodEnum> {
       @Override
-      public void write(final JsonWriter jsonWriter, final NftUploadMethodEnum enumeration) throws IOException {
+      public void write(final JsonWriter jsonWriter, final UploadMethodEnum enumeration) throws IOException {
         jsonWriter.value(enumeration.getValue());
       }
 
       @Override
-      public NftUploadMethodEnum read(final JsonReader jsonReader) throws IOException {
+      public UploadMethodEnum read(final JsonReader jsonReader) throws IOException {
         String value =  jsonReader.nextString();
-        return NftUploadMethodEnum.fromValue(value);
+        return UploadMethodEnum.fromValue(value);
       }
     }
   }
 
-  public static final String SERIALIZED_NAME_NFT_UPLOAD_METHOD = "nft_upload_method";
-  @SerializedName(SERIALIZED_NAME_NFT_UPLOAD_METHOD)
-  private NftUploadMethodEnum nftUploadMethod = NftUploadMethodEnum.S3;
+  public static final String SERIALIZED_NAME_UPLOAD_METHOD = "upload_method";
+  @SerializedName(SERIALIZED_NAME_UPLOAD_METHOD)
+  private UploadMethodEnum uploadMethod = UploadMethodEnum.S3;
+
+  public static final String SERIALIZED_NAME_URI = "uri";
+  @SerializedName(SERIALIZED_NAME_URI)
+  private String uri = "";
+
+  public static final String SERIALIZED_NAME_IMAGE_URL = "image_url";
+  @SerializedName(SERIALIZED_NAME_IMAGE_URL)
+  private String imageUrl = "";
+
+  public static final String SERIALIZED_NAME_URI_METADATA = "uri_metadata";
+  @SerializedName(SERIALIZED_NAME_URI_METADATA)
+  private Object uriMetadata = {};
 
   public static final String SERIALIZED_NAME_IS_MUTABLE = "is_mutable";
   @SerializedName(SERIALIZED_NAME_IS_MUTABLE)
@@ -183,6 +191,8 @@ public class NFTMintRequest {
   @SerializedName(SERIALIZED_NAME_NETWORK)
   private NetworkEnum network = NetworkEnum.DEVNET;
 
+  public NFTMintRequest() { 
+  }
 
   public NFTMintRequest wallet(Wallet wallet) {
     
@@ -194,8 +204,8 @@ public class NFTMintRequest {
    * Get wallet
    * @return wallet
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
 
   public Wallet getWallet() {
     return wallet;
@@ -207,141 +217,187 @@ public class NFTMintRequest {
   }
 
 
-  public NFTMintRequest nftName(String nftName) {
+  public NFTMintRequest returnCompiledTransaction(Boolean returnCompiledTransaction) {
     
-    this.nftName = nftName;
+    this.returnCompiledTransaction = returnCompiledTransaction;
+    return this;
+  }
+
+   /**
+   * If &#x60;true&#x60;, the transaction to mint the NFT will not be submitted or signed. It will be returned to you in a raw form that you can then sign with a wallet (e.g., Phantom) or code. No &#x60;wallet&#x60; authentication information is required (thus, you do you have to supply a seed phrase or private key). See a Python example [here](https://github.com/BL0CK-X/blockchain-api/blob/main/third-party-api-examples/me-buy-sell.py). If &#x60;false&#x60; (the default option), then &#x60;wallet&#x60; is required. We sign and submit the transaction for you, which uses your wallet to mint the NFT. No further action is required on your part, and the NFT is minted. Read more on security [here](#section/Security). 
+   * @return returnCompiledTransaction
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "If `true`, the transaction to mint the NFT will not be submitted or signed. It will be returned to you in a raw form that you can then sign with a wallet (e.g., Phantom) or code. No `wallet` authentication information is required (thus, you do you have to supply a seed phrase or private key). See a Python example [here](https://github.com/BL0CK-X/blockchain-api/blob/main/third-party-api-examples/me-buy-sell.py). If `false` (the default option), then `wallet` is required. We sign and submit the transaction for you, which uses your wallet to mint the NFT. No further action is required on your part, and the NFT is minted. Read more on security [here](#section/Security). ")
+
+  public Boolean getReturnCompiledTransaction() {
+    return returnCompiledTransaction;
+  }
+
+
+  public void setReturnCompiledTransaction(Boolean returnCompiledTransaction) {
+    this.returnCompiledTransaction = returnCompiledTransaction;
+  }
+
+
+  public NFTMintRequest name(String name) {
+    
+    this.name = name;
     return this;
   }
 
    /**
    * The name of the token. Limited to 32 characters. Stored on the blockchain.
-   * @return nftName
+   * @return name
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "The name of the token. Limited to 32 characters. Stored on the blockchain.")
 
-  public String getNftName() {
-    return nftName;
+  public String getName() {
+    return name;
   }
 
 
-  public void setNftName(String nftName) {
-    this.nftName = nftName;
+  public void setName(String name) {
+    this.name = name;
   }
 
 
-  public NFTMintRequest nftSymbol(String nftSymbol) {
+  public NFTMintRequest symbol(String symbol) {
     
-    this.nftSymbol = nftSymbol;
+    this.symbol = symbol;
     return this;
   }
 
    /**
    * The symbol of the token. Limited to 10 characters. Stored on the blockchain.
-   * @return nftSymbol
+   * @return symbol
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "The symbol of the token. Limited to 10 characters. Stored on the blockchain.")
 
-  public String getNftSymbol() {
-    return nftSymbol;
+  public String getSymbol() {
+    return symbol;
   }
 
 
-  public void setNftSymbol(String nftSymbol) {
-    this.nftSymbol = nftSymbol;
+  public void setSymbol(String symbol) {
+    this.symbol = symbol;
   }
 
 
-  public NFTMintRequest nftDescription(String nftDescription) {
+  public NFTMintRequest description(String description) {
     
-    this.nftDescription = nftDescription;
+    this.description = description;
     return this;
   }
 
    /**
-   * The description of the token. Limited to 2000 characters. Not stored on the blockchain.  This is stored in S3 in a bucket we own, and the link to that file is stored on the blockchain.  If you provide your own link, the link is also stored in that S3 file, which is publicly accessible. However, if you choose the NFT upload method \&quot;LINK\&quot; instead of \&quot;S3\&quot;, then we upload the link you  provide for nft_url directly to the blockchain, and S3 is not used at all. Thus, when you provide the \&quot;LINK\&quot; option, the value nft_description is ignored and not used. The Metaplex API does not provide functionality to store any data about your NFT besides a URL. 
-   * @return nftDescription
+   * The description of the NFT. Limited to 2000 characters. Not stored on the blockchain.         If you are providing your own &#x60;uri&#x60; (see above), then you do not need to provide this.  If you are not providing your own &#x60;uri&#x60; and you do not provide this, then there wills simply be no description.  Only provide a value for &#x60;description&#x60; if the &#x60;upload_method&#x60; is set to &#x60;S3&#x60; (see the description for &#x60;upload_method&#x60; above).
+   * @return description
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "The description of the token. Limited to 2000 characters. Not stored on the blockchain.  This is stored in S3 in a bucket we own, and the link to that file is stored on the blockchain.  If you provide your own link, the link is also stored in that S3 file, which is publicly accessible. However, if you choose the NFT upload method \"LINK\" instead of \"S3\", then we upload the link you  provide for nft_url directly to the blockchain, and S3 is not used at all. Thus, when you provide the \"LINK\" option, the value nft_description is ignored and not used. The Metaplex API does not provide functionality to store any data about your NFT besides a URL. ")
+  @ApiModelProperty(value = "The description of the NFT. Limited to 2000 characters. Not stored on the blockchain.         If you are providing your own `uri` (see above), then you do not need to provide this.  If you are not providing your own `uri` and you do not provide this, then there wills simply be no description.  Only provide a value for `description` if the `upload_method` is set to `S3` (see the description for `upload_method` above).")
 
-  public String getNftDescription() {
-    return nftDescription;
+  public String getDescription() {
+    return description;
   }
 
 
-  public void setNftDescription(String nftDescription) {
-    this.nftDescription = nftDescription;
+  public void setDescription(String description) {
+    this.description = description;
   }
 
 
-  public NFTMintRequest nftUrl(String nftUrl) {
+  public NFTMintRequest uploadMethod(UploadMethodEnum uploadMethod) {
     
-    this.nftUrl = nftUrl;
+    this.uploadMethod = uploadMethod;
     return this;
   }
 
    /**
-   * The URL you provided. Limited to 200 characters. This does not need to be a valid URL. Whether or not this is  stored on the blockchain depends on which upload method you choose. If you choose LINK, then this is stored on the  blockchain directly. If you choose S3, then this link is embedded in a public S3 text file that also contains the metadata, the name,  the symbol, and the description of the NFT. 
-   * @return nftUrl
+   * When you choose &#x60;S3&#x60;, all of the &#x60;name&#x60;, &#x60;description&#x60;, &#x60;symbol&#x60;, &#x60;uri_metadata&#x60;, and &#x60;image_url&#x60; are put into a JSON dictionary and uploaded to S3 as a JSON file.  This is uploaded to an AWS S3 bucket we own, and is an option we provide at no charge. The S3 link to this file is stored in the NFT&#39;s account on the blockchain. Learn more  &lt;a href&#x3D;\&quot;https://blockchainapi.com/2022/01/18/how-to-format-off-chain-nft-metadata.html\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;.  When you choose &#x60;URI&#x60;, the &#x60;uri&#x60; you provide is stored on the blockchain, and the &#x60;uri_metadata&#x60;, &#x60;description&#x60;, and &#x60;image_url&#x60; are ignored and not stored anywhere. &#x60;S3&#x60; is NOT involved in this case.   An example of a &#x60;uri&#x60; you would provide is an Arweave URL, like this: &#x60;https://arweave.net/_Y8tETU3FbAFZSM1wXNeWPweWwrW9K6oSF1SYi_bH9A&#x60;.
+   * @return uploadMethod
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "The URL you provided. Limited to 200 characters. This does not need to be a valid URL. Whether or not this is  stored on the blockchain depends on which upload method you choose. If you choose LINK, then this is stored on the  blockchain directly. If you choose S3, then this link is embedded in a public S3 text file that also contains the metadata, the name,  the symbol, and the description of the NFT. ")
+  @ApiModelProperty(value = "When you choose `S3`, all of the `name`, `description`, `symbol`, `uri_metadata`, and `image_url` are put into a JSON dictionary and uploaded to S3 as a JSON file.  This is uploaded to an AWS S3 bucket we own, and is an option we provide at no charge. The S3 link to this file is stored in the NFT's account on the blockchain. Learn more  <a href=\"https://blockchainapi.com/2022/01/18/how-to-format-off-chain-nft-metadata.html\" target=\"_blank\">here</a>.  When you choose `URI`, the `uri` you provide is stored on the blockchain, and the `uri_metadata`, `description`, and `image_url` are ignored and not stored anywhere. `S3` is NOT involved in this case.   An example of a `uri` you would provide is an Arweave URL, like this: `https://arweave.net/_Y8tETU3FbAFZSM1wXNeWPweWwrW9K6oSF1SYi_bH9A`.")
 
-  public String getNftUrl() {
-    return nftUrl;
+  public UploadMethodEnum getUploadMethod() {
+    return uploadMethod;
   }
 
 
-  public void setNftUrl(String nftUrl) {
-    this.nftUrl = nftUrl;
+  public void setUploadMethod(UploadMethodEnum uploadMethod) {
+    this.uploadMethod = uploadMethod;
   }
 
 
-  public NFTMintRequest nftMetadata(String nftMetadata) {
+  public NFTMintRequest uri(String uri) {
     
-    this.nftMetadata = nftMetadata;
+    this.uri = uri;
     return this;
   }
 
    /**
-   * Any data you provide. Must be a string and properly encoded json. Will be viewable on S3. Limited to 2000 bytes. Not stored on the blockchain.  This is stored in S3 in a bucket we own, and the link to that file is stored on the blockchain.  If you provide your own link, the link is also stored in that S3 file, which is publicly accessible. However, if you choose the NFT upload method \&quot;LINK\&quot; instead of \&quot;S3\&quot;, then we upload the link you  provide for nft_url directly to the blockchain, and S3 is not used at all. Thus, when you provide the \&quot;LINK\&quot; option, the value nft_metadata is ignored and not used. The Metaplex API does not provide functionality to store any data about your NFT besides a URL. 
-   * @return nftMetadata
+   * The &#x60;uri&#x60; you provide is stored on the blockchain, and the &#x60;uri_metadata&#x60;, &#x60;description&#x60;, and &#x60;image_url&#x60; are ignored and not stored anywhere. &#x60;S3&#x60; is NOT involved in this case.   Read more &lt;a href&#x3D;\&quot;https://blockchainapi.com/2022/01/18/how-to-format-off-chain-nft-metadata.html\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;.  An example of a &#x60;uri&#x60; you would provide is an Arweave URL, like this: &#x60;https://arweave.net/_Y8tETU3FbAFZSM1wXNeWPweWwrW9K6oSF1SYi_bH9A&#x60;.  Only provide a value for &#x60;uri&#x60; if the &#x60;upload_method&#x60; is set to &#x60;URI&#x60; (see the description for &#x60;upload_method&#x60; above).
+   * @return uri
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Any data you provide. Must be a string and properly encoded json. Will be viewable on S3. Limited to 2000 bytes. Not stored on the blockchain.  This is stored in S3 in a bucket we own, and the link to that file is stored on the blockchain.  If you provide your own link, the link is also stored in that S3 file, which is publicly accessible. However, if you choose the NFT upload method \"LINK\" instead of \"S3\", then we upload the link you  provide for nft_url directly to the blockchain, and S3 is not used at all. Thus, when you provide the \"LINK\" option, the value nft_metadata is ignored and not used. The Metaplex API does not provide functionality to store any data about your NFT besides a URL. ")
+  @ApiModelProperty(value = "The `uri` you provide is stored on the blockchain, and the `uri_metadata`, `description`, and `image_url` are ignored and not stored anywhere. `S3` is NOT involved in this case.   Read more <a href=\"https://blockchainapi.com/2022/01/18/how-to-format-off-chain-nft-metadata.html\" target=\"_blank\">here</a>.  An example of a `uri` you would provide is an Arweave URL, like this: `https://arweave.net/_Y8tETU3FbAFZSM1wXNeWPweWwrW9K6oSF1SYi_bH9A`.  Only provide a value for `uri` if the `upload_method` is set to `URI` (see the description for `upload_method` above).")
 
-  public String getNftMetadata() {
-    return nftMetadata;
+  public String getUri() {
+    return uri;
   }
 
 
-  public void setNftMetadata(String nftMetadata) {
-    this.nftMetadata = nftMetadata;
+  public void setUri(String uri) {
+    this.uri = uri;
   }
 
 
-  public NFTMintRequest nftUploadMethod(NftUploadMethodEnum nftUploadMethod) {
+  public NFTMintRequest imageUrl(String imageUrl) {
     
-    this.nftUploadMethod = nftUploadMethod;
+    this.imageUrl = imageUrl;
     return this;
   }
 
    /**
-   * When you choose S3, all of the nft_description, nft_name, nft_symbol, nft_metadata, and nft_url are put into a json dictionary and uploaded to S3 as a text file.  This is uploaded to an AWS S3 bucket we own, and is an option we provide at no charge. The S3 link to this file is stored on the NFT on the blockchain.   When you choose LINK, the nft_url you provide is stored on the blockchain, and the nft_metadata and nft_description are ignored and not stored anywhere. S3 is then NOT used. 
-   * @return nftUploadMethod
+   * The URL of the image of the NFT.         If you are providing your own &#x60;uri&#x60; (see above), then you do not need to provide this.  If you are not providing your own &#x60;uri&#x60; and you do not provide this, then there wills simply be no image.  Only provide a value for &#x60;image_url&#x60; if the &#x60;upload_method&#x60; is set to &#x60;S3&#x60; (see the description for &#x60;upload_method&#x60; above).
+   * @return imageUrl
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "When you choose S3, all of the nft_description, nft_name, nft_symbol, nft_metadata, and nft_url are put into a json dictionary and uploaded to S3 as a text file.  This is uploaded to an AWS S3 bucket we own, and is an option we provide at no charge. The S3 link to this file is stored on the NFT on the blockchain.   When you choose LINK, the nft_url you provide is stored on the blockchain, and the nft_metadata and nft_description are ignored and not stored anywhere. S3 is then NOT used. ")
+  @ApiModelProperty(value = "The URL of the image of the NFT.         If you are providing your own `uri` (see above), then you do not need to provide this.  If you are not providing your own `uri` and you do not provide this, then there wills simply be no image.  Only provide a value for `image_url` if the `upload_method` is set to `S3` (see the description for `upload_method` above).")
 
-  public NftUploadMethodEnum getNftUploadMethod() {
-    return nftUploadMethod;
+  public String getImageUrl() {
+    return imageUrl;
   }
 
 
-  public void setNftUploadMethod(NftUploadMethodEnum nftUploadMethod) {
-    this.nftUploadMethod = nftUploadMethod;
+  public void setImageUrl(String imageUrl) {
+    this.imageUrl = imageUrl;
+  }
+
+
+  public NFTMintRequest uriMetadata(Object uriMetadata) {
+    
+    this.uriMetadata = uriMetadata;
+    return this;
+  }
+
+   /**
+   * The off-chain metadata.        If you are providing your own &#x60;uri&#x60; (see above), then you do not need to provide this.  If you are not providing your own &#x60;uri&#x60; and you do not provide this, then there wills simply be no image.  Only provide a value for &#x60;uri_metadata&#x60; if the &#x60;upload_method&#x60; is set to &#x60;S3&#x60; (see the description for &#x60;upload_method&#x60; above).  Learn more about how to format this metadata &lt;a href&#x3D;\&quot;https://blockchainapi.com/2022/01/18/how-to-format-off-chain-nft-metadata.html\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;.
+   * @return uriMetadata
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "The off-chain metadata.        If you are providing your own `uri` (see above), then you do not need to provide this.  If you are not providing your own `uri` and you do not provide this, then there wills simply be no image.  Only provide a value for `uri_metadata` if the `upload_method` is set to `S3` (see the description for `upload_method` above).  Learn more about how to format this metadata <a href=\"https://blockchainapi.com/2022/01/18/how-to-format-off-chain-nft-metadata.html\" target=\"_blank\">here</a>.")
+
+  public Object getUriMetadata() {
+    return uriMetadata;
+  }
+
+
+  public void setUriMetadata(Object uriMetadata) {
+    this.uriMetadata = uriMetadata;
   }
 
 
@@ -460,11 +516,11 @@ public class NFTMintRequest {
   }
 
    /**
-   * A JSON encoded string representing an array / list.  The share of the royalty that each creator gets. Valid values range from 0 to 100.  Sum of the values must equal 100.  Only integer value accepted. Length of the share list must match length of the list of creators. 
+   * A JSON encoded string representing an array / list.  The share of the royalty that each creator gets. Valid values range from 0 to 100. Sum of the values must equal 100.  Only integer value accepted. Length of the share list must match length of the list of creators. 
    * @return share
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "A JSON encoded string representing an array / list.  The share of the royalty that each creator gets. Valid values range from 0 to 100.  Sum of the values must equal 100.  Only integer value accepted. Length of the share list must match length of the list of creators. ")
+  @ApiModelProperty(value = "A JSON encoded string representing an array / list.  The share of the royalty that each creator gets. Valid values range from 0 to 100. Sum of the values must equal 100.  Only integer value accepted. Length of the share list must match length of the list of creators. ")
 
   public List<Integer> getShare() {
     return share;
@@ -532,12 +588,14 @@ public class NFTMintRequest {
     }
     NFTMintRequest nfTMintRequest = (NFTMintRequest) o;
     return Objects.equals(this.wallet, nfTMintRequest.wallet) &&
-        Objects.equals(this.nftName, nfTMintRequest.nftName) &&
-        Objects.equals(this.nftSymbol, nfTMintRequest.nftSymbol) &&
-        Objects.equals(this.nftDescription, nfTMintRequest.nftDescription) &&
-        Objects.equals(this.nftUrl, nfTMintRequest.nftUrl) &&
-        Objects.equals(this.nftMetadata, nfTMintRequest.nftMetadata) &&
-        Objects.equals(this.nftUploadMethod, nfTMintRequest.nftUploadMethod) &&
+        Objects.equals(this.returnCompiledTransaction, nfTMintRequest.returnCompiledTransaction) &&
+        Objects.equals(this.name, nfTMintRequest.name) &&
+        Objects.equals(this.symbol, nfTMintRequest.symbol) &&
+        Objects.equals(this.description, nfTMintRequest.description) &&
+        Objects.equals(this.uploadMethod, nfTMintRequest.uploadMethod) &&
+        Objects.equals(this.uri, nfTMintRequest.uri) &&
+        Objects.equals(this.imageUrl, nfTMintRequest.imageUrl) &&
+        Objects.equals(this.uriMetadata, nfTMintRequest.uriMetadata) &&
         Objects.equals(this.isMutable, nfTMintRequest.isMutable) &&
         Objects.equals(this.isMasterEdition, nfTMintRequest.isMasterEdition) &&
         Objects.equals(this.sellerFeeBasisPoints, nfTMintRequest.sellerFeeBasisPoints) &&
@@ -549,7 +607,7 @@ public class NFTMintRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(wallet, nftName, nftSymbol, nftDescription, nftUrl, nftMetadata, nftUploadMethod, isMutable, isMasterEdition, sellerFeeBasisPoints, creators, share, mintToPublicKey, network);
+    return Objects.hash(wallet, returnCompiledTransaction, name, symbol, description, uploadMethod, uri, imageUrl, uriMetadata, isMutable, isMasterEdition, sellerFeeBasisPoints, creators, share, mintToPublicKey, network);
   }
 
   @Override
@@ -557,12 +615,14 @@ public class NFTMintRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class NFTMintRequest {\n");
     sb.append("    wallet: ").append(toIndentedString(wallet)).append("\n");
-    sb.append("    nftName: ").append(toIndentedString(nftName)).append("\n");
-    sb.append("    nftSymbol: ").append(toIndentedString(nftSymbol)).append("\n");
-    sb.append("    nftDescription: ").append(toIndentedString(nftDescription)).append("\n");
-    sb.append("    nftUrl: ").append(toIndentedString(nftUrl)).append("\n");
-    sb.append("    nftMetadata: ").append(toIndentedString(nftMetadata)).append("\n");
-    sb.append("    nftUploadMethod: ").append(toIndentedString(nftUploadMethod)).append("\n");
+    sb.append("    returnCompiledTransaction: ").append(toIndentedString(returnCompiledTransaction)).append("\n");
+    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    symbol: ").append(toIndentedString(symbol)).append("\n");
+    sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    uploadMethod: ").append(toIndentedString(uploadMethod)).append("\n");
+    sb.append("    uri: ").append(toIndentedString(uri)).append("\n");
+    sb.append("    imageUrl: ").append(toIndentedString(imageUrl)).append("\n");
+    sb.append("    uriMetadata: ").append(toIndentedString(uriMetadata)).append("\n");
     sb.append("    isMutable: ").append(toIndentedString(isMutable)).append("\n");
     sb.append("    isMasterEdition: ").append(toIndentedString(isMasterEdition)).append("\n");
     sb.append("    sellerFeeBasisPoints: ").append(toIndentedString(sellerFeeBasisPoints)).append("\n");

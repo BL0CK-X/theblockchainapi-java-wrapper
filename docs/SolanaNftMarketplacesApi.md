@@ -7,9 +7,6 @@ Method | HTTP request | Description
 [**solanaBuyNFT**](SolanaNftMarketplacesApi.md#solanaBuyNFT) | **POST** /solana/nft/marketplaces/{exchange}/buy/{network}/{mint_address} | Buy
 [**solanaDelistNFT**](SolanaNftMarketplacesApi.md#solanaDelistNFT) | **POST** /solana/nft/marketplaces/{exchange}/delist/{network}/{mint_address} | Delist
 [**solanaGetNFTListing**](SolanaNftMarketplacesApi.md#solanaGetNFTListing) | **GET** /solana/nft/marketplaces/listing/{network}/{mint_address} | Get NFT Listing
-[**solanaGetNFTMarketplaceAnalytics**](SolanaNftMarketplacesApi.md#solanaGetNFTMarketplaceAnalytics) | **POST** /solana/nft/marketplaces/analytics | Get NFT Analytics
-[**solanaGetNFTMarketplaceMarketShare**](SolanaNftMarketplacesApi.md#solanaGetNFTMarketplaceMarketShare) | **GET** /solana/nft/marketplaces/analytics/market_share | Get Marketplace Market Share
-[**solanaGetNFTMarketplaceRecentTransactions**](SolanaNftMarketplacesApi.md#solanaGetNFTMarketplaceRecentTransactions) | **GET** /solana/nft/marketplaces/analytics/recent_transactions | Get Recent NFT Transactions
 [**solanaListNFT**](SolanaNftMarketplacesApi.md#solanaListNFT) | **POST** /solana/nft/marketplaces/{exchange}/list/{network}/{mint_address} | List
 
 
@@ -19,7 +16,7 @@ Method | HTTP request | Description
 
 Buy
 
-&lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/blockchain-api/tree/main/examples/solana-nft-marketplaces/buy-nft\&quot; target&#x3D;\&quot;_blank\&quot;&gt;See examples (Python, JavaScript)&lt;/a&gt;.  Buy an NFT on a Solana Exchange.  Exchanges supported: SolSea, Magic Edennpm  &#x60;Cost: 25 Credits&#x60;, &#x60;Cost: 3 Credits on Devnet&#x60; (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
+&lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/blockchain-api/tree/main/examples/solana-nft-marketplaces/buy-nft\&quot; target&#x3D;\&quot;_blank\&quot;&gt;See examples (Python, JavaScript)&lt;/a&gt;.  Buy an NFT on a Solana Exchange.  Exchanges supported: SolSea, Magic Eden  &#x60;Cost: 25 Credits&#x60;, &#x60;Cost: 3 Credits on Devnet&#x60; (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
 
 ### Example
 ```java
@@ -50,7 +47,7 @@ public class Example {
 
     SolanaNftMarketplacesApi apiInstance = new SolanaNftMarketplacesApi(defaultClient);
     String network = "devnet"; // String | The network ID
-    String exchange = "solsea"; // String | The NFT exchange to interact with
+    String exchange = "magic-eden"; // String | The NFT exchange to interact with
     String mintAddress = "7GA16mQup7ESJbaD6n49VCwVG9kRkyQDzWKhBSLjbYqr"; // String | The mint address of the NFT you want to buy
     BuyRequest buyRequest = new BuyRequest(); // BuyRequest | 
     try {
@@ -72,7 +69,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **network** | **String**| The network ID | [enum: devnet, mainnet-beta]
- **exchange** | **String**| The NFT exchange to interact with | [enum: solsea, magic-eden]
+ **exchange** | **String**| The NFT exchange to interact with | [enum: magic-eden]
  **mintAddress** | **String**| The mint address of the NFT you want to buy |
  **buyRequest** | [**BuyRequest**](BuyRequest.md)|  | [optional]
 
@@ -134,7 +131,7 @@ public class Example {
 
     SolanaNftMarketplacesApi apiInstance = new SolanaNftMarketplacesApi(defaultClient);
     String network = "devnet"; // String | The network ID
-    String exchange = "solsea"; // String | The NFT exchange to interact with
+    String exchange = "magic-eden"; // String | The NFT exchange to interact with
     String mintAddress = "7GA16mQup7ESJbaD6n49VCwVG9kRkyQDzWKhBSLjbYqr"; // String | The mint address of the NFT you want to buy
     DelistRequest delistRequest = new DelistRequest(); // DelistRequest | 
     try {
@@ -156,7 +153,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **network** | **String**| The network ID | [enum: devnet, mainnet-beta]
- **exchange** | **String**| The NFT exchange to interact with | [enum: solsea, magic-eden]
+ **exchange** | **String**| The NFT exchange to interact with | [enum: magic-eden]
  **mintAddress** | **String**| The mint address of the NFT you want to buy |
  **delistRequest** | [**DelistRequest**](DelistRequest.md)|  | [optional]
 
@@ -263,237 +260,6 @@ Name | Type | Description  | Notes
 **403** | Our API will throw a 403 if you are providing a body in the GET request.  Such requests are insecure and rejected. The solution is not to provide any sort of body in any GET request.  |  -  |
 **404** | No marketplace listing found for this NFT. |  -  |
 
-<a name="solanaGetNFTMarketplaceAnalytics"></a>
-# **solanaGetNFTMarketplaceAnalytics**
-> NFTAnalyticsResponse solanaGetNFTMarketplaceAnalytics(nfTAnalyticsRequest)
-
-Get NFT Analytics
-
-&lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/blockchain-api/tree/main/examples/solana-nft-marketplaces/analytics\&quot; target&#x3D;\&quot;_blank\&quot;&gt;See examples (Python, JavaScript)&lt;/a&gt;.  A collection is a list of NFTs.  Any collection can thus be defined as a list of mint addresses.  This endpoint takes in a list of mint addresses (effectively, a collection), a start time (optional), and an end time (optional) and outputs the floor for that period, the volume for that period, and the transaction history for each NFT in the list (buy, list, delist, update price) for that period.  We are currently compiling a dictionary of collection names to list of mint addresses for public use. Please contribute &lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/solana-nft-collection-mint-addresses\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;.  Currently scans the following Solana NFT martketplaces: SolSea, Magic Eden, Solanart, Alpha Art, Digital Eyes, Exchange.art  &#x60;Cost: 15 Credits&#x60;, (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
-
-### Example
-```java
-// Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
-import org.openapitools.client.api.SolanaNftMarketplacesApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.blockchainapi.com/v1");
-    
-    // Configure API key authorization: APIKeyID
-    ApiKeyAuth APIKeyID = (ApiKeyAuth) defaultClient.getAuthentication("APIKeyID");
-    APIKeyID.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //APIKeyID.setApiKeyPrefix("Token");
-
-    // Configure API key authorization: APISecretKey
-    ApiKeyAuth APISecretKey = (ApiKeyAuth) defaultClient.getAuthentication("APISecretKey");
-    APISecretKey.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //APISecretKey.setApiKeyPrefix("Token");
-
-    SolanaNftMarketplacesApi apiInstance = new SolanaNftMarketplacesApi(defaultClient);
-    NFTAnalyticsRequest nfTAnalyticsRequest = new NFTAnalyticsRequest(); // NFTAnalyticsRequest | 
-    try {
-      NFTAnalyticsResponse result = apiInstance.solanaGetNFTMarketplaceAnalytics(nfTAnalyticsRequest);
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling SolanaNftMarketplacesApi#solanaGetNFTMarketplaceAnalytics");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **nfTAnalyticsRequest** | [**NFTAnalyticsRequest**](NFTAnalyticsRequest.md)|  | [optional]
-
-### Return type
-
-[**NFTAnalyticsResponse**](NFTAnalyticsResponse.md)
-
-### Authorization
-
-[APIKeyID](../README.md#APIKeyID), [APISecretKey](../README.md#APISecretKey)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful Response |  -  |
-**400** | Bad request (check response message) |  -  |
-**401** | Invalid API key pair in headers |  -  |
-**402** | Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. |  -  |
-**404** | No marketplace listing found for this NFT. |  -  |
-
-<a name="solanaGetNFTMarketplaceMarketShare"></a>
-# **solanaGetNFTMarketplaceMarketShare**
-> Object solanaGetNFTMarketplaceMarketShare()
-
-Get Marketplace Market Share
-
-&lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/blockchain-api/tree/main/examples/solana-nft-marketplaces/market-share\&quot; target&#x3D;\&quot;_blank\&quot;&gt;See examples (Python, JavaScript)&lt;/a&gt;.  Get the Marketplace listing of a Solana NFT.  Currently checks for the following Solana NFT martketplaces: SolSea, Magic Eden, Solanart, Alpha Art, Digital Eyes, Exchange.art  &#x60;Cost: 3 Credits&#x60;, (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
-
-### Example
-```java
-// Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
-import org.openapitools.client.api.SolanaNftMarketplacesApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.blockchainapi.com/v1");
-    
-    // Configure API key authorization: APIKeyID
-    ApiKeyAuth APIKeyID = (ApiKeyAuth) defaultClient.getAuthentication("APIKeyID");
-    APIKeyID.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //APIKeyID.setApiKeyPrefix("Token");
-
-    // Configure API key authorization: APISecretKey
-    ApiKeyAuth APISecretKey = (ApiKeyAuth) defaultClient.getAuthentication("APISecretKey");
-    APISecretKey.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //APISecretKey.setApiKeyPrefix("Token");
-
-    SolanaNftMarketplacesApi apiInstance = new SolanaNftMarketplacesApi(defaultClient);
-    try {
-      Object result = apiInstance.solanaGetNFTMarketplaceMarketShare();
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling SolanaNftMarketplacesApi#solanaGetNFTMarketplaceMarketShare");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-**Object**
-
-### Authorization
-
-[APIKeyID](../README.md#APIKeyID), [APISecretKey](../README.md#APISecretKey)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful Response |  -  |
-**400** | Bad request (check response message) |  -  |
-**401** | Invalid API key pair in headers |  -  |
-**402** | Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. |  -  |
-**403** | Our API will throw a 403 if you are providing a body in the GET request.  Such requests are insecure and rejected. The solution is not to provide any sort of body in any GET request.  |  -  |
-**404** | No marketplace listing found for this NFT. |  -  |
-
-<a name="solanaGetNFTMarketplaceRecentTransactions"></a>
-# **solanaGetNFTMarketplaceRecentTransactions**
-> List&lt;NFTTransaction&gt; solanaGetNFTMarketplaceRecentTransactions()
-
-Get Recent NFT Transactions
-
-&lt;a href&#x3D;\&quot;https://github.com/BL0CK-X/blockchain-api/tree/main/examples/solana-nft-marketplaces/recent-transactions\&quot; target&#x3D;\&quot;_blank\&quot;&gt;See examples (Python, JavaScript)&lt;/a&gt;.  Get all NFT transactions across all major marketplaces in the last 30 minutes.  Currently checks for the following Solana NFT martketplaces: SolSea, Magic Eden, Solanart, Alpha Art, Digital Eyes, Exchange.art  &#x60;Cost: 15 Credits&#x60;, (&lt;a href&#x3D;\&quot;#section/Pricing\&quot;&gt;See Pricing&lt;/a&gt;)
-
-### Example
-```java
-// Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
-import org.openapitools.client.api.SolanaNftMarketplacesApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://api.blockchainapi.com/v1");
-    
-    // Configure API key authorization: APIKeyID
-    ApiKeyAuth APIKeyID = (ApiKeyAuth) defaultClient.getAuthentication("APIKeyID");
-    APIKeyID.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //APIKeyID.setApiKeyPrefix("Token");
-
-    // Configure API key authorization: APISecretKey
-    ApiKeyAuth APISecretKey = (ApiKeyAuth) defaultClient.getAuthentication("APISecretKey");
-    APISecretKey.setApiKey("YOUR API KEY");
-    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-    //APISecretKey.setApiKeyPrefix("Token");
-
-    SolanaNftMarketplacesApi apiInstance = new SolanaNftMarketplacesApi(defaultClient);
-    try {
-      List<NFTTransaction> result = apiInstance.solanaGetNFTMarketplaceRecentTransactions();
-      System.out.println(result);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling SolanaNftMarketplacesApi#solanaGetNFTMarketplaceRecentTransactions");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**List&lt;NFTTransaction&gt;**](NFTTransaction.md)
-
-### Authorization
-
-[APIKeyID](../README.md#APIKeyID), [APISecretKey](../README.md#APISecretKey)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Successful Response |  -  |
-**400** | Bad request (check response message) |  -  |
-**401** | Invalid API key pair in headers |  -  |
-**402** | Payment required. Occurs when you run out of API requests. Upgrade &lt;a href&#x3D;\&quot;https://dashboard.theblockchainapi.com/billing\&quot; target&#x3D;\&quot;_blank\&quot;&gt;here&lt;/a&gt;. |  -  |
-**403** | Our API will throw a 403 if you are providing a body in the GET request.  Such requests are insecure and rejected. The solution is not to provide any sort of body in any GET request.  |  -  |
-**404** | No marketplace listing found for this NFT. |  -  |
-
 <a name="solanaListNFT"></a>
 # **solanaListNFT**
 > ListResponse solanaListNFT(network, exchange, mintAddress, listRequest)
@@ -531,7 +297,7 @@ public class Example {
 
     SolanaNftMarketplacesApi apiInstance = new SolanaNftMarketplacesApi(defaultClient);
     String network = "devnet"; // String | The network ID
-    String exchange = "solsea"; // String | The NFT exchange to interact with
+    String exchange = "magic-eden"; // String | The NFT exchange to interact with
     String mintAddress = "7GA16mQup7ESJbaD6n49VCwVG9kRkyQDzWKhBSLjbYqr"; // String | The mint address of the NFT you want to buy
     ListRequest listRequest = new ListRequest(); // ListRequest | 
     try {
@@ -553,7 +319,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **network** | **String**| The network ID | [enum: devnet, mainnet-beta]
- **exchange** | **String**| The NFT exchange to interact with | [enum: solsea, magic-eden]
+ **exchange** | **String**| The NFT exchange to interact with | [enum: magic-eden]
  **mintAddress** | **String**| The mint address of the NFT you want to buy |
  **listRequest** | [**ListRequest**](ListRequest.md)|  | [optional]
 

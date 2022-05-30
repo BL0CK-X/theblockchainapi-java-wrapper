@@ -29,16 +29,26 @@ import org.openapitools.client.model.Wallet;
 /**
  * BuyRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-03-22T18:48:51.223575-07:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-30T09:58:36.085380-07:00[America/Los_Angeles]")
 public class BuyRequest {
   public static final String SERIALIZED_NAME_WALLET = "wallet";
   @SerializedName(SERIALIZED_NAME_WALLET)
   private Wallet wallet;
 
+  public static final String SERIALIZED_NAME_SKIP_CHECKS = "skip_checks";
+  @SerializedName(SERIALIZED_NAME_SKIP_CHECKS)
+  private Boolean skipChecks = false;
+
+  public static final String SERIALIZED_NAME_SELLER_PUBLIC_KEY = "seller_public_key";
+  @SerializedName(SERIALIZED_NAME_SELLER_PUBLIC_KEY)
+  private String sellerPublicKey = "null";
+
   public static final String SERIALIZED_NAME_NFT_PRICE = "nft_price";
   @SerializedName(SERIALIZED_NAME_NFT_PRICE)
   private BigDecimal nftPrice;
 
+  public BuyRequest() { 
+  }
 
   public BuyRequest wallet(Wallet wallet) {
     
@@ -60,6 +70,52 @@ public class BuyRequest {
 
   public void setWallet(Wallet wallet) {
     this.wallet = wallet;
+  }
+
+
+  public BuyRequest skipChecks(Boolean skipChecks) {
+    
+    this.skipChecks = skipChecks;
+    return this;
+  }
+
+   /**
+   * Whether or not to skip the provided checks (e.g., Is this NFT not listed? Is this NFT listed for a different price than you set?) and proceed with the transaction. 
+   * @return skipChecks
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Whether or not to skip the provided checks (e.g., Is this NFT not listed? Is this NFT listed for a different price than you set?) and proceed with the transaction. ")
+
+  public Boolean getSkipChecks() {
+    return skipChecks;
+  }
+
+
+  public void setSkipChecks(Boolean skipChecks) {
+    this.skipChecks = skipChecks;
+  }
+
+
+  public BuyRequest sellerPublicKey(String sellerPublicKey) {
+    
+    this.sellerPublicKey = sellerPublicKey;
+    return this;
+  }
+
+   /**
+   * The public key of the seller. Only required if providing &#x60;skip_checks&#x60;. Otherwise, don&#39;t provide it. 
+   * @return sellerPublicKey
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "The public key of the seller. Only required if providing `skip_checks`. Otherwise, don't provide it. ")
+
+  public String getSellerPublicKey() {
+    return sellerPublicKey;
+  }
+
+
+  public void setSellerPublicKey(String sellerPublicKey) {
+    this.sellerPublicKey = sellerPublicKey;
   }
 
 
@@ -96,12 +152,14 @@ public class BuyRequest {
     }
     BuyRequest buyRequest = (BuyRequest) o;
     return Objects.equals(this.wallet, buyRequest.wallet) &&
+        Objects.equals(this.skipChecks, buyRequest.skipChecks) &&
+        Objects.equals(this.sellerPublicKey, buyRequest.sellerPublicKey) &&
         Objects.equals(this.nftPrice, buyRequest.nftPrice);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(wallet, nftPrice);
+    return Objects.hash(wallet, skipChecks, sellerPublicKey, nftPrice);
   }
 
   @Override
@@ -109,6 +167,8 @@ public class BuyRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class BuyRequest {\n");
     sb.append("    wallet: ").append(toIndentedString(wallet)).append("\n");
+    sb.append("    skipChecks: ").append(toIndentedString(skipChecks)).append("\n");
+    sb.append("    sellerPublicKey: ").append(toIndentedString(sellerPublicKey)).append("\n");
     sb.append("    nftPrice: ").append(toIndentedString(nftPrice)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -28,7 +28,7 @@ import org.openapitools.client.model.NFT;
 /**
  * NFTSearchResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-03-22T18:48:51.223575-07:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-30T09:58:36.085380-07:00[America/Los_Angeles]")
 public class NFTSearchResponse {
   public static final String SERIALIZED_NAME_NFT_METADATA = "nft_metadata";
   @SerializedName(SERIALIZED_NAME_NFT_METADATA)
@@ -38,6 +38,8 @@ public class NFTSearchResponse {
   @SerializedName(SERIALIZED_NAME_PUB_KEY_HASH)
   private String pubKeyHash;
 
+  public NFTSearchResponse() { 
+  }
 
   public NFTSearchResponse nftMetadata(NFT nftMetadata) {
     

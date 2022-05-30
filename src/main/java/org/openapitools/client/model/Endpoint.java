@@ -31,7 +31,7 @@ import org.openapitools.client.model.ParameterSpecification;
 /**
  * Endpoint
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-03-22T18:48:51.223575-07:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-30T09:58:36.085380-07:00[America/Los_Angeles]")
 public class Endpoint {
   public static final String SERIALIZED_NAME_PROJECT_ID = "project_id";
   @SerializedName(SERIALIZED_NAME_PROJECT_ID)
@@ -85,6 +85,8 @@ public class Endpoint {
   @SerializedName(SERIALIZED_NAME_OUTPUT_EXAMPLES)
   private Object outputExamples;
 
+  public Endpoint() { 
+  }
 
   public Endpoint projectId(String projectId) {
     

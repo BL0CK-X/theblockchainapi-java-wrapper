@@ -28,7 +28,7 @@ import java.math.BigDecimal;
 /**
  * NFTMintFee
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-03-22T18:48:51.223575-07:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-30T09:58:36.085380-07:00[America/Los_Angeles]")
 public class NFTMintFee {
   public static final String SERIALIZED_NAME_NFT_MINT_FEE_ESTIMATE_LAMPORTS = "nft_mint_fee_estimate_lamports";
   @SerializedName(SERIALIZED_NAME_NFT_MINT_FEE_ESTIMATE_LAMPORTS)
@@ -38,6 +38,8 @@ public class NFTMintFee {
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
   private String description;
 
+  public NFTMintFee() { 
+  }
 
   public NFTMintFee nftMintFeeEstimateLamports(BigDecimal nftMintFeeEstimateLamports) {
     

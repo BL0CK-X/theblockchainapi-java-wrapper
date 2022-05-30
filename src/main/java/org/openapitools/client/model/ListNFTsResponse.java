@@ -30,7 +30,7 @@ import org.openapitools.client.model.NFT;
 /**
  * ListNFTsResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-03-22T18:48:51.223575-07:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-30T09:58:36.085380-07:00[America/Los_Angeles]")
 public class ListNFTsResponse {
   public static final String SERIALIZED_NAME_NFTS_OWNED = "nfts_owned";
   @SerializedName(SERIALIZED_NAME_NFTS_OWNED)
@@ -40,6 +40,8 @@ public class ListNFTsResponse {
   @SerializedName(SERIALIZED_NAME_NFTS_METADATA)
   private List<NFT> nftsMetadata = null;
 
+  public ListNFTsResponse() { 
+  }
 
   public ListNFTsResponse nftsOwned(List<String> nftsOwned) {
     

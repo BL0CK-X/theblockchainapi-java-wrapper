@@ -28,7 +28,7 @@ import java.math.BigDecimal;
 /**
  * NFTTransaction
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-03-22T18:48:51.223575-07:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-26T09:40:45.678369-07:00[America/Los_Angeles]")
 public class NFTTransaction {
   public static final String SERIALIZED_NAME_BLOCK_TIME = "block_time";
   @SerializedName(SERIALIZED_NAME_BLOCK_TIME)
@@ -223,6 +223,8 @@ public class NFTTransaction {
   @SerializedName(SERIALIZED_NAME_TRANSACTION_SIGNATURE)
   private String transactionSignature;
 
+  public NFTTransaction() { 
+  }
 
   public NFTTransaction blockTime(BigDecimal blockTime) {
     

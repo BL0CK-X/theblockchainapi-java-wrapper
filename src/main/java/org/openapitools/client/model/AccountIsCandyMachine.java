@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * AccountIsCandyMachine
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-03-22T18:48:51.223575-07:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-30T09:58:36.085380-07:00[America/Los_Angeles]")
 public class AccountIsCandyMachine {
   public static final String SERIALIZED_NAME_IS_CANDY_MACHINE = "is_candy_machine";
   @SerializedName(SERIALIZED_NAME_IS_CANDY_MACHINE)
@@ -86,6 +86,8 @@ public class AccountIsCandyMachine {
   @SerializedName(SERIALIZED_NAME_CANDY_MACHINE_CONTRACT_VERSION)
   private CandyMachineContractVersionEnum candyMachineContractVersion;
 
+  public AccountIsCandyMachine() { 
+  }
 
   public AccountIsCandyMachine isCandyMachine(Boolean isCandyMachine) {
     

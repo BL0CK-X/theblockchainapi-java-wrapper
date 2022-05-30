@@ -24,12 +24,13 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.math.BigDecimal;
+import org.openapitools.client.model.NFTCollection;
 import org.openapitools.client.model.NFTData;
 
 /**
  * NFT
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-03-22T18:48:51.223575-07:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-30T09:58:36.085380-07:00[America/Los_Angeles]")
 public class NFT {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
@@ -63,6 +64,28 @@ public class NFT {
   @SerializedName(SERIALIZED_NAME_EXPLORER_URL)
   private String explorerUrl;
 
+  public static final String SERIALIZED_NAME_METADATA_ACCOUNT = "metadata_account";
+  @SerializedName(SERIALIZED_NAME_METADATA_ACCOUNT)
+  private String metadataAccount;
+
+  public static final String SERIALIZED_NAME_EDITION_NONCE = "edition_nonce";
+  @SerializedName(SERIALIZED_NAME_EDITION_NONCE)
+  private BigDecimal editionNonce;
+
+  public static final String SERIALIZED_NAME_TOKEN_STANDARD = "token_standard";
+  @SerializedName(SERIALIZED_NAME_TOKEN_STANDARD)
+  private BigDecimal tokenStandard;
+
+  public static final String SERIALIZED_NAME_COLLECTION = "collection";
+  @SerializedName(SERIALIZED_NAME_COLLECTION)
+  private NFTCollection collection;
+
+  public static final String SERIALIZED_NAME_USES = "uses";
+  @SerializedName(SERIALIZED_NAME_USES)
+  private BigDecimal uses;
+
+  public NFT() { 
+  }
 
   public NFT data(NFTData data) {
     
@@ -248,6 +271,121 @@ public class NFT {
   }
 
 
+  public NFT metadataAccount(String metadataAccount) {
+    
+    this.metadataAccount = metadataAccount;
+    return this;
+  }
+
+   /**
+   * The metadata account of the NFT 
+   * @return metadataAccount
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "The metadata account of the NFT ")
+
+  public String getMetadataAccount() {
+    return metadataAccount;
+  }
+
+
+  public void setMetadataAccount(String metadataAccount) {
+    this.metadataAccount = metadataAccount;
+  }
+
+
+  public NFT editionNonce(BigDecimal editionNonce) {
+    
+    this.editionNonce = editionNonce;
+    return this;
+  }
+
+   /**
+   * Get editionNonce
+   * @return editionNonce
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public BigDecimal getEditionNonce() {
+    return editionNonce;
+  }
+
+
+  public void setEditionNonce(BigDecimal editionNonce) {
+    this.editionNonce = editionNonce;
+  }
+
+
+  public NFT tokenStandard(BigDecimal tokenStandard) {
+    
+    this.tokenStandard = tokenStandard;
+    return this;
+  }
+
+   /**
+   * Get tokenStandard
+   * @return tokenStandard
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public BigDecimal getTokenStandard() {
+    return tokenStandard;
+  }
+
+
+  public void setTokenStandard(BigDecimal tokenStandard) {
+    this.tokenStandard = tokenStandard;
+  }
+
+
+  public NFT collection(NFTCollection collection) {
+    
+    this.collection = collection;
+    return this;
+  }
+
+   /**
+   * Get collection
+   * @return collection
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public NFTCollection getCollection() {
+    return collection;
+  }
+
+
+  public void setCollection(NFTCollection collection) {
+    this.collection = collection;
+  }
+
+
+  public NFT uses(BigDecimal uses) {
+    
+    this.uses = uses;
+    return this;
+  }
+
+   /**
+   * Get uses
+   * @return uses
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public BigDecimal getUses() {
+    return uses;
+  }
+
+
+  public void setUses(BigDecimal uses) {
+    this.uses = uses;
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -264,12 +402,17 @@ public class NFT {
         Objects.equals(this.updateAuthority, NFT.updateAuthority) &&
         Objects.equals(this.sellerFeeBasisPoints, NFT.sellerFeeBasisPoints) &&
         Objects.equals(this.mintSecretRecoveryPhrase, NFT.mintSecretRecoveryPhrase) &&
-        Objects.equals(this.explorerUrl, NFT.explorerUrl);
+        Objects.equals(this.explorerUrl, NFT.explorerUrl) &&
+        Objects.equals(this.metadataAccount, NFT.metadataAccount) &&
+        Objects.equals(this.editionNonce, NFT.editionNonce) &&
+        Objects.equals(this.tokenStandard, NFT.tokenStandard) &&
+        Objects.equals(this.collection, NFT.collection) &&
+        Objects.equals(this.uses, NFT.uses);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(data, isMutable, mint, primarySaleHappened, updateAuthority, sellerFeeBasisPoints, mintSecretRecoveryPhrase, explorerUrl);
+    return Objects.hash(data, isMutable, mint, primarySaleHappened, updateAuthority, sellerFeeBasisPoints, mintSecretRecoveryPhrase, explorerUrl, metadataAccount, editionNonce, tokenStandard, collection, uses);
   }
 
   @Override
@@ -284,6 +427,11 @@ public class NFT {
     sb.append("    sellerFeeBasisPoints: ").append(toIndentedString(sellerFeeBasisPoints)).append("\n");
     sb.append("    mintSecretRecoveryPhrase: ").append(toIndentedString(mintSecretRecoveryPhrase)).append("\n");
     sb.append("    explorerUrl: ").append(toIndentedString(explorerUrl)).append("\n");
+    sb.append("    metadataAccount: ").append(toIndentedString(metadataAccount)).append("\n");
+    sb.append("    editionNonce: ").append(toIndentedString(editionNonce)).append("\n");
+    sb.append("    tokenStandard: ").append(toIndentedString(tokenStandard)).append("\n");
+    sb.append("    collection: ").append(toIndentedString(collection)).append("\n");
+    sb.append("    uses: ").append(toIndentedString(uses)).append("\n");
     sb.append("}");
     return sb.toString();
   }

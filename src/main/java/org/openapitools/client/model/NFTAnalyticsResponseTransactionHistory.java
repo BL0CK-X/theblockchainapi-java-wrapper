@@ -31,12 +31,14 @@ import org.openapitools.client.model.NFTTransaction;
  * A dictionary that maps each mint address to its transaction history. See the example to the right (click \&quot;Expand All\&quot;). The transaction history consists of a list of transactions.  Each transaction is represented by an object with the following properties: &#x60;block_time&#x60;, &#x60;exchange&#x60;, &#x60;exchange_readable&#x60;, &#x60;mint_address&#x60;, &#x60;operation&#x60;, &#x60;seller&#x60;, &#x60;buyer&#x60;, and &#x60;transaction_signature&#x60;. 
  */
 @ApiModel(description = "A dictionary that maps each mint address to its transaction history. See the example to the right (click \"Expand All\"). The transaction history consists of a list of transactions.  Each transaction is represented by an object with the following properties: `block_time`, `exchange`, `exchange_readable`, `mint_address`, `operation`, `seller`, `buyer`, and `transaction_signature`. ")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-03-22T18:48:51.223575-07:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-26T09:40:45.678369-07:00[America/Los_Angeles]")
 public class NFTAnalyticsResponseTransactionHistory {
   public static final String SERIALIZED_NAME_MINT_ADDRESS = "mint_address";
   @SerializedName(SERIALIZED_NAME_MINT_ADDRESS)
   private List<NFTTransaction> mintAddress = null;
 
+  public NFTAnalyticsResponseTransactionHistory() { 
+  }
 
   public NFTAnalyticsResponseTransactionHistory mintAddress(List<NFTTransaction> mintAddress) {
     

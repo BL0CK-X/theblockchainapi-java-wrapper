@@ -28,12 +28,14 @@ import java.math.BigDecimal;
 /**
  * AccountContext
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-03-22T18:48:51.223575-07:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-30T09:58:36.085380-07:00[America/Los_Angeles]")
 public class AccountContext {
   public static final String SERIALIZED_NAME_SLOT = "slot";
   @SerializedName(SERIALIZED_NAME_SLOT)
   private BigDecimal slot;
 
+  public AccountContext() { 
+  }
 
   public AccountContext slot(BigDecimal slot) {
     

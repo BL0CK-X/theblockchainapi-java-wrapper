@@ -29,7 +29,7 @@ import org.openapitools.client.model.TransactionResult;
 /**
  * Transaction
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-03-22T18:48:51.223575-07:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-30T09:58:36.085380-07:00[America/Los_Angeles]")
 public class Transaction {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -43,6 +43,8 @@ public class Transaction {
   @SerializedName(SERIALIZED_NAME_RESULT)
   private TransactionResult result;
 
+  public Transaction() { 
+  }
 
   public Transaction id(BigDecimal id) {
     

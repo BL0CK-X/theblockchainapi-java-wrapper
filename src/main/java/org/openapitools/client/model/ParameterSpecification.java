@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * ParameterSpecification
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-03-22T18:48:51.223575-07:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-30T09:58:36.085380-07:00[America/Los_Angeles]")
 public class ParameterSpecification {
   /**
    * The type of the parameter
@@ -96,6 +96,8 @@ public class ParameterSpecification {
   @SerializedName(SERIALIZED_NAME_REQUIRED)
   private Boolean required;
 
+  public ParameterSpecification() { 
+  }
 
   public ParameterSpecification type(TypeEnum type) {
     

@@ -28,7 +28,7 @@ import java.io.IOException;
  * A group is a group of endpoints. 
  */
 @ApiModel(description = "A group is a group of endpoints. ")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-03-22T18:48:51.223575-07:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-30T09:58:36.085380-07:00[America/Los_Angeles]")
 public class Group {
   public static final String SERIALIZED_NAME_SECTION_NAME = "section_name";
   @SerializedName(SERIALIZED_NAME_SECTION_NAME)
@@ -42,6 +42,8 @@ public class Group {
   @SerializedName(SERIALIZED_NAME_GROUP_DESCRIPTION)
   private String groupDescription;
 
+  public Group() { 
+  }
 
   public Group sectionName(String sectionName) {
     

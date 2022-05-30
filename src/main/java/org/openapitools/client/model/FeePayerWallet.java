@@ -31,7 +31,7 @@ import org.openapitools.client.model.SecretRecoveryPhrase;
  * If you do NOT provide a wallet here, the fee payer of the transaction will be the &#x60;wallet&#x60; you provide or the &#x60;sender_public_key&#x60;.        If you do provide a wallet, then the &#x60;fee_payer_wallet&#x60; will pay the fees of the transaction and any costs associated with creating a new associated token account (only if necessary; approx. 0.002 SOL when necessary). A new account is necessary if you are sending an NFT or SPL token to a user that has not received the same NFT or one of the SPL tokens before (thus, a new associated token account is needed).
  */
 @ApiModel(description = "If you do NOT provide a wallet here, the fee payer of the transaction will be the `wallet` you provide or the `sender_public_key`.        If you do provide a wallet, then the `fee_payer_wallet` will pay the fees of the transaction and any costs associated with creating a new associated token account (only if necessary; approx. 0.002 SOL when necessary). A new account is necessary if you are sending an NFT or SPL token to a user that has not received the same NFT or one of the SPL tokens before (thus, a new associated token account is needed).")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-03-22T18:48:51.223575-07:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-30T09:58:36.085380-07:00[America/Los_Angeles]")
 public class FeePayerWallet {
   public static final String SERIALIZED_NAME_SECRET_RECOVERY_PHRASE = "secret_recovery_phrase";
   @SerializedName(SERIALIZED_NAME_SECRET_RECOVERY_PHRASE)
@@ -53,6 +53,8 @@ public class FeePayerWallet {
   @SerializedName(SERIALIZED_NAME_B58_PRIVATE_KEY)
   private String b58PrivateKey;
 
+  public FeePayerWallet() { 
+  }
 
   public FeePayerWallet secretRecoveryPhrase(String secretRecoveryPhrase) {
     

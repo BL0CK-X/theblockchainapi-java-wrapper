@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * TransferResponseCompiled
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-03-22T18:48:51.223575-07:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-30T09:58:36.085380-07:00[America/Los_Angeles]")
 public class TransferResponseCompiled {
   public static final String SERIALIZED_NAME_B58_COMPILED_TRANSACTION = "b58_compiled_transaction";
   @SerializedName(SERIALIZED_NAME_B58_COMPILED_TRANSACTION)
@@ -37,6 +37,8 @@ public class TransferResponseCompiled {
   @SerializedName(SERIALIZED_NAME_COMPILED_TRANSACTION)
   private Object compiledTransaction;
 
+  public TransferResponseCompiled() { 
+  }
 
   public TransferResponseCompiled b58CompiledTransaction(String b58CompiledTransaction) {
     

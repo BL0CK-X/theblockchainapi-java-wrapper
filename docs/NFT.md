@@ -15,6 +15,11 @@ Name | Type | Description | Notes
 **sellerFeeBasisPoints** | **BigDecimal** |  |  [optional]
 **mintSecretRecoveryPhrase** | **String** |  |  [optional]
 **explorerUrl** | **String** |  |  [optional]
+**metadataAccount** | **String** | The metadata account of the NFT  |  [optional]
+**editionNonce** | **BigDecimal** |  |  [optional]
+**tokenStandard** | **BigDecimal** |  |  [optional]
+**collection** | [**NFTCollection**](NFTCollection.md) |  |  [optional]
+**uses** | **BigDecimal** |  |  [optional]
 
 
 

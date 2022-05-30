@@ -31,7 +31,7 @@ import org.openapitools.client.model.GetAllNFTsResponseUnmintedNfts;
 /**
  * GetAllNFTsResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-03-22T18:48:51.223575-07:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-30T09:58:36.085380-07:00[America/Los_Angeles]")
 public class GetAllNFTsResponse {
   public static final String SERIALIZED_NAME_MINTED_NFTS = "minted_nfts";
   @SerializedName(SERIALIZED_NAME_MINTED_NFTS)
@@ -49,6 +49,8 @@ public class GetAllNFTsResponse {
   @SerializedName(SERIALIZED_NAME_ACCURATE)
   private Boolean accurate;
 
+  public GetAllNFTsResponse() { 
+  }
 
   public GetAllNFTsResponse mintedNfts(List<GetAllNFTsResponseMintedNfts> mintedNfts) {
     

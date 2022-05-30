@@ -28,7 +28,7 @@ import java.math.BigDecimal;
 /**
  * StatItem
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-03-22T18:48:51.223575-07:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-05-30T09:58:36.085380-07:00[America/Los_Angeles]")
 public class StatItem {
   public static final String SERIALIZED_NAME_UID = "uid";
   @SerializedName(SERIALIZED_NAME_UID)
@@ -54,6 +54,8 @@ public class StatItem {
   @SerializedName(SERIALIZED_NAME_PATH)
   private String path;
 
+  public StatItem() { 
+  }
 
   public StatItem uid(String uid) {
     
